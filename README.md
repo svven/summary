@@ -27,6 +27,36 @@ visualizing extraction results.**
 ![news.html preview](https://dl.dropboxusercontent.com/u/134594/Svven/news.png)
 https://dl.dropboxusercontent.com/u/134594/svven/news.html
 
+Installation
+============
+
+Cloning both summary and extraction repos.
+
+    $ virtualenv env
+    $ source env/bin/activate # or env\scripts\activate
+    $ git clone https://github.com/svven/extraction.git
+    $ git clone https://github.com/svven/summary.git
+    $ pip install -r summary/requirements.txt # includes extraction dependencies but the extraction itself
+    $ pip install -e extraction/ # instead of `python setup.py develop`
+
+Usage
+=====
+
+    $ cd summary # path to templates is relative
+    $ python
+
+    >>> from summarize import extract, render
+    >>> urls = ['https://github.com/svven/summary', 'http://twitter.com/ducu']
+    >>> articles = extract(urls)
+    >>> html = render(articles, template='news.html')
+    ▷ https://github.com/svven/summary
+    ▷ http://twitter.com/ducu
+    Fails: 0 out of 2.
+    >>> with open('demo.html', 'w') as file:
+    ...   file.write(html)
+    ... 
+    >>> 
+
 Docstrings
 ==========
 
