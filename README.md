@@ -24,6 +24,9 @@ displays the articles in a nice responsive grid layout.
 through the multiple extracted values. This helps
 visualizing extraction results.**
 
+![news.html preview](https://dl.dropboxusercontent.com/u/134594/Svven/news.png)
+https://dl.dropboxusercontent.com/u/134594/svven/news.html
+
 Docstrings
 ==========
 
