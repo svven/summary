@@ -20,15 +20,15 @@ and renders the output in html format as news articles.
 The included template is built on top of bootstrap and
 displays the articles in a nice responsive grid layout.
 
-Clicking the article title, image and description cycles
-through the multiple extracted values for each. This helps
-visualizing extraction results.
+**Clicking the article title, image and description cycles
+through the multiple extracted values. This helps
+visualizing extraction results.**
 
 Docstrings
 ==========
 
 ```
-* extract(urls)
+extract(urls)
 ```
 Parses each url and performs the extraction.
 Returns a list of Extracted instances aka articles.
