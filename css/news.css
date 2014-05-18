@@ -1,0 +1,150 @@
+﻿/*
+ * Article
+ * --------------------------------------------------
+*/
+.article {
+  font-family: Georgia;
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  word-wrap: break-word;
+  }
+
+  .title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    }
+
+  .url {
+      font-family: Helvetica;
+      font-size: 16px;
+      line-height: 23px;
+    }
+    .url a {
+      text-decoration: none;
+    }
+    .url a span {
+      color: #999;
+    }
+    .url a:hover span {
+      color: #666;
+      text-decoration: underline;
+    }
+
+  .image {
+    cursor: pointer;
+    /*float: left;*/
+    display: block;
+    height: auto;
+    margin: 0 10px 5px 0;
+    padding: 1px;
+    border: solid 1px #000;
+    max-width: 100%; /*default*/
+    }
+    .image.sm {
+      max-width: 33.333%;
+    }
+    .image.md {
+      max-width: 50%;
+    }
+    .image.lg {
+      max-width: 100%;
+    }
+
+    .imgsrc {
+      color: #999;
+    }
+
+  .description {
+    font-size: 16px;
+    line-height: 23px;
+    }
+
+    .description p.cycle {
+      cursor: pointer;
+    }
+
+  .article + .clearfix {
+    margin: 0 15px;
+    /* underline */
+    border-bottom: solid 1px #eee;
+    }
+
+  .cycle {
+    display: none;
+    visibility: hidden;
+    }
+    .cycle.show {
+      display: block !important;
+      visibility: visible !important;
+    }
+
+
+/*
+ * Grid
+ * --------------------------------------------------
+*/
+.enable-sm,
+.enable-md,
+.enable-lg {
+  display: none !important;
+  }
+
+  @media (max-width: 670px) {
+    .enable-sm {
+      display: block !important;
+    }
+    .article {
+      width: 100%; /*1 col*/
+    }
+  }
+  @media (min-width: 671px) and (max-width: 1170px) {
+    .enable-md {
+      display: block !important;
+    }
+    .article {
+      width: 50%; /*2 cols*/
+    }
+  }
+  @media (min-width: 1171px) {
+    .enable-lg {
+      display: block !important;
+    }
+    .article {
+      width: 25%; /*4 cols*/
+    }
+  }
+
+
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  }
+
+
+/*
+ * Container Fluid
+ * --------------------------------------------------
+*/
+.container-fluid {
+  min-width: 320px;
+  max-width: 1280px;
+  padding-left: 30px;
+  padding-right: 30px;
+  }
+  @media (max-width: 480px) {
+    .container-fluid {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
