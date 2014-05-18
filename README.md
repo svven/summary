@@ -1,13 +1,12 @@
-=======
 Summary
 =======
 
 Uses extraction to get the title, image and description 
 for a bunch of URLs. <br />
-Here's the forked extraction package that's being used 
+Here's the forked extraction package that's being used: 
 https://github.com/svven/extraction
 
-Many thanks to Will Larson ([@lethain](https://github.com/lethain)) for the original repo
+Many thanks to Will Larson ([@lethain](https://github.com/lethain)) for the original repo:
 https://github.com/lethain/extraction. <br />
 Very nice work there, easy to extend -- summary is just a
 wrapper over extraction, used to help extend and hopefully 
@@ -29,7 +28,7 @@ Docstrings
 ==========
 
 ```
-#extract(urls)#
+* extract(urls)
 ```
 Parses each url and performs the extraction.
 Returns a list of Extracted instances aka articles.
@@ -60,7 +59,8 @@ Parses the list of urls, performs data extraction,
 and renders the output in html format as news articles,
 if not otherwise specified by the template.
 
-You're very welcome to contribute. 
-Comments and suggestions are welcome as well. Cheers.
+***
+You're very welcome to contribute. <br />
+Comments and suggestions are welcome as well. Cheers,
 [@ducu](http://twitter.com/ducu)
 
