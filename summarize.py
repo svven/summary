@@ -4,11 +4,6 @@ Parses a list of urls, performs data extraction,
 and renders the output in html format as news articles.
 """
 
-# Unicode issues with extraction.
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
 
 def render(articles, template):
 	"""
@@ -53,7 +48,7 @@ def extract(urls):
 			page.raise_for_status()
 			article = extractor.extract(page.text, source_url=page.url)
 			article.source = url
-			print u"▷ %s" % url
+			print "-> %s" % url
 			yield article
 		except Exception, e:
 			fails += 1
@@ -83,6 +78,6 @@ if __name__ == '__main__':
 		urls.extend([url.strip() for url in file])
 	page = summarize(urls)
 	with open('news.html', 'w') as file:
-		file.write(page)
+		file.write(page.encode('utf-8')
 
 
