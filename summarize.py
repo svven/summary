@@ -78,6 +78,5 @@ if __name__ == '__main__':
 		urls.extend([url.strip() for url in file])
 	page = summarize(urls)
 	with open('news.html', 'w') as file:
-		file.write(page.encode('utf-8')
-
+		file.write(page.encode('utf-8'))
 
