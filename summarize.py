@@ -1,11 +1,11 @@
 """
-Parses a list of urls, performs data extraction,
-and renders the output in html format as news articles.
+Parses a list of URLs, performs data extraction,
+and renders the output in HTML format as news articles.
 """
 
 def render(template, **kwargs):
 	"""
-	Renders the html containing provided articles.
+	Renders the HTML containing provided articles.
 
 	The article has to be an instance of extraction.Extracted, 
 	or at least contain similar properties: title, image, url,
@@ -22,17 +22,19 @@ def render(template, **kwargs):
 
 def extract(url):
 	"""
-	Downloads the page from url and calls extraction.
+	Downloads the page from URL and calls extraction.
 	Returns the Extracted instance with filtered results.
 
 	TODO:
-	Download just the html <head> tag first, load it
+	Download just the HTML <head> tag first, load it
 	into extractor and see if Extracted data is complete.
-	Otherwise download the html <body> as well and load
+	Otherwise download the HTML <body> as well and load
 	it into extractor passing the appropriate techniques.
 	"""
 	import extraction, requests
-	extractor = extraction.Extractor()
+	extractor = extraction.Extractor(techniques=
+		["extraction.techniques.FacebookOpengraphTags",
+		 "extraction.techniques.HeadTags"])
 
 	page = requests.get(url, timeout=10)
 	page.raise_for_status()
@@ -42,11 +44,11 @@ def extract(url):
 	return article
 
 
-def summarize(urls, template="news.html"):
+def summarize(urls):
 	"""
-	Calls extract for each of the urls,
-	and renders the output in news articles format, if not 
-	otherwise specified by the template.
+	Calls extract for each of the URLs,
+	Returns the list of Extracted instances as articles, 
+	the result of the process, and the speed.
 	"""
 	import time
 
@@ -73,22 +75,25 @@ def summarize(urls, template="news.html"):
 		articles.append(article)
 		end = time.time()
 
-	results = fails and "Fails: %s out of %s." % (fails, len(articles)) \
+	result = fails and "Fails: %s out of %s." % (fails, len(articles)) \
 		or "Success: %s." % len(articles)
-	print results
+	print result
 
 	duration = end - start
 	speed = "%.2f" % (duration/len(articles))
 
-	return render(template, 
-		articles=articles, results=results, speed=speed)
+	return articles, result, speed
 
 
 if __name__ == '__main__':
 	urls = []
 	with open('urls.txt', 'r') as file:
 		urls.extend([url.strip() for url in file])
-	page = summarize(urls)
+
+	articles, result, speed = summarize(urls)
+	page = render(template="news.html",
+		articles=articles, result=result, speed=speed)
+
 	with open('news.html', 'w') as file:
 		file.write(page.encode('utf-8'))
 

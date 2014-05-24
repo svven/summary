@@ -2,14 +2,13 @@
               <div class="article">
                 <h2 class="title">{% for title in article.titles %}
                   <a href="#" class="cycle{% if loop.first %} show{% endif %}" title="{{ loop.index }} of {{ loop.length }}">{{ title }}</a>{% endfor %}
-                </h2>
+                </h2>{% for url in article.urls %}
                 <p class="url"><a href="{{ article.source }}">
-                  <span>{{ article.url }}</span></a>
-                </p>{% for image in article.images %}
+                  <span>{{ url }}</span></a>
+                </p>{% endfor %}{% for image in article.images %}
                 <img class="image cycle{% if loop.first %} show{% endif %}" title="{{ loop.index }} of {{ loop.length }}" src="{{ image }}" alt="{{ image }}" />{% endfor %}
                 <div class="description">
                   <p class="imgsrc">{{ article.image }}</p>
-                  <span></span>
                   {% for description in article.descriptions %}<p class="cycle{% if loop.first %} show{% endif %}" title="{{ loop.index }} of {{ loop.length }}">
                     {{ description|truncate(150, end="[...]") }}
                   </p>{% endfor %}
