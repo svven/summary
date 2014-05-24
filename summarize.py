@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Parses a list of urls, performs data extraction,
 and renders the output in html format as news articles.
 """
-
 
 def render(articles, template):
 	"""
@@ -11,10 +9,7 @@ def render(articles, template):
 
 	The article has to be an instance of extraction.Extracted, 
 	or at least contain similar properties: title, image, url,
-	description and lists/tuples titles, images, descriptions.
-	
-	Feeds are not rendered at the moment - might be discarded.
-	(That's the best added value of this nice little library.)
+	description and collections: titles, images, descriptions.
 	"""
 	import jinja2
 
@@ -25,51 +20,55 @@ def render(articles, template):
 	return temp.render(articles=articles)
 
 
-def extract(urls):
+def extract(url):
 	"""
-	Parses each url and performs the extraction.
-	Returns a list of Extracted instances aka articles.
+	Downloads the page from url and calls extraction.
+	Returns the Extracted instance with filtered results.
 
-	For now it downloads the whole page from the url in order
-	to perform the extraction. It would be better to define 
-	some extraction techniques that can work with fragments of
-	the HTML page so we could stream the request for faster 
-	processing and minimum bandwidth. Will keep this in mind.
+	TODO:
+	Download just the html <head> tag first, load it
+	into extractor and see if Extracted data is complete.
+	Otherwise download the html <body> as well and load
+	it into extractor passing the appropriate techniques.
 	"""
-	import urllib2, requests, extraction
-
-	fails = 0
-	err = lambda e: e.__class__.__name__
-
+	import extraction, requests
 	extractor = extraction.Extractor()
-	for url in urls:
-		try:
-			page = requests.get(url, timeout=10)
-			page.raise_for_status()
-			article = extractor.extract(page.text, source_url=page.url)
-			article.source = url
-			print "-> %s" % url
-			yield article
-		except Exception, e:
-			fails += 1
-			print "[%s] (%s): %s" % (err(e), e, url)
-			article = extraction.Extracted(
-				titles=["[%s]" % err(e)],
-				urls=[url],
-				descriptions=[str(e)],
-				source=url)
-			yield article
-	print "Fails: %s out of %s." % (fails, len(urls))
+
+	page = requests.get(url, timeout=10)
+	page.raise_for_status()
+	article = extractor.extract(page.text, source_url=page.url)
+	article.source = url # to be removed
+
+	return article
+
 
 def summarize(urls, template="news.html"):
 	"""
-	Main function of the module.
-	Parses a list of urls, performs data extraction,
-	and renders the output in html format as news articles,
-	if not otherwise specified by the template.
+	Calls extract for each of the urls,
+	and renders the output in news articles format, if not 
+	otherwise specified by the template.
 	"""
-	articles = extract(urls)
-	return render(articles=articles, template=template)
+	fails = 0
+	err = lambda e: e.__class__.__name__
+	articles = []
+
+	for url in urls:
+		try:
+			article = extract(url)
+			print "-> %s" % url
+		except Exception, e:
+			fails += 1
+			article = {
+				'titles': ["[%s]" % err(e)],
+				'urls': [url],
+				'descriptions': [str(e)],
+				'source': url
+				}
+			print "[%s] (%s): %s" % (err(e), e, url)
+		articles.append(article)
+	print "Fails: %s out of %s." % (fails, len(urls))
+
+	return render(articles, template)
 
 
 if __name__ == '__main__':
