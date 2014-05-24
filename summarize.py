@@ -3,7 +3,7 @@ Parses a list of urls, performs data extraction,
 and renders the output in html format as news articles.
 """
 
-def render(articles, template):
+def render(template, **kwargs):
 	"""
 	Renders the html containing provided articles.
 
@@ -17,7 +17,7 @@ def render(articles, template):
 	env = jinja2.Environment(loader=loader)
 	temp = env.get_template(template)
 
-	return temp.render(articles=articles)
+	return temp.render(**kwargs)
 
 
 def extract(url):
@@ -48,27 +48,40 @@ def summarize(urls, template="news.html"):
 	and renders the output in news articles format, if not 
 	otherwise specified by the template.
 	"""
+	import time
+
 	fails = 0
 	err = lambda e: e.__class__.__name__
-	articles = []
 
+	articles = []
+	start = time.time()
 	for url in urls:
 		try:
 			article = extract(url)
 			print "-> %s" % url
+		except KeyboardInterrupt:
+			break
 		except Exception, e:
 			fails += 1
 			article = {
 				'titles': ["[%s]" % err(e)],
 				'urls': [url],
 				'descriptions': [str(e)],
-				'source': url
+				'source': url,
 				}
 			print "[%s] (%s): %s" % (err(e), e, url)
 		articles.append(article)
-	print "Fails: %s out of %s." % (fails, len(urls))
+		end = time.time()
 
-	return render(articles, template)
+	results = fails and "Fails: %s out of %s." % (fails, len(articles)) \
+		or "Success: %s." % len(articles)
+	print results
+
+	duration = end - start
+	speed = "%.2f" % (duration/len(articles))
+
+	return render(template, 
+		articles=articles, results=results, speed=speed)
 
 
 if __name__ == '__main__':
