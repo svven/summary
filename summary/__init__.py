@@ -102,6 +102,7 @@ class Summary(object):
 
 	def _get_tag(self, response, tag_name="html"):
 		"Iterates response content and returns the tag if found."
+		lower_html = self._html.lower()
 		tag_start = tag_end = None
 		def find_tag(html, tag_name, tag_start, tag_end):
 			if not tag_start:
@@ -111,14 +112,15 @@ class Summary(object):
 				end = html.find("</%s>" % tag_name)
 				if end > tag_start: tag_end = end+len(tag_name)+3
 			if tag_end: # and tag_start
-				return html[tag_start:tag_end]
+				return self._html[tag_start:tag_end]
 			return None
 		for chunk in response.iter_content(CHUNK_SIZE, decode_unicode=True):
 			self._html += chunk
-			tag = find_tag(self._html.lower(), tag_name, tag_start, tag_end)
+			lower_html += chunk.lower()
+			tag = find_tag(lower_html, tag_name, tag_start, tag_end)
 			if tag:
 				return tag
-		tag = find_tag(self._html.lower(), tag_name, tag_start, tag_end)
+		tag = find_tag(lower_html, tag_name, tag_start, tag_end)
 		return tag
 
 	def extract(self, check_url=None):
