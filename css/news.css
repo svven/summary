@@ -1,8 +1,8 @@
 ﻿/*
- * Article
+ * Summary
  * --------------------------------------------------
 */
-.article {
+.summary {
   font-family: Georgia;
   position: relative;
   float: left;
@@ -67,7 +67,7 @@
       cursor: pointer;
     }
 
-  .article + .clearfix {
+  .summary + .clearfix {
     margin: 0 15px;
     /* underline */
     border-bottom: solid 1px #eee;
@@ -97,7 +97,7 @@
     .enable-sm {
       display: block !important;
     }
-    .article {
+    .summary {
       width: 100%; /*1 col*/
     }
   }
@@ -105,7 +105,7 @@
     .enable-md {
       display: block !important;
     }
-    .article {
+    .summary {
       width: 50%; /*2 cols*/
     }
   }
@@ -113,7 +113,7 @@
     .enable-lg {
       display: block !important;
     }
-    .article {
+    .summary {
       width: 25%; /*4 cols*/
     }
   }

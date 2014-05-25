@@ -5,9 +5,9 @@ and renders the output in HTML format as news articles.
 
 def render(template, **kwargs):
 	"""
-	Renders the HTML containing provided articles.
+	Renders the HTML containing provided summaries.
 
-	The article has to be an instance of extraction.Extracted, 
+	The summary has to be an instance of summary.Summary, 
 	or at least contain similar properties: title, image, url,
 	description and collections: titles, images, descriptions.
 	"""
@@ -38,16 +38,16 @@ def extract(url):
 
 	page = requests.get(url, timeout=10)
 	page.raise_for_status()
-	article = extractor.extract(page.text, source_url=page.url)
-	article.source = url # to be removed
+	summary = extractor.extract(page.text, source_url=page.url)
+	summary.source = url # to be removed
 
-	return article
+	return summary
 
 
 def summarize(urls):
 	"""
 	Calls extract for each of the URLs,
-	Returns the list of Extracted instances as articles, 
+	Returns the list of Extracted instances as summaries, 
 	the result of the process, and the speed.
 	"""
 	import time
@@ -55,34 +55,34 @@ def summarize(urls):
 	fails = 0
 	err = lambda e: e.__class__.__name__
 
-	articles = []
+	summaries = []
 	start = time.time()
 	for url in urls:
 		try:
-			article = extract(url)
+			summary = extract(url)
 			print "-> %s" % url
 		except KeyboardInterrupt:
 			break
 		except Exception, e:
 			fails += 1
-			article = {
+			summary = {
 				'titles': ["[%s]" % err(e)],
 				'urls': [url],
 				'descriptions': [str(e)],
 				'source': url,
 				}
 			print "[%s] (%s): %s" % (err(e), e, url)
-		articles.append(article)
+		summaries.append(summary)
 		end = time.time()
 
-	result = fails and "Fails: %s out of %s." % (fails, len(articles)) \
-		or "Success: %s." % len(articles)
+	result = fails and "Fails: %s out of %s." % (fails, len(summaries)) \
+		or "Success: %s." % len(summaries)
 	print result
 
 	duration = end - start
-	speed = "%.2f" % (duration/len(articles))
+	speed = "%.2f" % (duration/len(summaries))
 
-	return articles, result, speed
+	return summaries, result, speed
 
 
 if __name__ == '__main__':
@@ -90,9 +90,9 @@ if __name__ == '__main__':
 	with open('urls.txt', 'r') as file:
 		urls.extend([url.strip() for url in file])
 
-	articles, result, speed = summarize(urls)
+	summaries, result, speed = summarize(urls)
 	page = render(template="news.html",
-		articles=articles, result=result, speed=speed)
+		summaries=summaries, result=result, speed=speed)
 
 	with open('news.html', 'w') as file:
 		file.write(page.encode('utf-8'))

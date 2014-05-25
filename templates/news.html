@@ -14,8 +14,8 @@
   <div class="container-fluid">
     <div class="page-content">
       <div class="row">
-        <ul class="list-unstyled">{% for article in articles %}
-          <li>{% include "article.html" %}
+        <ul class="list-unstyled">{% for summary in summaries %}
+          <li>{% include "summary.html" %}
             <div class="clearfix enable-sm {% if loop.index is divisibleby 2 %}enable-md{% endif %} {% if loop.index is divisibleby 4 %}enable-lg{% endif %}"></div>
           </li>{% endfor %}
         </ul>
