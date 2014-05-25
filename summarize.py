@@ -20,30 +20,6 @@ def render(template, **kwargs):
 	return temp.render(**kwargs)
 
 
-def extract(url):
-	"""
-	Downloads the page from URL and calls extraction.
-	Returns the Extracted instance with filtered results.
-
-	TODO:
-	Download just the HTML <head> tag first, load it
-	into extractor and see if Extracted data is complete.
-	Otherwise download the HTML <body> as well and load
-	it into extractor passing the appropriate techniques.
-	"""
-	import extraction, requests
-	extractor = extraction.Extractor(techniques=
-		["extraction.techniques.FacebookOpengraphTags",
-		 "extraction.techniques.HeadTags"])
-
-	page = requests.get(url, timeout=10)
-	page.raise_for_status()
-	summary = extractor.extract(page.text, source_url=page.url)
-	summary.source = url # to be removed
-
-	return summary
-
-
 def summarize(urls):
 	"""
 	Calls extract for each of the URLs,
@@ -51,6 +27,8 @@ def summarize(urls):
 	the result of the process, and the speed.
 	"""
 	import time
+	from summary import Summary
+
 
 	fails = 0
 	err = lambda e: e.__class__.__name__
@@ -59,7 +37,8 @@ def summarize(urls):
 	start = time.time()
 	for url in urls:
 		try:
-			summary = extract(url)
+			summary = Summary(url)
+			summary.extract()
 			print "-> %s" % url
 		except KeyboardInterrupt:
 			break
