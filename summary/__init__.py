@@ -8,7 +8,7 @@ Extraction is performed gradually by parsing the HTML <head>
 tag first, applying specific head extraction techniques, and
 goes on to the <body> only if Summary data is not complete.
 """
-import extraction, requests
+import requests, extraction, filters
 from contextlib import closing
 
 CHUNK_SIZE = 1024
@@ -33,44 +33,43 @@ class Summary(object):
 		self.images = []
 		self.urls = []
 
-	# # Non-plural properties
-		# @property
-		# def title(self):
-		# 	"Return the best title, if any."
-		# 	if self.titles:
-		# 		return self.titles[0]
-		# 	else:
-		# 		return None
+	# Non-plural properties
+	# @property
+	# def title(self):
+		# "Return the best title, if any."
+		# if self.titles:
+			# return self.titles[0]
+		# else:
+			# return None
 
-		# @property
-		# def description(self):
-		# 	"Return the best description, if any."
-		# 	if self.descriptions:
-		# 		return self.descriptions[0]
-		# 	else:
-		# 		return None
+	# @property
+	# def description(self):
+		# "Return the best description, if any."
+		# if self.descriptions:
+			# return self.descriptions[0]
+		# else:
+			# return None
 
-		# @property
-		# def image(self):
-		# 	"Return the best image, if any."
-		# 	if self.images:
-		# 		return self.images[0]
-		# 	else:
-		# 		return None
+	@property
+	def image(self):
+		"Return the best image, if any."
+		if self.images:
+			return self.images[0]
+		else:
+			return None
 
-		# @property
-		# def url(self):
-		# 	"Return the best url, if any."
-		# 	if self.urls:
-		# 		return self.urls[0]
-		# 	else:
-		# 		return None
+	# @property
+	# def url(self):
+		# "Return the best url, if any."
+		# if self.urls:
+			# return self.urls[0]
+		# else:
+			# return None
+
 
 	def _is_complete(self):
-		# return False
-		return self.titles and self.descriptions \
-			and self.images and self.urls and True
-			# self.title and self.description and self.image and self.url \
+		# return self.title and self.description and self.image and self.url and True
+		return self.titles and self.descriptions and self.images and self.urls and True
 
 	def _load(self, titles=[], descriptions=[], images=[], urls=[], **kwargs):
 		"""
@@ -81,10 +80,17 @@ class Summary(object):
 		# TODO: filter out invalid items
 		self.titles.extend(titles)
 		self.descriptions.extend(descriptions)
+		
+		# urls = [self._clean_url(u) for u in urls]
+		urls = map(self._clean_url, urls)
 		self.urls.extend(urls)
+		
+		# images = [i for i in [self._filter_image(i) for i in images] if i] 
+		images = filter(None, map(self._filter_image, images))
 		self.images.extend(images)
-
+		
 		# TODO: set non-plural fields to best item
+
 
 	def _clean_url(self, url):
 		"Fixes the url, but it should also discard useless query params."
@@ -100,6 +106,12 @@ class Summary(object):
 		    return urlparse.urlunsplit((scheme, netloc, path, qs, anchor))
 		return url_fix(url)
 
+	def _filter_image(self, url):
+		"The param is the image URL, which is returned if it passes all the filters."
+		# return url
+		return reduce(lambda f, g: f and g(f), 
+			[filters.AdblockURLFilter()(url), filters.NoImageFilter(), filters.SizeImageFilter(), filters.MonoImageFilter()])
+	
 	def _get_tag(self, response, tag_name="html"):
 		"Iterates response content and returns the tag if found."
 		lower_html = self._html.lower()
@@ -135,15 +147,15 @@ class Summary(object):
 		E.g.: URL has been summarized before; URL points to off limits
 		websites like facebook.com and so on.
 		"""
-		url = self.source_url
-		with closing(requests.get(url, stream=True, timeout=10)) as response:
+		self.clean_url = self.source_url
+		with closing(requests.get(self.clean_url, stream=True, timeout=10)) as response:
 			response.raise_for_status()
 			# TODO: validate content-type
 			# response.headers.get('content-type')
 
-			url = self._clean_url(response.url)
+			self.clean_url = self._clean_url(response.url)
 			if check_url:
-				check_url(url)
+				check_url(self.clean_url)
 
 			self._html = u""
 			head = self._get_tag(response, tag_name="head")
@@ -153,7 +165,7 @@ class Summary(object):
 		        "extraction.techniques.TwitterSummaryCardTags",
 				"extraction.techniques.HeadTags"
 			])
-			extracted = extractor.extract(head, source_url=url)
+			extracted = extractor.extract(head, source_url=self.clean_url)
 			self._load(**extracted)
 
 			if self._is_complete():
@@ -165,7 +177,7 @@ class Summary(object):
 		        "extraction.techniques.HTML5SemanticTags",
 		        "extraction.techniques.SemanticTags"				
 			])
-			extracted = extractor.extract(body, source_url=url)
+			extracted = extractor.extract(body, source_url=self.clean_url)
 			self._load(**extracted)
 
 		# that's it

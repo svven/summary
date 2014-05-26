@@ -3,7 +3,7 @@
                 <h2 class="title">{% for title in summary.titles %}
                   <a href="#" class="cycle{% if loop.first %} show{% endif %}" title="{{ loop.index }} of {{ loop.length }}">{{ title }}</a>{% endfor %}
                 </h2>{% for url in summary.urls %}
-                <p class="url"><a href="{{ summary.source_url }}">
+                <p class="url"><a href="{{ summary.clean_url }}">
                   <span>{{ url }}</span></a>
                 </p>{% endfor %}{% for image in summary.images %}
                 <img class="image cycle{% if loop.first %} show{% endif %}" title="{{ loop.index }} of {{ loop.length }}" src="{{ image }}" alt="{{ image }}" />{% endfor %}
