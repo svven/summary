@@ -1,5 +1,7 @@
 "This file contains filters for the extracted data, mainly images."
 
+from adblockparser import AdblockRules
+
 # from PIL.Image import Image as PILImage
 # from PIL.ImageFile import Parser as PILParser
 
@@ -27,8 +29,20 @@ class Image(object):
 
 class AdblockURLFilter(object): # Filter
 	"Uses Adblock URL filtering and returns None if should_block."
+
+	def get_rules():
+		"Loads Adblock filter rules from file."
+		raw_rules = []
+		with open('summary/easylist.txt', 'r') as file:
+			for rule in file:
+				raw_rules.append(rule.strip())
+		rules = AdblockRules(raw_rules)
+		return rules
+
+	rules = get_rules()
+
 	def __call__(self, url):
-		if 'doubleclick.net' in url:
+		if AdblockURLFilter.rules.should_block(url):
 			print "[BadImage] AdblockURLFilter: %s" % url
 			return None
 		return url
