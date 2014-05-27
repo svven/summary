@@ -154,6 +154,15 @@ class MonoImageFilter(object): # SizeImageFilter
 	Checks whether the image is (plain black or) white and returns None.
 	Otherwise return the Image instance.
 	http://stackoverflow.com/questions/14041562/python-pil-detect-if-an-image-is-completely-black-or-white
+	
+	E.g.:
+		http://upcoming.org/assets/images/screw-it.png#SEMT
+		http://i.cdn.turner.com/cnn/.e/img/3.0/global/header/intl/CNNi_Logo_new.png#SEMT
+		http://images.inc.com/leftnavmenu/inc-logo-white.png#SEMT
+		http://www.inc.com/uploaded_files/leftnavmenuitem/UNUM_38.png#SEMT
+		http://wordpress.com/i/blank.jpg?m=1383295312g#FBOG
+		http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/iphone-menu-fire-white-small.png#SEMT
+		http://wordpress.com/i/blank.jpg?m=1383295312g#FBOG
 	"""
 	def __call__(self, image):
 		# image = super(MonoImageFilter, self).__call__(image)
