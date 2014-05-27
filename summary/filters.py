@@ -168,7 +168,7 @@ class MonoImageFilter(object): # SizeImageFilter
 		# image = super(MonoImageFilter, self).__call__(image)
 		try:
 			# sum(img.convert("L").getextrema()) in (0, 2)
-			if image.raw.convert("L").getextrema() == (1, 1):
+			if image.raw.convert("L").getextrema() == (255, 255): # all white
 				print "[BadImage] MonoImageFilter: %s" % image.url
 				return None
 		except Exception, e:
