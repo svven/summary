@@ -73,6 +73,6 @@ if __name__ == '__main__':
 	page = render(template="news.html",
 		summaries=summaries, result=result, speed=speed)
 
-	with open('news.html', 'w') as file:
+	with open('clean.html', 'w') as file:
 		file.write(page.encode('utf-8'))
 
