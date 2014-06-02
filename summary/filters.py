@@ -7,7 +7,7 @@ from contextlib import closing
 clsn = lambda e: e.__class__.__name__
 
 class Image(object):
-	"Used by the filter classes below."
+	"Used by the filter classes in this module."
 	def __init__(self, url, size=None, format=None): # raw_image=None
 		self.url = url
 		self.size = size
@@ -115,8 +115,8 @@ class NoImageFilter(object): # AdblockURLFilter
 
 
 IMAGE_LIMIT_RATIO = 4 # if js crop center square
-IMAGE_MIN_IMGSIZE = (48, 48)
-IMAGE_MAX_IMGSIZE = (2048, 2048)
+IMAGE_MIN_IMGSIZE = (64, 64)
+IMAGE_MAX_IMGSIZE = (2064, 2064)
 
 class SizeImageFilter(object): # NoImageFilter
 	"""
@@ -206,5 +206,40 @@ class MonoImageFilter(object): # SizeImageFilter
 			pass
 		return None
 
+
+class FormatImageFilter(object): # MonoImageFilter
+	"""
+	Checks whether the image is animated gif.
+	"""
+	class AnimatedImageException(Exception):
+		pass
+
+	@classmethod
+	def check_animated(cls, raw_image):
+		"Checks whether the gif is animated."
+		try:
+			raw_image.seek(1)
+		except EOFError:
+			isanimated= False
+		else:
+			isanimated= True
+			raise cls.AnimatedImageException
+
+
+	def __call__(self, image):
+		# image = super(FormatImageFilter, self).__call__(image)
+		try:
+			if image.format.lower() == "gif":
+				content = requests.get(image.url).content
+				pic = StringIO(content)
+				raw_image = PIL.Image.open(pic)
+				FormatImageFilter.check_animated(raw_image)
+				del raw_image
+				print "[GoodImage] FormatImageFilter: %s" % image.url
+			return image
+		except Exception, e:
+			print "[BadImage] %s: %s" % (clsn(e), image.url)
+			pass
+		return None
 
 
