@@ -12,6 +12,7 @@ import requests, extraction, filters
 from contextlib import closing
 
 CHUNK_SIZE = 1024 # 1 KB
+GET_ALL_DATA = False # False for better performance
 
 class Summary(object):
 	"Provides incremental load mechanism and validation."
@@ -21,8 +22,6 @@ class Summary(object):
 		Unlike Extracted ctor, this one just sets the source_url.
 		Extracted data is loaded later gradually by calling extract.
 		"""
-		self.source_url = source_url
-
 		# self.title = None
 		# self.description = None
 		# self.image = None
@@ -33,22 +32,25 @@ class Summary(object):
 		self.images = []
 		self.urls = []
 
-	# Non-plural properties
-	# @property
-	# def title(self):
-		# "Return the best title, if any."
-		# if self.titles:
-			# return self.titles[0]
-		# else:
-			# return None
+		self.source_url = source_url
+		self.clean_url = self.source_url
 
-	# @property
-	# def description(self):
-		# "Return the best description, if any."
-		# if self.descriptions:
-			# return self.descriptions[0]
-		# else:
-			# return None
+	# Non-plural properties
+	@property
+	def title(self):
+		"Return the best title, if any."
+		if self.titles:
+			return self.titles[0]
+		else:
+			return None
+
+	@property
+	def description(self):
+		"Return the best description, if any."
+		if self.descriptions:
+			return self.descriptions[0]
+		else:
+			return None
 
 	@property
 	def image(self):
@@ -58,13 +60,13 @@ class Summary(object):
 		else:
 			return None
 
-	# @property
-	# def url(self):
-		# "Return the best url, if any."
-		# if self.urls:
-			# return self.urls[0]
-		# else:
-			# return None
+	@property
+	def url(self):
+		"Return the best canonical url, or the cleaned source url."
+		if self.urls:
+			return self.urls[0]
+		else:
+			return self.clean_url
 
 
 	def _is_complete(self):
@@ -76,21 +78,31 @@ class Summary(object):
 		Loads extracted data into Summary.
 		Performs validation and filtering on-the-fly, and sets the
 		non-plural fields to the best specific item so far.
+		If GET_ALL_DATA is False, it gets only the first valid item.
 		"""
-		# TODO: filter out invalid items
-		self.titles.extend(titles)
-		self.descriptions.extend(descriptions)
-		
-		# urls = [self._clean_url(u) for u in urls]
-		urls = map(self._clean_url, urls)
-		self.urls.extend(urls)
-		
-		# images = [i for i in [self._filter_image(i) for i in images] if i] 
-		images = filter(None, map(self._filter_image, images))
-		self.images.extend(images)
-		
-		# TODO: set non-plural fields to best item
+		if GET_ALL_DATA or not self.titles:
+			self.titles.extend(titles)
+		if GET_ALL_DATA or not self.descriptions:
+			self.descriptions.extend(descriptions)
 
+		if GET_ALL_DATA or not self.urls:
+			# urls = [self._clean_url(u) for u in urls]
+			urls = map(self._clean_url, urls)
+			self.urls.extend(urls)
+		
+		if GET_ALL_DATA:
+			# images = [i for i in [self._filter_image(i) for i in images] if i] 
+			images = filter(None, map(self._filter_image, images))
+			self.images.extend(images)
+		elif not self.images:
+			for i in images:
+				image = self._filter_image(i)
+				if image:
+					self.images.append(image)
+					break
+
+		# TODO: set non-plural fields to best item by sorting
+		# self.descriptions = sorted(self.descriptions, key = lambda t: len(t), reverse=True)
 
 	def _clean_url(self, url):
 		"Fixes the url, but it should also discard useless query params."
@@ -111,10 +123,11 @@ class Summary(object):
 		# return url
 		return reduce(lambda f, g: f and g(f), 
 		[
-			filters.AdblockURLFilter()(url), 
-			filters.NoImageFilter(), 
+			filters.AdblockURLFilter()(url),
+			filters.NoImageFilter(),
 			filters.SizeImageFilter(),
 			filters.MonoImageFilter(),
+			filters.FormatImageFilter(),
 		])
 	
 	def _get_tag(self, response, tag_name="html"):
@@ -152,7 +165,6 @@ class Summary(object):
 		E.g.: URL has been summarized before; URL points to off limits
 		websites like facebook.com and so on.
 		"""
-		self.clean_url = self.source_url
 		with closing(requests.get(self.clean_url, stream=True, timeout=10)) as response:
 			response.raise_for_status()
 			# TODO: validate content-type
