@@ -41,7 +41,8 @@
     height: auto;
     margin: 0 10px 5px 0;
     padding: 1px;
-    border: solid 1px #000;
+    /*border: solid 1px #999;*/
+    background-color: #eee;
     max-width: 100%; /*default*/
     }
     .image.sm {
