@@ -120,7 +120,6 @@ class Summary(object):
 
 	def _filter_image(self, url):
 		"The param is the image URL, which is returned if it passes all the filters."
-		# return url
 		return reduce(lambda f, g: f and g(f), 
 		[
 			filters.AdblockURLFilter()(url),

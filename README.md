@@ -29,14 +29,15 @@ u'summary - Summary is a complete solution to extract the title, image and descr
 >>> summaries, result, speed = summarize(urls)
 -> http://www.wired.com/
 [BadImage] RatioImageException(398, 82): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/wired_logo.gif
-[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
 -> http://www.nytimes.com/
-[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/24/ad.372455/bar1_memorialday.jpg
-[BadImage] AdblockURLFilter: http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=bsr&FlightID=9912966&Page=&PluID=0&Pos=1206468759
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-3panel-nyt.png
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-3panel-nytcom.png
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-4panel-opinion.png
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/51/ad.375173/CRS-1572_nytpinion_EARS_L_184x90_CP2.gif
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/51/ad.375174/CRS-1572_nytpinion_EARS_R_184x90_ER1.gif
 [BadImage] RatioImageException(379, 64): http://i1.nyt.com/images/misc/nytlogo379x64.gif
 [BadImage] TinyImageException(16, 16): http://graphics8.nytimes.com/images/article/functions/facebook.gif
-[BadImage] TinyImageException(16, 16): http://graphics8.nytimes.com/images/article/functions/twitter.gif
--> http://www.technologyreview.com/lists/technologies/2014/
+[BadImage] TinyImageException(16, 16): http://graphics8.nytimes.com/images/article/functions/twitter.gif-> http://www.technologyreview.com/lists/technologies/2014/
 Success: 3.
 >>> html = render(template="news.html",
     summaries=summaries, result=result, speed=speed)
@@ -159,7 +160,7 @@ images = filter(None, map(self._filter_image, image_urls))
   beautiful filtering routine you can see above.
   
   Worth mentioning again that it only gets first few chunks of the image
-  file until the `PIL` Parser gets the size and format of the image.
+  file until the PIL parser gets the size and format of the image.
 
 * **SizeImageFilter**
 
@@ -170,9 +171,9 @@ images = filter(None, map(self._filter_image, image_urls))
 
 * **MonoImageFilter**
 
-  Checks whether the image is plain white and returns None.<br />
-  This filter retrieves the whole image file so it has an extra
-  regex check before. It rules out following URLs:
+  Checks whether the image is plain white and returns `None`.<br />
+  This filter retrieves the whole image file so it has an extra regex 
+  check before. E.g.: rules out these URLs:
     - http://wordpress.com/i/blank.jpg?m=1383295312g
     - http://images.inc.com/leftnavmenu/inc-logo-white.png
 
