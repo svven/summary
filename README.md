@@ -1,8 +1,8 @@
 Summary
 =======
 
-Simple usage
-------------
+### Simple usage
+
 ```python
 >>> import summary
 >>> s = summary.Summary('https://github.com/svven/summary')
@@ -14,8 +14,9 @@ https://avatars0.githubusercontent.com/u/7524085?s=400
 >>> s.description
 u'summary - Summary is a complete solution to extract the title, image and description from any URL.'
 ```
-Batch usage with HTML rendering
--------------------------------
+
+### Batch usage with HTML rendering
+
 ```python    
 >>> import summary
 >>> summary.GET_ALL_DATA = True # default is False
@@ -44,13 +45,16 @@ Success: 3.
 >>> 
 ```
 
+In a nutshell
+-------------
+
 Summary requests the page from the URL, then uses 
 [extraction](https://github.com/svven/extraction) to parse the HTML.<br />
 Worth mentioning that it downloads the head tag first, performs specific
 extraction techniques, and goes further to body only if extracted data is 
 not complete. Unless ```summary.GET_ALL_DATA = True```.
 
-The resulting lists of titles, images, and descriptions are then filtered 
+The resulting lists of titles, images, and descriptions are filtered on the fly 
 to rule out unwanted items like ads, tiny images (tracking images or sharing 
 buttons), and plain white images. See the whole list of filters below.
 
@@ -63,18 +67,25 @@ https://github.com/svven/extraction
 Notes
 -----
 
-The purpose of the HTML rendering mechanism is just to visualize extracted data. 
+The purpose of the HTML rendering mechanism is just to visualize extracted data.<br /> 
 The included Jinja2 template (news.html) is built on top of bootstrap and displays the 
-summaries in a nice responsive grid layout.
+summaries in a nice responsive grid layout. 
+
+You can completely disregard the rendering mechanism and just `import summary` module
+for data extraction and filtering. You probably have your own means to render the data,
+so you only need the summary folder.
+
+
+![news.html preview](https://dl.dropboxusercontent.com/u/134594/Svven/news.png)
 
 **Clicking the summary title, image and description cycles through the multiple 
 extracted values.**
 
-![news.html preview](https://dl.dropboxusercontent.com/u/134594/Svven/news.png)
 https://dl.dropboxusercontent.com/u/134594/svven/news.html
 
+
 Installation
-============
+------------
 
 Cloning both summary and extraction repos.
 
@@ -86,15 +97,15 @@ Cloning both summary and extraction repos.
     $ pip install -e extraction/ # instead of `python setup.py develop`
     
     $ cd summary # path to templates is relative
-    $ python # see the Usage section above
+    $ python # see the usage instructions above
 
 Requirements
-============
+------------
 
     Jinja2==2.7.2 # only for rendering
     MarkupSafe==0.23 # idem
     Pillow==2.4.0
-    adblockparser==0.2 # very useful
+    adblockparser==0.2
     beautifulsoup4==4.3.2
     # extraction==0.1.3 # pip install -e .
     html5lib==0.999
@@ -105,42 +116,20 @@ Requirements
     wsgiref==0.1.2
 
 Filters
-=======
+-------
 
-* **AdblockURLFilter**
+Filters are _callable_ classes that perform specific data checks.
 
-  Uses Adblock URL filtering and returns None if should_block.
+For the moment there are only image filters. The image URL is passed as
+input parameter to the first filter. The check is performed and the URL
+is returned if it is valid, so it is passed to the second filter and so
+on. When the check fails it returns `None`.
 
-* **NoImageFilter**
-
-  Retrieves actual image and returns it, or None if it fails.<br />
-  Returns instance of Image class to be verified by following filters.
-
-* **SizeImageFilter**
-
-  Checks image to have proper size, or returns None if it doesn't.<br />
-  This may rule out tracking images that were not detected by AdblockURLFilter.
-
-* **MonoImageFilter**
-
-  Checks whether the image is (plain black or) white and returns None.<br />
-  Otherwise return the Image instance.
-	
-  E.g.:
-    * http://wordpress.com/i/blank.jpg?m=1383295312g
-    * http://images.inc.com/leftnavmenu/inc-logo-white.png
-
-* **FormatImageFilter**
-
-  Checks whether the image is animated gif.
-
-And here's some python awesomeness to apply the filters in the right order.
+This pattern makes it possible to write the filtering routine like this
 
 ```python
-images = filter(None, map(self._filter_image, images))
-
 def _filter_image(self, url):
-		"The param is the image URL, which is returned if it passes all the filters."
+		"The param is the image URL, which is returned if it passes *all* the filters."
 		return reduce(lambda f, g: f and g(f), 
 		[
 			filters.AdblockURLFilter()(url),
@@ -149,7 +138,49 @@ def _filter_image(self, url):
 			filters.MonoImageFilter(),
 			filters.FormatImageFilter(),
 		])
+
+images = filter(None, map(self._filter_image, image_urls))
 ```
+
+* **AdblockURLFilter**
+
+  Uses [adblockparser](https://github.com/scrapinghub/adblockparser) 
+  and returns `None` if it `should_block` the URL.<br />
+  Hats off to Mikhail Korobov ([@kmike](https://github.com/kmike)) for the awesome work.
+  It gives a lot of value to this mashup repo.
+
+* **NoImageFilter**
+
+  Retrieves actual image file, and returns `None` if it fails.<br />
+  Otherwise it returns an instance of the `filters.Image` class containing 
+  the URL, together with the size and format of the actual image. Basically
+  it hydrates this instance which is passed to following filters.<br />
+  The `Image.__repr__` override returns just the URL so we can write the 
+  beautiful filtering routine you can see above.<br />
+  Worth mentioning again that it only gets first few chunks of the image
+  file until the `PIL` Parser gets the size and format of the image.
+
+* **SizeImageFilter**
+
+  Checks the `filters.Image` instance to have proper size.<br />
+  This can raise following exceptions based on defined limits: `TinyImageException`, 
+  `HugeImageException`, or `RatioImageException`. 
+  If any of these happens it returns `None`.
+
+* **MonoImageFilter**
+
+  Checks whether the image is plain white and returns None.<br />
+  This filter retrieves the whole image file so it has an extra
+  regex check before. <br />
+  For example it rules out following URLs.
+    - http://wordpress.com/i/blank.jpg?m=1383295312g
+    - http://images.inc.com/leftnavmenu/inc-logo-white.png
+
+* **FormatImageFilter**
+
+  Rules out animated gif images for the moment.<br />
+  This can be extended to exclude other image formats based on the file content.
+
 
 ***
 You're very welcome to contribute. <br />
