@@ -171,7 +171,7 @@ images = filter(None, map(self._filter_image, image_urls))
 
 * **MonoImageFilter**
 
-  Checks whether the image is plain white and returns None.<br />
+  Checks whether the image is plain white and returns `None`.<br />
   This filter retrieves the whole image file so it has an extra
   regex check before. E.g.: rules out these URLs:
     - http://wordpress.com/i/blank.jpg?m=1383295312g
