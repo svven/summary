@@ -109,13 +109,13 @@ class Summary(object):
 		import urllib
 		import urlparse
 		def url_fix(s, charset='utf-8'):
-		    "https://github.com/mitsuhiko/werkzeug/blob/master/werkzeug/urls.py"
-		    if isinstance(s, unicode):
-		        s = s.encode(charset, 'ignore')
-		    scheme, netloc, path, qs, anchor = urlparse.urlsplit(s)
-		    path = urllib.quote(path, '/%')
-		    qs = urllib.quote_plus(qs, ':&=')
-		    return urlparse.urlunsplit((scheme, netloc, path, qs, anchor))
+			"https://github.com/mitsuhiko/werkzeug/blob/master/werkzeug/urls.py"
+			if isinstance(s, unicode):
+				s = s.encode(charset, 'ignore')
+			scheme, netloc, path, qs, anchor = urlparse.urlsplit(s)
+			path = urllib.quote(path, '/%')
+			qs = urllib.quote_plus(qs, ':&=')
+			return urlparse.urlunsplit((scheme, netloc, path, qs, anchor))
 		return url_fix(url)
 
 	def _filter_image(self, url):
@@ -175,27 +175,28 @@ class Summary(object):
 				check_url(self.clean_url)
 
 			self._html = u""
+			# # Extract from the <head> tag
 			head = self._get_tag(response, tag_name="head")
 			# print "Get head: %s" % len(head)
 			extractor = extraction.Extractor(techniques=[
 				"extraction.techniques.FacebookOpengraphTags",
-		        "extraction.techniques.TwitterSummaryCardTags",
+				"extraction.techniques.TwitterSummaryCardTags",
 				"extraction.techniques.HeadTags"
 			])
 			extracted = extractor.extract(head, source_url=self.clean_url)
 			self._load(**extracted)
 
-			if self._is_complete():
-				return # done
-
-			body = self._get_tag(response, tag_name="body")
-			# print "Get body: %s" % len(body)
-			extractor = extraction.Extractor(techniques=[
-		        "extraction.techniques.HTML5SemanticTags",
-		        "extraction.techniques.SemanticTags"				
-			])
-			extracted = extractor.extract(body, source_url=self.clean_url)
-			self._load(**extracted)
+			# # Extract from <body>
+			if GET_ALL_DATA or not self._is_complete():
+				body = self._get_tag(response, tag_name="body")
+				# print "Get body: %s" % len(body)
+				extractor = extraction.Extractor(techniques=[
+					"extraction.techniques.HTML5SemanticTags",
+					"extraction.techniques.SemanticTags"				
+				])
+				extracted = extractor.extract(body, source_url=self.clean_url)
+				self._load(**extracted)
+			del self._html # no longer needed
 
 		# that's it
 

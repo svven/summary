@@ -37,9 +37,9 @@ def summarize(urls):
 	start = time.time()
 	for url in urls:
 		try:
+			print "-> %s" % url
 			summary = Summary(url)
 			summary.extract()
-			print "-> %s" % url
 		except KeyboardInterrupt:
 			break
 		except Exception, e:
@@ -73,6 +73,6 @@ if __name__ == '__main__':
 	page = render(template="news.html",
 		summaries=summaries, result=result, speed=speed)
 
-	with open('clean.html', 'w') as file:
+	with open('demo.html', 'w') as file:
 		file.write(page.encode('utf-8'))
 
