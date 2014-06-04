@@ -73,13 +73,13 @@ function showNext(curr) {
 			next.className += " show";
 			curr.className = curr.className.replace(" show", "");
 			// change imgsrc
-			if (tag.toLowerCase() == 'img') {
-				var article = next.parentNode;
-				var imgSrcs = 
-					getElementsByClass('imgsrc', article, null);
-				if (imgSrcs != null)
-					imgSrcs[0].innerText = next.alt;
-			}
+			// if (tag.toLowerCase() == 'img') {
+			// 	var article = next.parentNode;
+			// 	var imgSrcs = 
+			// 		getElementsByClass('imgsrc', article, null);
+			// 	if (imgSrcs != null)
+			// 		imgSrcs[0].innerText = next.alt;
+			// }
 		}
 	};
 }

@@ -49,32 +49,22 @@ Success: 3.
 In a nutshell
 -------------
 
-Summary requests the page from the URL, then uses 
-[extraction](https://github.com/svven/extraction) to parse the HTML.<br />
-Worth mentioning that it downloads the head tag first, performs specific
-extraction techniques, and goes further to body only if extracted data is 
-not complete. Unless ```summary.GET_ALL_DATA = True```.
+Summary requests the page from the URL, then uses [extraction](https://github.com/svven/extraction) to parse the HTML.<br />
+Worth mentioning that it downloads the head tag first, performs specific extraction techniques, and goes further to body only if extracted data is not complete. Unless ```summary.GET_ALL_DATA = True```.
 
-The resulting lists of titles, images, and descriptions are filtered on the fly 
-to rule out unwanted items like ads, tiny images (tracking images or sharing 
-buttons), and plain white images. See the whole list of filters below.
+The resulting lists of titles, images, and descriptions are filtered on the fly to rule out unwanted items like ads, tiny images (tracking images or sharing buttons), and plain white images. See the whole list of filters below.
 
-Many thanks to Will Larson ([@lethain](https://github.com/lethain)) 
-for the original [extraction](https://github.com/lethain/extraction) repo.<br />
-Here's the forked extraction package that's being used: 
-https://github.com/svven/extraction
+Many thanks to Will Larson ([@lethain](https://github.com/lethain)) for the original [extraction](https://github.com/lethain/extraction) repo.<br />
+Here's the forked extraction package that's being used: https://github.com/svven/extraction
 
 
-Notes
------
+Rendering
+---------
 
 The purpose of the HTML rendering mechanism is just to visualize extracted data.<br /> 
-The included Jinja2 template (news.html) is built on top of bootstrap and displays the 
-summaries in a nice responsive grid layout. 
+The included Jinja2 template (news.html) is built on top of bootstrap and displays the summaries in a nice responsive grid layout. 
 
-You can completely disregard the rendering mechanism and just `import summary` module
-for data extraction and filtering. You probably have your own means to render the data,
-so you only need the summary folder.
+You can completely disregard the rendering mechanism and just `import summary` module for data extraction and filtering. You probably have your own means to render the data, so you only need the summary folder.
 
 
 ![news.html preview](https://dl.dropboxusercontent.com/u/134594/Svven/news.png)
@@ -121,10 +111,7 @@ Filters
 
 Filters are _callable_ classes that perform specific data checks.
 
-For the moment there are only image filters. The image URL is passed as
-input parameter to the first filter. The check is performed and the URL
-is returned if it is valid, so it is passed to the second filter and so
-on. When the check fails it returns `None`.
+For the moment there are only image filters. The image URL is passed as input parameter to the first filter. The check is performed and the URL is returned if it is valid, so it is passed to the second filter and so on. When the check fails it returns `None`.
 
 This pattern makes it possible to write the filtering routine like this
 
@@ -145,35 +132,26 @@ images = filter(None, map(self._filter_image, image_urls))
 
 * **AdblockURLFilter**
 
-  Uses [adblockparser](https://github.com/scrapinghub/adblockparser) 
-  and returns `None` if it `should_block` the URL.<br />
-  Hats off to Mikhail Korobov ([@kmike](https://github.com/kmike)) for the awesome work.
-  It gives a lot of value to this mashup repo.
+  Uses [adblockparser](https://github.com/scrapinghub/adblockparser) and returns `None` if it `should_block` the URL.<br />
+  Hats off to Mikhail Korobov ([@kmike](https://github.com/kmike)) for the awesome work. It gives a lot of value to this mashup repo.
 
 * **NoImageFilter**
 
   Retrieves actual image file, and returns `None` if it fails.<br />
-  Otherwise it returns an instance of the `filters.Image` class containing 
-  the URL, together with the size and format of the actual image. Basically
-  it hydrates this instance which is passed to following filters.<br />
-  The `Image.__repr__` override returns just the URL so we can write the 
-  beautiful filtering routine you can see above.
+  Otherwise it returns an instance of the `filters.Image` class containing the URL, together with the size and format of the actual image. Basically it hydrates this instance which is passed to following filters.<br />
+  The `Image.__repr__` override returns just the URL so we can write the beautiful filtering routine you can see above.
   
-  Worth mentioning again that it only gets first few chunks of the image
-  file until the PIL parser gets the size and format of the image.
+  Worth mentioning again that it only gets first few chunks of the image file until the PIL parser gets the size and format of the image.
 
 * **SizeImageFilter**
 
   Checks the `filters.Image` instance to have proper size.<br />
-  This can raise following exceptions based on defined limits: `TinyImageException`, 
-  `HugeImageException`, or `RatioImageException`. 
-  If any of these happens it returns `None`.
+  This can raise following exceptions based on defined limits: `TinyImageException`, `HugeImageException`, or `RatioImageException`. If any of these happens it returns `None`.
 
 * **MonoImageFilter**
 
   Checks whether the image is plain white and returns `None`.<br />
-  This filter retrieves the whole image file so it has an extra
-  regex check before. E.g.: rules out these URLs:
+  This filter retrieves the whole image file so it has an extra regex check before. E.g.: rules out these URLs:
     - http://wordpress.com/i/blank.jpg?m=1383295312g
     - http://images.inc.com/leftnavmenu/inc-logo-white.png
 
