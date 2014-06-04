@@ -156,7 +156,8 @@ images = filter(None, map(self._filter_image, image_urls))
   the URL, together with the size and format of the actual image. Basically
   it hydrates this instance which is passed to following filters.<br />
   The `Image.__repr__` override returns just the URL so we can write the 
-  beautiful filtering routine you can see above.<br />
+  beautiful filtering routine you can see above.
+  
   Worth mentioning again that it only gets first few chunks of the image
   file until the `PIL` Parser gets the size and format of the image.
 
@@ -171,15 +172,14 @@ images = filter(None, map(self._filter_image, image_urls))
 
   Checks whether the image is plain white and returns None.<br />
   This filter retrieves the whole image file so it has an extra
-  regex check before. <br />
-  For example it rules out following URLs.
+  regex check before. It rules out following URLs:
     - http://wordpress.com/i/blank.jpg?m=1383295312g
     - http://images.inc.com/leftnavmenu/inc-logo-white.png
 
 * **FormatImageFilter**
 
   Rules out animated gif images for the moment.<br />
-  This can be extended to exclude other image formats based on the file content.
+  This can be extended to exclude other image formats based on file contents.
 
 
 ***
