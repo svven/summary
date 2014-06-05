@@ -70,7 +70,7 @@ You can completely disregard the rendering mechanism and just `import summary` m
 ![news.html preview](https://dl.dropboxusercontent.com/u/134594/Svven/news.png)
 
 
-This is the output having `summary.GET_ALL_DATA = True`
+This is the output having `summary.GET_ALL_DATA = True`.<br />
 **Clicking the summary title, image and description cycles through the multiple 
 extracted values.**
 https://dl.dropboxusercontent.com/u/134594/svven/news.html
