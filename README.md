@@ -69,10 +69,10 @@ You can completely disregard the rendering mechanism and just `import summary` m
 
 ![news.html preview](https://dl.dropboxusercontent.com/u/134594/Svven/news.png)
 
-**Clicking the summary title, image and description cycles through the multiple 
-extracted values.**
 
 This is the output having `summary.GET_ALL_DATA = True`
+**Clicking the summary title, image and description cycles through the multiple 
+extracted values.**
 https://dl.dropboxusercontent.com/u/134594/svven/news.html
 
 And this one produced much faster (see footer) with `summary.GET_ALL_DATA = False`. It contains only the first valid item of each kind - title, image, and description. This is the default behaviour.
