@@ -1,0 +1,1230 @@
+-> http://www.wired.com/
+[BadImage] RatioImageException(398, 82): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/wired_logo.gif
+[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
+-> http://www.nytimes.com/
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-3panel-nyt.png
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-3panel-nytcom.png
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-4panel-opinion.png
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/51/ad.375173/CRS-1572_nytpinion_EARS_L_184x90_CP2.gif
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/51/ad.375174/CRS-1572_nytpinion_EARS_R_184x90_ER1.gif
+[BadImage] RatioImageException(379, 64): http://i1.nyt.com/images/misc/nytlogo379x64.gif
+[BadImage] TinyImageException(16, 16): http://graphics8.nytimes.com/images/article/functions/facebook.gif
+[BadImage] TinyImageException(16, 16): http://graphics8.nytimes.com/images/article/functions/twitter.gif
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/51/ad.375153/CRS-1572_nytopinion_970x44_ER1.gif
+-> http://rappers.mdaniels.com.s3-website-us-east-1.amazonaws.com/
+-> https://discover.twitter.com/first-tweet
+[BadImage] TinyImageException(32, 32): https://g.twimg.com/sites/discover/themes/gazebo_discover/img/pinterest-icon.png
+[BadImage] TinyImageException(32, 32): https://g.twimg.com/sites/discover/themes/gazebo_discover/img/tumblr-icon.png
+[BadImage] TinyImageException(32, 32): https://g.twimg.com/sites/discover/themes/gazebo_discover/img/gplus-icon.png
+[BadImage] TinyImageException(32, 32): https://g.twimg.com/sites/discover/themes/gazebo_discover/img/facebook-icon.png
+-> http://www.ft.com/home/uk
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N5887/ad/ftcom.5887.home/uk;sz=468x60,728x90;pos=banlbGPT;tile=1;nojs=1?
+[BadImage] TinyImageException(435, 36): http://im.ft-static.com/m/img/masthead_main.jpg
+[BadImage] TinyImageException(14, 14): http://navigation.webservices.ft.com/v1/navigation/ft/img/rss-icon.gif
+-> http://online.wsj.com/europe
+[BadImage] TinyImageException(1, 1): http://s.wsj.net/img/b.gif
+-> http://www.technologyreview.com/lists/technologies/2014/
+[GoodImage] MonoImageFilter: http://www.technologyreview.com/sites/all/themes/mittr/global/i/logo-mittr-black.png
+[GoodImage] FormatImageFilter: http://www.technologyreview.com/sites/default/files/styles/homepage_you_may_have_missed/public/images/walking.robotsx392.gif?itok=oZqjvxg9
+-> http://www.creativebloq.com/net-magazine
+[BadImage] TinyImageException(135, 59): http://media.creativebloq.futurecdn.net/sites/creativebloq.com/files/images/2013/09/rss.gif
+-> http://www.bloomberg.com/dataview/2014-04-17/how-americans-die.html
+[BadImage] TinyImageException(62, 62): http://www.bloomberg.com/dataview/2014-04-17/graphics/imgs/klein.png
+-> http://dandkagency.com/velositey/
+[BadImage] AnimatedImageException: http://dandkagency.com/velositey/img/236.gif
+[BadImage] NoImageException: http://dandkagency.com/velositey/img/logo.svg
+-> http://blog.samaltman.com/employee-equity
+-> http://nutraspire.com/
+-> http://Amazon.com/
+[BadImage] TinyImageException(1, 1): http://g-ecx.images-amazon.com/images/G/01/x-locale/common/transparent-pixel._V386942464_.gif
+[GoodImage] FormatImageFilter: https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2014/CLOTHING/SHOPS/FATHERS_DAY/PERIPHERALS/FathersDayGiftGuide_CSM.gif
+[BadImage] TinyImageException(40, 75): http://ecx.images-amazon.com/images/I/41vJNsprbTL._SL75_.jpg
+[BadImage] TinyImageException(42, 75): http://ecx.images-amazon.com/images/I/41oUm2c3OtL._SL75_.jpg
+-> http://macheist.com/
+-> http://www.cnet.com/news/nike-fires-fuelband-engineers-will-stop-making-wearable-hardware/
+[BadImage] TinyImageException(70, 53): http://cnet3.cbsistatic.com/hub/i/r/2014/06/04/a0d89f12-a3a9-48a1-88cc-bd61c493475a/thumbnail/70x53/feacdbea3a43845c30009f2b9e8822c2/rezenence-table.jpg
+[BadImage] TinyImageException(70, 53): http://cnet3.cbsistatic.com/hub/i/r/2014/01/24/74d9cc20-0d76-4dba-9027-2b211b0c845e/thumbnail/70x53/c947733f7357135dc9ded89b9ab78a52/SteelSeries_Stratus_Game_Controller_35833864_04.jpg
+[BadImage] TinyImageException(70, 53): http://cnet4.cbsistatic.com/hub/i/r/2014/06/02/bfd85e28-b80c-4097-ad4f-1933e505e57d/thumbnail/70x53/a8d0c54fdbca932a6d6a1d0da83d4a3f/cod-awadvanced-soldier.jpg
+[BadImage] TinyImageException(70, 53): http://cnet3.cbsistatic.com/hub/i/r/2014/06/04/ec81fda6-e835-4bb9-bd91-9ff7ab1a7e77/thumbnail/70x53/843f75df3244d36629f0bafdac2293d8/madrazo.jpg
+[BadImage] TinyImageException(70, 53): http://cnet3.cbsistatic.com/hub/i/r/2014/06/04/22ca4fef-7a28-4408-8de6-cbd6f43f77e5/thumbnail/70x53/75ab781cd46ac701ac304485dde18ed4/amazon-device.jpg
+[BadImage] TinyImageException(70, 53): http://cnet3.cbsistatic.com/hub/i/r/2014/03/18/f8d065a6-b0bd-11e3-a24e-d4ae52e62bcc/thumbnail/70x53/25b28b5102afda8ffce0eb361f4a0f47/Beats_Studio_Wireless_35834962-06.jpg
+[BadImage] TinyImageException(70, 53): http://cnet4.cbsistatic.com/hub/i/r/2014/03/18/fa89e37c-b0bd-11e3-a24e-d4ae52e62bcc/thumbnail/70x53/d452d549604af74fef0adae052edf2ed/jackrabbit_35835036-27_1.jpg
+[BadImage] TinyImageException(70, 53): http://cnet3.cbsistatic.com/hub/i/r/2013/02/20/770bc4fc-6798-11e3-846b-14feb5ca9861/thumbnail/70x53/337dffb66e03e291521b66d29dc1dc59/bc3f7d1f-0fb1-4ff1-be7d-5e47cd68c71e.jpg
+-> https://medium.com/p/597cde9ee9d4
+-> http://blog.ycombinator.com/the-new-deal
+-> http://GreatestPitch.com/
+[BadImage] TinyImageException(35, 37): http://GreatestPitch.com/img/icons/twitter.png
+[BadImage] TinyImageException(35, 37): http://GreatestPitch.com/img/icons/facebook.png
+[BadImage] TinyImageException(35, 37): http://GreatestPitch.com/img/icons/youtube.png
+[BadImage] TinyImageException(35, 37): http://GreatestPitch.com/img/icons/pin.png
+[BadImage] TinyImageException(1000, 2): http://GreatestPitch.com/img/line.png
+[BadImage] TinyImageException(174, 50): http://GreatestPitch.com/img/mediagroup.png
+-> http://StartupSense.org
+[ConnectionError] (HTTPConnectionPool(host='StartupSense.org', port=80): Max retries exceeded with url: / (Caused by <class 'socket.gaierror'>: [Errno 8] nodename nor servname provided, or not known)): http://StartupSense.org
+-> https://blog.twitter.com/2014/coming-soon-a-whole-new-you-in-your-twitter-profile
+[GoodImage] MonoImageFilter: https://blog.twitter.com/sites/all/themes/gazebo/img/twitter-bird-white-on-blue.png
+-> http://commun.it/
+[BadImage] TinyImageException(60, 20): http://commun.it/images/homepage/register-preloader.gif
+[BadImage] TinyImageException(83, 15): http://commun.it/images/homepage/logo01.png
+[BadImage] TinyImageException(38, 38): http://commun.it/images/homepage/logo02.png
+[BadImage] TinyImageException(62, 33): http://commun.it/images/homepage/logo03.png
+[BadImage] TinyImageException(57, 21): http://commun.it/images/homepage/logo04.png
+[BadImage] TinyImageException(90, 17): http://commun.it/images/homepage/logo05.png
+[BadImage] TinyImageException(39, 39): http://commun.it/images/homepage/logo06.png
+[BadImage] TinyImageException(33, 30): http://commun.it/images/homepage/logo07.png
+-> http://Upcoming.org/
+-> http://www.pandora.com/restricted
+[TypeError] (object of type 'NoneType' has no len()): http://www.pandora.com/restricted
+-> http://greatestpitch.com/apply_pitch.php
+[BadImage] TinyImageException(35, 37): http://greatestpitch.com/img/icons/twitter.png
+[BadImage] TinyImageException(35, 37): http://greatestpitch.com/img/icons/facebook.png
+[BadImage] TinyImageException(35, 37): http://greatestpitch.com/img/icons/youtube.png
+[BadImage] TinyImageException(35, 37): http://greatestpitch.com/img/icons/pin.png
+[BadImage] TinyImageException(174, 50): http://greatestpitch.com/img/mediagroup.png
+-> http://engineering.flipboard.com/2014/03/web-layouts/
+[BadImage] NoImageException: http://engineering.flipboard.com/assets/flipboard.svg
+[BadImage] NoImageException: http://engineering.flipboard.com/assets/webmag/title-type.svg
+[BadImage] RatioImageException(1373, 304): http://engineering.flipboard.com/assets/webmag/diagram-pageflow.png
+-> http://stilldrinking.org/programming-sucks
+[GoodImage] FormatImageFilter: http://stilldrinking.org/blog_images/code-horror.gif?b=1
+[BadImage] HTTPError: http://stilldrinking.org/../blog_images/code-horror.gif
+-> http://www.strivved.com/
+[TypeError] (object of type 'NoneType' has no len()): http://www.strivved.com/
+-> http://www.nytimes.com/2014/04/12/opinion/sunday/raising-a-moral-child.html?_r=0
+-> https://fresh.amazon.com/dash/
+[BadImage] TinyImageException(126, 31): https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/af-logo-white-trans3.png
+[BadImage] TinyImageException(40, 40): https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/playBTN._V340359610_.png
+[BadImage] RatioImageException(466, 111): https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/Rio/AmazonDash_Logo_black._V340764598_.png
+[BadImage] TinyImageException(16, 36): https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/Rio/voice-icon._V340359724_.png
+[BadImage] TinyImageException(35, 27): https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/Rio/scan-icon._V340359725_.png
+[BadImage] TinyImageException(34, 23): https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/Rio/wifi-icon._V340359724_.png
+-> https://www.leanstartupmachine.com/validationboard
+[BadImage] TinyImageException(213, 25): https://www.leanstartupmachine.com/assets/validation_board/images/Lean-1085acf11582d008441c95294ebd6422.png
+[BadImage] TinyImageException(46, 97): https://www.leanstartupmachine.com/assets/validation_board/images/sticky_demo_CP-21a36d172d59b99e796bbc667d146207.png
+[BadImage] TinyImageException(110, 57): https://www.leanstartupmachine.com/assets/validation_board/images/sticky_demo_A-bdd6aa863f1367c9757f12c13c862714.png
+[BadImage] TinyImageException(50, 51): https://www.leanstartupmachine.com/assets/validation_board/images/sticky_demo_RA-a08c84b52e2a87e9c88b08614c8d6a37.png
+[BadImage] TinyImageException(48, 49): https://www.leanstartupmachine.com/assets/validation_board/images/sticky_demo_M-fe12692a10edfc443c0774c583183f0c.png
+[BadImage] TinyImageException(48, 49): https://www.leanstartupmachine.com/assets/validation_board/images/sticky_demo_MSC-8a2f8ff8765ec797bcc09ccec851aef6.png
+[BadImage] TinyImageException(54, 54): https://www.leanstartupmachine.com/assets/validation_board/images/icon_print-ba12cb9ca8fdd661f7b4e31d85f94a7d.png
+[BadImage] TinyImageException(54, 54): https://www.leanstartupmachine.com/assets/validation_board/images/icon_present-e0f08f376785636100904d77818ddb4b.png
+-> http://www.gatesnotes.com/Health/Most-Lethal-Animal-Mosquito-Week?WT.mc_id=MosquitoWeek2014_SharkWeek_tw&WT.tsrc=Twitter
+[BadImage] TinyImageException(60, 60): http://www.gatesnotes.com/TGN/img/close.png
+-> https://mobile.yahoo.com/newsdigest
+[BadImage] TinyImageException(1, 1): https://s1.yimg.com/os/mit/media/m/base/images/transparent-1093278.png
+[BadImage] TinyImageException(409, 50): https://s.yimg.com/um/897a715e9ea57663ea6897fdd68ff8e0.png
+-> http://jonahlupton.com/radio/
+[BadImage] RatioImageException(1208, 250): http://jonahlupton.com/wp-content/themes/jonah/pic/p7.jpg
+-> https://thedaywefightback.org/
+[BadImage] RatioImageException(700, 131): https://thedaywefightback.org/img/logos.png
+[BadImage] TinyImageException(190, 49): https://thedaywefightback.org/imgs/call-your-legislators.png
+[BadImage] TinyImageException(232, 34): https://thedaywefightback.org/imgs/poweredby.png
+[BadImage] TinyImageException(146, 34): https://thedaywefightback.org/imgs/twilio-privacypolicy.png
+[BadImage] TinyImageException(190, 49): https://thedaywefightback.org/imgs/email-your-legislators.png
+-> http://edition.cnn.com/
+[BadImage] TinyImageException(120, 30): http://i.cdn.turner.com/cnn/.e/img/3.0/main/t1.breaking.news-red.png
+[BadImage] TinyImageException(16, 10): http://i.cdn.turner.com/cnn/.e/img/3.0/global/icons/video_icon.gif
+[BadImage] TinyImageException(16, 11): http://i.cdn.turner.com/cnn/.e/img/3.0/global/icons/gallery_icon2.png
+[BadImage] TinyImageException(1, 1): http://i.cdn.turner.com/cnn/.e/img/3.0/1px.gif
+-> http://theoatmeal.com/comics/tesla
+[BadImage] HugeImageException(800, 2134): http://s3.amazonaws.com/theoatmeal-img/comics/tesla/2.jpg
+[BadImage] HugeImageException(800, 2356): http://s3.amazonaws.com/theoatmeal-img/comics/tesla/3.jpg
+[BadImage] HugeImageException(800, 2723): http://s3.amazonaws.com/theoatmeal-img/comics/tesla/4.jpg
+[BadImage] HugeImageException(800, 3073): http://s3.amazonaws.com/theoatmeal-img/comics/tesla/6.jpg
+[BadImage] HugeImageException(800, 2383): http://s3.amazonaws.com/theoatmeal-img/comics/tesla/9.jpg
+-> http://www.slate.com/articles/health_and_science/science/2013/12/creativity_is_rejected_teachers_and_bosses_don_t_value_out_of_the_box_thinking.html
+[BadImage] TinyImageException(39, 39): http://slate-static-prod.s3.amazonaws.com/etc/designs/slate/images/social/yellow-twitterNew.821dc365.png
+[BadImage] TinyImageException(39, 39): http://slate-static-prod.s3.amazonaws.com/etc/designs/slate/images/social/yellow-facebookNew.74981e6f.png
+[BadImage] TinyImageException(96, 13): http://slate-static-prod.s3.amazonaws.com/etc/designs/slate/images/the-slate-group-logo.12cbe5ac.png
+[BadImage] TinyImageException(63, 16): http://slate-static-prod.s3.amazonaws.com/etc/designs/slate/images/the-root-logo.74009c0a.png
+-> https://be.yahoo.com/?p=us
+[BadImage] TinyImageException(1, 1): https://csc.beap.bc.yahoo.com/yi?bv=1.0.0&bs=(136gmp2n2(gid$4ge9ujk4LjHUSeNyRrTgxAsJOTEuMVOPqLcAAAAA,st$1401923767751960,si$4246032,sp$2146242957,pv$1,v$2.0))&t=JR_3-DR_3&al=(as$12q640j0f,aid$QPr4XmKL4Jo-,bi$196517032,cr$2722961532,ct$25,at$HR,eob$gd1_match_id=-1:ypos=TL1)
+[BadImage] TinyImageException(1, 1): https://s.yimg.com/os/mit/media/m/base/images/transparent-1093278.png
+[BadImage] TinyImageException(1, 1): https://csc.beap.bc.yahoo.com/yi?bv=1.0.0&bs=(136gmp2n2(gid$4ge9ujk4LjHUSeNyRrTgxAsJOTEuMVOPqLcAAAAA,st$1401923767751960,si$4246032,sp$2146242957,pv$1,v$2.0))&t=JR_3-DR_3&al=(as$12qqb8sbi,aid$UBH5XmKL4Jo-,bi$107807532,cr$2260929532,ct$25,at$HR,eob$gd1_match_id=-1:ypos=FPAD)
+-> http://www.liveleak.com/
+[GoodImage] FormatImageFilter: http://edge.liveleak.com/80281E/u/u/ll2/logo.gif
+[GoodImage] FormatImageFilter: http://edge.liveleak.com/80281E/u/u/ll2/logo.gif
+[BadImage] TinyImageException(16, 16): http://edge.liveleak.com/80281E/u/u/ll2/facebook-icon.png
+[BadImage] TinyImageException(16, 16): http://edge.liveleak.com/80281E/u/u/ll2/twitter-icon.gif
+[BadImage] TinyImageException(17, 19): http://edge.liveleak.com/80281E/u/u/ll2/rss.gif
+[BadImage] TinyImageException(14, 15): http://edge.liveleak.com/80281E/u/u/ll2/plus.gif
+[BadImage] TinyImageException(40, 39): http://edge.liveleak.com/80281E/u/u/ll2/ga_icon.gif
+-> http://www.webat25.org/
+[BadImage] NoImageException: http://www.webat25.org/assets/img/logo.svg
+[BadImage] TinyImageException(60, 60): http://www.webat25.org/assets/made/images/uploads/tbl_square_60_60.jpg
+[BadImage] TinyImageException(60, 60): http://www.webat25.org/assets/made/images/uploads/vintforw25_60_60.jpg
+[BadImage] TinyImageException(60, 60): http://www.webat25.org/assets/made/images/uploads/jwtwitter_60_60.jpg
+[BadImage] TinyImageException(80, 45): http://www.webat25.org/assets/made/images/uploads/TYT_80_45.jpg
+-> https://medium.com/design-ux/62ae4bcbe01b
+-> http://www.rollingstone.com/culture/news/the-flight-of-the-birdman-flappy-bird-creator-dong-nguyen-speaks-out-20140311
+[BadImage] TinyImageException(86, 37): http://www.rollingstone.com/images/fe/header_logo_yahoo_on_rs.png
+[BadImage] TinyImageException(40, 20): http://assets.pinterest.com/images/pidgets/pin_it_button.png
+[BadImage] TinyImageException(50, 50): http://assets-s3.rollingstone.com/assets/images/partners/hero/50x50/patrickstewardxmen-1401713943.jpg
+[BadImage] TinyImageException(50, 50): http://assets-s3.rollingstone.com/assets/images/partners/hero/50x50/jayzlyrics-1401889652.jpg
+-> https://donate.wikimedia.org/w/index.php?title=Special:FundraiserLandingPage&country=BE&uselang=en&utm_medium=SocialMedia&utm_source=B11_Twitter&utm_campaign=C11_SocialMedia&appeal=Appeal-Twitter
+[BadImage] TinyImageException(88, 31): http://bits.wikimedia.org/images/wikimedia-button.png
+[BadImage] TinyImageException(88, 31): http://bits.wikimedia.org/static-1.24wmf7/skins/common/images/poweredby_mediawiki_88x31.png
+-> http://www.newrepublic.com/article/117088/silicons-valleys-brutal-ageism
+[BadImage] RatioImageException(500, 76): http://www.newrepublic.com/sites/all/themes/tnr/assets/images/logo.png
+[GoodImage] FormatImageFilter: http://www.newrepublic.com/sites/all/themes/tnr/assets/images/tags/tnr-culture-187x80.gif
+-> https://www.brighttalk.com/webcast/499/107965
+[BadImage] TinyImageException(139, 25): https://www.brighttalk.com/bundles/brighttalklayout/images/logo-transparent-139x25.png?v=58404363
+[BadImage] TinyImageException(18, 18): https://www.brighttalk.com/bundles/brighttalkportal/images/sharing/linkedin-18x18.png?v=58404363
+[BadImage] TinyImageException(18, 18): https://www.brighttalk.com/bundles/brighttalkportal/images/sharing/twitter-18x18.png?v=58404363
+[BadImage] TinyImageException(18, 18): https://www.brighttalk.com/bundles/brighttalkportal/images/sharing/facebook-18x18.png?v=58404363
+[BadImage] TinyImageException(18, 18): https://www.brighttalk.com/bundles/brighttalkportal/images/sharing/google-18x18.png?v=58404363
+[BadImage] TinyImageException(18, 18): https://www.brighttalk.com/bundles/brighttalkportal/images/sharing/email-18x18.png?v=58404363
+[BadImage] TinyImageException(18, 18): https://www.brighttalk.com/bundles/brighttalkportal/images/sharing/embed-18x18.png?v=58404363
+-> http://www.nytimes.com/2014/05/11/us/reading-writing-arithmetic-and-lately-coding.html?_r=0
+-> http://eu.fab.com/
+[BadImage] AnimatedImageException: http://eu.dby.fab.com.s3.amazonaws.com/production/dby_load.gif
+-> http://doge2048.com/
+-> http://www.wired.com/2013/09/ev-williams-xoxo/
+[BadImage] HugeImageException(2500, 1667): http://www.wired.com/images_blogs/business/2013/09/WBC_ALL29.jpg
+[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
+-> http://www.nytimes.com/2014/03/16/magazine/silicon-valleys-youth-problem.html?_r=0
+[BadImage] RatioImageException(600, 137): http://static01.nyt.com/images/2014/03/16/magazine/mag-16Silicon_old2/mag-16Silicon_old2-articleLarge-v2.png
+-> http://www.apple.com/
+[BadImage] RatioImageException(960, 122): http://images.apple.com/home/images/yosemite_hero_headline.png
+[BadImage] RatioImageException(960, 104): http://images.apple.com/home/images/yosemite_hero_headline_small.png
+[BadImage] TinyImageException(100, 40): http://images.apple.com/home/images/ios8_hero_headline.png
+[BadImage] TinyImageException(86, 36): http://images.apple.com/home/images/ios8_hero_headline_small.png
+[BadImage] RatioImageException(952, 120): http://images.apple.com/home/images/ios8_hero_subhead.png
+[BadImage] RatioImageException(952, 104): http://images.apple.com/home/images/ios8_hero_subhead_small.png
+-> https://www.facebook.com/
+[BadImage] TinyImageException(16, 11): https://fbstatic-a.akamaihd.net/rsrc.php/v2/yb/r/GsNJNwuI-UM.gif
+-> http://pics.lockerz.com/
+[BadImage] TinyImageException(32, 32): https://d8o6wu1tc2zf3.cloudfront.net/pegasus/4.5.113/bundles/lockerzglobal/images/loadinglogoDark.gif?1.0.0
+[BadImage] TinyImageException(980, 60): https://d8o6wu1tc2zf3.cloudfront.net/pegasus/4.5.113/bundles/lockerzglobal/images/ador-header.jpg?1.0.0
+[BadImage] MonoImageException: https://d8o6wu1tc2zf3.cloudfront.net/pegasus/4.5.113/bundles/lockerzglobal/images/decal_back_overlay.png?1.0.0
+[BadImage] NoImageException: http://pics.lockerz.com/
+[BadImage] TinyImageException(50, 50): http://lockerz-media-prod.s3.amazonaws.com/20155372_220931_109682_273612_small.jpg
+[BadImage] TinyImageException(50, 50): http://static.lockerz.com/profiles/small/image001343774419941crkqbd.png
+[BadImage] TinyImageException(50, 50): http://static.lockerz.com/profiles/small/image001399780904679vtg8g5.jpeg
+-> http://asherv.com/threes/
+[BadImage] AnimatedImageException: http://asherv.com/threes/images/THREES_trailer.gif
+-> http://www.bloomberg.com/news/2014-04-11/nsa-said-to-have-used-heartbleed-bug-exposing-consumers.html
+[BadImage] HugeImageException(3000, 2000): http://www.bloomberg.com/image/iGT3sBLJrWX0.jpg
+[BadImage] NoImageException: http://cdn.gotraffic.net/assets/icons/facebook-db49bc202f5c8c63a2783f99f4942090.svg
+[BadImage] NoImageException: http://cdn.gotraffic.net/assets/icons/twitter-2856bf711fa6245418bf232c7655dc5f.svg
+[BadImage] NoImageException: http://cdn.gotraffic.net/assets/icons/facebook-f-c72270aa8eec607d56964794bd1ded8d.svg
+[BadImage] NoImageException: http://cdn.gotraffic.net/assets/icons/twitter-bird-f9cf64d3b45040f12c5dc12ab3365b8a.svg
+-> http://www.ustream.tv/channel/iss-hdev-payload
+[BadImage] TinyImageException(112, 33): http://wwwimages.adobe.com/www.adobe.com/images/shared/download_buttons/get_flash_player.gif
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-22sNmkTMKNC-A.gif?labels=Tech.Featured
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-8CUfddfLwsPW-.gif?labels=Tech.Featured
+-> http://www.wired.com/2014/04/zuckerberg-f8-interview/
+[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
+-> http://www.allenpike.com/2014/burying-the-url/
+-> https://vine.co/v/MrTlImjlai1
+-> http://www.cbinsights.com/blog/startup-failure-post-mortem
+[BadImage] TinyImageException(120, 20): http://www.cbinsights.com/img/logo_small.png
+[BadImage] TinyImageException(103, 15): http://www.cbinsights.com/img/datastore.png
+-> http://blog.eat24hours.com/breakup-letter-to-facebook-from-eat24/
+[BadImage] TinyImageException(160, 60): http://blog.eat24hours.com/wp-content/themes/henley/images/icons/logobutton.png
+[BadImage] AnimatedImageException: http://blog.eat24hours.com/wp-content/uploads/2014/03/how-dare-u.gif
+-> https://medium.com/p/24eb09e026dd
+[GoodImage] MonoImageFilter: https://d262ilb51hltx0.cloudfront.net/max/800/desat/multiply/teal/overlay/teal/1*75EXgEjjVd4dQLhS6wzOjg.jpeg
+-> http://heidiroizen.tumblr.com/post/80368150370/what-i-learned-negotiating-with-steve-jobs
+[BadImage] HugeImageException(2000, 3008): http://static.tumblr.com/293c266d56fe2df97a1ed9db4b8b018a/5t6kmvq/Krpn2srno/tumblr_static_dsc_0133_2_copy.jpg
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_d700e47f7874_64.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_bf112864b1d0_64.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_7d18f426813a_64.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_af846f0105a1_64.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_a3658c548a10_64.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_1134ae4bf728_64.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_20192a8b921c_64.png
+[BadImage] AdblockURLFilter: http://assets.tumblr.com/images/default_avatar/cone_open_64.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_da1c1b2938e7_64.png
+-> http://www.businessinsider.com/larry-page-the-untold-story-2014-4
+[BadImage] TinyImageException(1, 1): http://static4.businessinsider.com/assets/images/transparent.gif
+[BadImage] TinyImageException(50, 50): http://static2.businessinsider.com/image/519f7320eab8eabf1d00000e-50-50/nicholas-carlson.jpg
+-> http://avc.com/2014/05/the-fast-lane-the-slow-lane-and-the-no-lane/
+-> http://schlaf.me/post/81679927670
+[BadImage] AdblockURLFilter: http://31.media.tumblr.com/avatar_d3ef0a01b026_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_4371f7238776_16.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_b6b355836fe2_16.png
+[BadImage] AdblockURLFilter: http://31.media.tumblr.com/avatar_1992931cb48f_16.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_2ed7e1b8eae2_16.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_0725310779ae_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_de6032b7a6e9_16.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_099ac7f4d0f3_16.png
+[BadImage] AdblockURLFilter: http://31.media.tumblr.com/avatar_d16d27bcc005_16.png
+-> http://Inc.com/
+[BadImage] TinyImageException(172, 60): http://images.inc.com/leftnavmenu/inc-logo-white.png
+[BadImage] TinyImageException(25, 25): http://images.inc.com/leftnavmenu/search-magnifying-glass.png
+[BadImage] TinyImageException(120, 60): http://www.inc.com/uploaded_files/leftnavmenuitem/UNUM_38.png
+[BadImage] TinyImageException(60, 58): http://images.inc.com/ajaxloader/back-to-top.png?asdf
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=6916907&c3=&c4=&c5=&c6=&c15=&cj=1
+[BadImage] TinyImageException(2, 2): http://grunerandjahr.112.2o7.net/b/ss/gjinccomprod/1/H.24.1--NS/0?AQB=1&pccr=true&g=none&AQE=1
+[BadImage] TinyImageException(11, 26): http://images.inc.com/login/right-menu/go-forward.png
+[BadImage] TinyImageException(1, 1): http://www.inc.com/images/spacer.gif
+-> http://www.businessinsider.com/facebook-is-buying-whatsapp-2014-2
+[BadImage] TinyImageException(1, 1): http://static4.businessinsider.com/assets/images/transparent.gif
+[BadImage] TinyImageException(50, 50): http://static2.businessinsider.com/image/519f7320eab8eabf1d00000e-50-50/nicholas-carlson.jpg
+[BadImage] TinyImageException(16, 16): http://static3.businessinsider.com/assets/images/icons/icon_loading.gif
+-> https://famo.us/
+[BadImage] NoImageException: https://famo.us/images/bullhorn.svg
+[BadImage] NoImageException: https://famo.us/images/wrench.svg
+[BadImage] NoImageException: https://famo.us/images/university_hat.svg
+[BadImage] NoImageException: https://famo.us/images/folder_a.svg
+[BadImage] NoImageException: https://famo.us/images/people_group.svg
+[BadImage] NoImageException: https://famo.us/images/chat_bubbles.svg
+[BadImage] NoImageException: https://famo.us/images/computer.svg
+[BadImage] NoImageException: https://famo.us/images/boxes.svg
+[BadImage] NoImageException: https://famo.us/images/dashboard.svg
+-> http://daily.songza.com/
+[BadImage] AnimatedImageException: http://daily.songza.com/wp-content/uploads/2014/05/emt-vogue.gif
+-> http://xkcd.com/1354/
+[BadImage] TinyImageException(273, 45): http://imgs.xkcd.com/store/whatif-book-news.png
+[BadImage] RatioImageException(520, 100): http://imgs.xkcd.com/s/a899e84.jpg
+-> http://klout.com/home
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-aeKjlJXBiuePA.gif
+-> http://www.vox.com/2014/5/9/5691098/why-cyclists-should-be-able-to-roll-through-stop-signs-and-ride
+[BadImage] TinyImageException(1, 1): http://cdn0.vox-cdn.com/images/sbn/components/lazy-load-image-gray.vc5f04cd.gif
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-d9vfr8QTWnv1E.gif
+[BadImage] TinyImageException(350, 59): http://cdn2.vox-cdn.com/images/auth/verge.vf8f1c8e.png
+[BadImage] TinyImageException(350, 40): http://cdn0.vox-cdn.com/images/auth/sbn.v50c5f70.png
+[BadImage] TinyImageException(32, 32): http://cdn0.vox-cdn.com/images/auth/spinner.vc97ec6e.gif
+-> http://bits.blogs.nytimes.com/2014/05/06/vsco-a-digital-photography-company-raises-40-million-from-accel-partners/?_php=true&_type=blogs&smid=tw-nytimesbits&_r=0
+[BadImage] RatioImageException(600, 90): http://graphics8.nytimes.com/images/blogs_v5/bits/bits_post.png
+[BadImage] TinyImageException(46, 78): http://graphics8.nytimes.com/images/blogs/dealbook/db_icon-mobile.gif
+[BadImage] TinyImageException(46, 72): http://graphics8.nytimes.com/images/blogs/dealbook/db_icon-bb.gif
+[BadImage] TinyImageException(21, 20): http://graphics8.nytimes.com/gfx/blogs/common/icons/twitter20x20.png
+[BadImage] TinyImageException(20, 20): http://graphics8.nytimes.com/gfx/blogs/common/icons/rss20x20.png
+-> http://www.buzzfeed.com/charliewarzel/why-twitters-newest-tweetstormtm-trend-must-be-stopped
+[BadImage] TinyImageException(18, 18): http://s3-ak.buzzfed.com/static/images/public/videopage/play_icon.png
+-> http://www.linkedin.com/today/post/article/20130717021959-62614725-the-self-conscious-entrepreneur?utm_source=buffer&utm_campaign=Buffer&utm_content=buffer3f598&utm_medium=twitter
+[BadImage] ZeroBytesException: http://b.scorecardresearch.com/b?c1=2&c2=6402952&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-b3sGjMtCFrexE.gif
+[BadImage] TinyImageException(1, 1): http://secure-us.imrworldwide.com/cgi-bin/m?ci=us-603751h&cg=0&cc=1&ts=noscript&ja=1
+-> http://www.theguardian.com/society/2013/nov/01/secrets-worlds-happiest-cities-commute-property-prices
+[BadImage] TinyImageException(115, 22): http://static.guim.co.uk/static/a10a62d4c9949bf22fafe1d25554c70d3408b90d/common/images/logos/the-guardian/news.gif
+[BadImage] TinyImageException(40, 20): http://assets.pinterest.com/images/pidgets/pin_it_button.png
+[BadImage] TinyImageException(15, 12): http://static.guim.co.uk/static/a10a62d4c9949bf22fafe1d25554c70d3408b90d/common/images/icon-email.png
+[BadImage] TinyImageException(16, 16): http://static.guim.co.uk/static/a10a62d4c9949bf22fafe1d25554c70d3408b90d/common/images/icon-print.png
+[BadImage] TinyImageException(16, 16): http://static.guim.co.uk/static/a10a62d4c9949bf22fafe1d25554c70d3408b90d/common/images/icon-share.png
+[BadImage] TinyImageException(16, 16): http://static.guim.co.uk/static/a10a62d4c9949bf22fafe1d25554c70d3408b90d/common/images/icon-email-us.png
+[BadImage] TinyImageException(10, 11): http://static.guim.co.uk/static/a10a62d4c9949bf22fafe1d25554c70d3408b90d/common/images/close-popup.png
+-> http://qz.com/
+[BadImage] AdblockURLFilter: http://ox-d.qz.com/w/1.0/ai?auid=337638&cs=5115492963096&cb=538fa87f436d5
+[BadImage] TinyImageException(1, 1): http://stats.wordpress.com/b.gif?v=noscript
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=6463921&c3=&c4=&c5=&c6=&c15=&cj=1
+-> https://blog.mozilla.org/blog/2014/04/03/brendan-eich-steps-down-as-mozilla-ceo/
+[BadImage] AdblockURLFilter: https://secure.gravatar.com/avatar/314b80cc35bedcecdb753b985e0de628?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&r=G
+[BadImage] AdblockURLFilter: https://secure.gravatar.com/avatar/314b80cc35bedcecdb753b985e0de628?s=68&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&r=G
+-> http://hbr.org/2013/10/fergusons-formula/ar/1
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36302&cs=51deb4c2b36e1&cb={random}
+[GoodImage] FormatImageFilter: http://hbr.org/hbrg-main/resources/images/hbrPrintLogo.gif
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=405835&cs=517671d970fbf&cb={random}
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=537102294&cs=ff0652788d&cb={random}
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=406641&cs=51792cfb56ff4&cb={random}
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36303&cs=51deb4c2b36e1&cb={random}
+[BadImage] TinyImageException(42, 43): http://static.hbr.org/hbrg-main/resources/images/most_widget_articles.gif
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=536872108&cs=51deb4c2b36e1&cb={random}
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36304&cs=51deb4c2b36e1&cb={random}
+-> http://startupboy.com/2014/04/01/the-fifth-protocol/
+[BadImage] MonoImageException: http://wordpress.com/i/blank.jpg?m=1383295312g
+[BadImage] HugeImageException(2500, 249): http://startupboy.files.wordpress.com/2014/04/cropped-banner2.jpg
+[BadImage] TinyImageException(60, 60): http://i2.wp.com/pbs.twimg.com/profile_images/3580641456/82c873940343750638b7caa04b4652fe_normal.jpeg?resize=60%2C60
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/68e5a216183757b05943d4860a9e96f9?s=60&d=identicon&r=G
+[BadImage] TinyImageException(60, 60): http://i2.wp.com/pbs.twimg.com/profile_images/378800000033763819/1ed5c6e7727995762e404c09b222d17e_normal.png?resize=60%2C60
+[BadImage] HTTPError: http://i1.wp.com/pbs.twimg.com/profile_images/448825893201256449/YZaQHVxQ_normal.jpeg?resize=60%2C60
+[BadImage] TinyImageException(60, 60): http://i0.wp.com/pbs.twimg.com/profile_images/378800000642527833/8f83ede0c9ec9426e62ee96f1e038109_normal.jpeg?resize=60%2C60
+[BadImage] TinyImageException(60, 60): http://i0.wp.com/pbs.twimg.com/profile_images/449579868615749633/fCol54qA_normal.jpeg?resize=60%2C60
+[BadImage] TinyImageException(60, 60): http://i1.wp.com/pbs.twimg.com/profile_images/444812676107993089/GDN94KTI_normal.jpeg?resize=60%2C60
+[BadImage] TinyImageException(60, 60): http://i2.wp.com/graph.facebook.com/526623723/picture?q=type%3Dlarge%26_md5%3D5737480d7968c90b73222f12a5e39807&resize=60%2C60
+-> http://wtfhtmlcss.com/
+-> https://www.growthhacker.tv/
+[BadImage] TinyImageException(38, 37): https://www.growthhacker.tv/images/new.png
+[BadImage] TinyImageException(32, 14): https://www.growthhacker.tv/images/down.png
+[BadImage] TinyImageException(14, 32): https://www.growthhacker.tv/images/hide_arrow.png
+[BadImage] TinyImageException(14, 32): https://www.growthhacker.tv/images/hide_arrowr.png
+[BadImage] TinyImageException(43, 11): https://www.growthhacker.tv/images/refer_loader.gif
+[BadImage] HTTPError: https://www.growthhacker.tv/../../images/star.png?1
+[BadImage] TinyImageException(28, 32): https://www.growthhacker.tv/images/caution.png
+-> http://www.latimes.com/business/technology/la-fi-tn-1-10-americans-html-std-study-finds-20140304-story.html
+-> http://gabrielecirulli.github.io/2048/
+[BadImage] NoImageException: http://gabrielecirulli.github.io/2048/meta/icon_pp.svg
+[BadImage] TinyImageException(1, 1): https://www.paypalobjects.com/en_US/i/scr/pixel.gif
+[BadImage] NoImageException: http://gabrielecirulli.github.io/2048/meta/icon_bitcoin.svg
+-> http://onboardly.com/startup-pr/how-uber-went-from-just-another-startup-to-a-big-ing-deal/?fb_action_ids=10151529764356010&fb_action_types=og.likes&fb_ref=.UgkAcmxEcah.like&fb_source=other_multiline&action_object_map=%7B%2210151529764356010%22:267486570043216%7D&action_type_map=%7B%2210151529764356010%22:%22og.likes%22%7D&action_ref_map=%7B%2210151529764356010%22:%22.UgkAcmxEcah.like%22%7D&utm_source=buffer&utm_campaign=Buffer&utm_content=bufferad924&utm_medium=twitter#.UgkCMmT71YK
+[BadImage] TinyImageException(149, 40): http://onboardly.com/wp-content/themes/onboardly2/images/logo.png
+[BadImage] TinyImageException(16, 16): http://onboardly.com/wp-content/themes/onboardly2/images/icons/small-twitter.png
+[BadImage] TinyImageException(16, 16): http://onboardly.com/wp-content/themes/onboardly2/images/icons/small-facebook.png
+[BadImage] TinyImageException(16, 16): http://onboardly.com/wp-content/themes/onboardly2/images/icons/small-email.png
+-> https://sumall.com/
+[BadImage] TinyImageException(21, 20): https://d49awdk0lj1sm.cloudfront.net/public/external/img/notices/error.png?_vx=v2.9.68-2
+[BadImage] RatioImageException(1450, 82): https://d49awdk0lj1sm.cloudfront.net/public/external/img/hero/lifeline_bumper.gif?_vx=v2.9.68-2
+[BadImage] TinyImageException(49, 37): https://d49awdk0lj1sm.cloudfront.net/public/external/img/hero/data_guide_new.png?_vx=v2.9.68-2
+[BadImage] RatioImageException(1221, 88): https://d49awdk0lj1sm.cloudfront.net/public/external/img/partners/home_companies/sumall_companies.png?_vx=v2.9.68-2
+[BadImage] TinyImageException(270, 47): https://d49awdk0lj1sm.cloudfront.net/public/external/img/partners/home_press/1-WSJ.png?_vx=v2.9.68-2
+[BadImage] TinyImageException(270, 47): https://d49awdk0lj1sm.cloudfront.net/public/external/img/partners/home_press/2-Forbes.png?_vx=v2.9.68-2
+[BadImage] TinyImageException(270, 47): https://d49awdk0lj1sm.cloudfront.net/public/external/img/partners/home_press/3-NYT.png?_vx=v2.9.68-2
+[BadImage] TinyImageException(270, 47): https://d49awdk0lj1sm.cloudfront.net/public/external/img/partners/home_press/4-TC.png?_vx=v2.9.68-2
+-> http://techcrunch.com/2014/04/18/nike-is-said-to-be-killing-off-the-fuelband/
+[BadImage] NoImageException: http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/logo.svg
+[BadImage] TinyImageException(75, 17): http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/reddit.gif?m=1381204869g
+[BadImage] TinyImageException(1, 1): http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/1x1.png?m=1381219147g
+[BadImage] ZeroBytesException: http://b.scorecardresearch.com/b?c1=2&c2=6036210&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1
+-> http://avc.com/2014/03/the-search-for-the-next-platform/
+-> http://scottberkun.com/2014/critique-dont-fuck-up-culture/
+[BadImage] RatioImageException(366, 74): http://scottberkun.com/wp-content/themes/berkun/images/logo-small.png
+[BadImage] TinyImageException(25, 22): http://scottberkun.com/wp-content/themes/berkun/images/icon-twitter.png
+[BadImage] TinyImageException(25, 22): http://scottberkun.com/wp-content/themes/berkun/images/icon-facebook.png
+[BadImage] TinyImageException(25, 22): http://scottberkun.com/wp-content/themes/berkun/images/icon-rss.png
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/fa9dd192befa80f6703f2d4155033e35?s=23&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D23&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/abbacbceec9bd0a083766a6f924b443b?s=23&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D23&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/d30849bdb11c595ba413a7f908263fb6?s=23&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D23&r=G
+-> http://www.patatap.com/
+-> http://code.org/
+[BadImage] TinyImageException(35, 35): http://code.org/images/facebook_purple.png
+[BadImage] TinyImageException(35, 35): http://code.org/images/twitter_purple.png
+[BadImage] TinyImageException(35, 35): http://code.org/images/tumblr_purple.png
+[BadImage] TinyImageException(35, 35): http://code.org/images/zazzle_purple.png
+[BadImage] TinyImageException(35, 35): http://code.org/images/donate_normal.png
+[BadImage] TinyImageException(16, 9): http://code.org/images/16x9.png
+-> http://www.theverge.com/2014/3/18/5522226/google-reveals-android-wear-an-operating-system-designed-for
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=7976662&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://cdn0.vox-cdn.com/images/sbn/components/lazy-load-image-gray.vc5f04cd.gif
+[BadImage] TinyImageException(90, 60): http://cdn2.vox-cdn.com/uploads/chorus_image/image/33919049/amazon-event-2012-_1145.0_standard_90.0.jpg
+[GoodImage] FormatImageFilter: http://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif
+[BadImage] AnimatedImageException: http://cdn2.vox-cdn.com/images/verge/loading.v92f34fc.gif
+-> https://xkcd.com/1354/
+[BadImage] TinyImageException(273, 45): http://imgs.xkcd.com/store/whatif-book-news.png
+[BadImage] RatioImageException(520, 100): http://imgs.xkcd.com/s/a899e84.jpg
+-> https://sumall.com/myweek
+[BadImage] TinyImageException(21, 20): https://d49awdk0lj1sm.cloudfront.net/public/external/img/notices/error.png?_vx=v2.9.68-2
+-> http://www.mailboxapp.com/
+[BadImage] HTTPError: http://www.mailboxapp.com/ogimage.jpg
+[BadImage] HTTPError: http://www.mailboxapp.com/assets/images/archive-fbvideo.png
+[BadImage] NoImageException: http://www.mailboxapp.com/assets/images/logo-icon.svg
+[BadImage] HTTPError: http://www.mailboxapp.com/assets/images/snooze-fbvideo.png
+[BadImage] HTTPError: http://www.mailboxapp.com/assets/images/autoswipe-fbvideo.png
+-> http://www.theatlantic.com/technology/archive/2014/04/a-eulogy-for-twitter/361339/
+[BadImage] TinyImageException(9, 12): http://cdn.theatlantic.com/static/front/images/welcome-screens/arrow.png
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Fchannel_technology&t=src%3Dblog%26by%3Dadrienne-lafrance%2Crobinson-meyer%26title%3Da-eulogy-for-twitter%26pos%3Dwelcometest&sz=640x480&c=278365453&tile=2
+[BadImage] RatioImageException(728, 90): http://pagead2.googlesyndication.com/pagead/imgad?id=CICAgKDjkf6XMhDYBRhaMgi_NzcvjqFBiw
+[BadImage] AdblockURLFilter: http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=19&mc=imp&pli=9498814&PluID=0&ord=%n&rtu=-1
+-> http://cdixon.org/2014/04/07/the-decline-of-the-mobile-web/
+[BadImage] TinyImageException(14, 14): http://s.wordpress.com/wp-includes/images/rss.png?m=1354137473g
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/65a4d8799ff5f9c512fe310230b53720?s=60&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/e85270b383a9a15415368ad19ed5a081?s=60&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=60&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/086663f36f2a4310640d60aa2bb37271?s=60&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/863173d86b9895b4721649dd8431fc7d?s=60&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/b9b7722031c41aaf0c1e13fc8c6ced71?s=60&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/b154d80756fc0e57416d38453e61ec59?s=60&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+-> http://steveblank.com/2014/03/04/why-companies-are-not-startups/
+[BadImage] RatioImageException(1508, 272): http://steveblank.files.wordpress.com/2014/03/stagegate.jpg
+[BadImage] HugeImageException(2210, 1252): http://steveblank.files.wordpress.com/2014/03/strategy-maps-from-robert-kaplan.jpg
+[BadImage] RatioImageException(904, 160): http://steveblank.files.wordpress.com/2009/02/cropped-100_3947-ks-far-away-download10.jpg
+[BadImage] RatioImageException(904, 210): http://s1.wp.com/wp-content/themes/pub/digg3/images/bg_header_overlay.png?m=1391151072g
+[BadImage] TinyImageException(300, 54): http://steveblank.files.wordpress.com/2014/03/stagegate.jpg?w=300&h=54
+[BadImage] TinyImageException(40, 20): http://assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/89e45878186b9e81660910c11eaa23a6?s=32&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&r=G
+-> http://www.fastcompany.com/3028156/united-states-of-innovation/the-google-x-factor
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/FastCompany-logo-white.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcodesign-dark.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcoexist-dark.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcocreate-dark.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcolabs-dark.svg
+[BadImage] TinyImageException(72, 12): http://www.fastcompany.com/images/loading.gif
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcompany-light-txt.svg
+-> http://www.spacex.com/hyperloop
+[BadImage] TinyImageException(198, 25): http://www.spacex.com/sites/all/themes/spacex2012/logo.png
+-> http://www.rollingstone.com/music/news/de-la-soul-to-make-entire-catalog-available-for-free-20140213
+[BadImage] TinyImageException(86, 37): http://www.rollingstone.com/images/fe/header_logo_yahoo_on_rs.png
+[BadImage] TinyImageException(40, 20): http://assets.pinterest.com/images/pidgets/pin_it_button.png
+[BadImage] TinyImageException(50, 50): http://assets-s3.rollingstone.com/assets/images/partners/hero/50x50/patrickstewardxmen-1401713943.jpg
+[BadImage] TinyImageException(50, 50): http://assets-s3.rollingstone.com/assets/images/partners/hero/50x50/jayzlyrics-1401889652.jpg
+-> http://thequickword.wordpress.com/2014/02/16/james-irys-history-of-programming-languages-illustrated-with-pictures-and-large-fonts/
+[BadImage] RatioImageException(940, 198): http://thequickword.files.wordpress.com/2014/01/cropped-monty_wp.jpg
+-> http://www.successstories.co.in/eesha-khare-invents-a-device-to-recharge-your-mobile-within-20-seconds/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+successstoriesin+%28Success+Stories+%29
+[BadImage] TinyImageException(16, 16): http://www.successstories.co.in/wp-content/plugins/authorsure/images/16px/facebook.png?5df810
+[BadImage] TinyImageException(16, 16): http://www.successstories.co.in/wp-content/plugins/authorsure/images/16px/googleplus.png?5df810
+[BadImage] TinyImageException(16, 16): http://www.successstories.co.in/wp-content/plugins/authorsure/images/16px/linkedin.png?5df810
+[BadImage] TinyImageException(16, 16): http://www.successstories.co.in/wp-content/plugins/authorsure/images/16px/pinterest.png?5df810
+[BadImage] TinyImageException(16, 16): http://www.successstories.co.in/wp-content/plugins/authorsure/images/16px/twitter.png?5df810
+-> http://sethgodin.typepad.com/seths_blog/2014/05/set-a-date.html
+[BadImage] TinyImageException(83, 16): http://s7.addthis.com/addme/button0-fd.gif
+[BadImage] TinyImageException(83, 16): http://s7.addthis.com/addme/button0-bm.gif
+[BadImage] TinyImageException(75, 32): http://www.google.com/intl/en/logos/Logo_25wht.gif
+[BadImage] TinyImageException(1, 1): http://sethgodin.typepad.com/sg/images/home_book_nav/clear.spacer.png
+-> http://www.bbc.com/future/story/20140105-timeline-of-the-far-future
+[BadImage] TinyImageException(1, 1): http://sa.bbc.co.uk/bbc/bbc/s?name=future.story.20140105-timeline-of-the-far-future.page&ns_m2=yes&ns_setsiteck=538FA98666E101F8&pal_route=story_show&ml_name=barlesque&app_type=web&language=en-GB&ml_version=0.18.5&pal_webapp=wwfeatures&prod_name=future&app_name=future&blq_s=3.5d&blq_r=3.5&blq_v=default-worldwide
+[BadImage] TinyImageException(84, 24): http://static.bbci.co.uk/frameworks/barlesque/2.60.9/desktop/3.5/img/blq-blocks_grey_alpha.png
+[BadImage] TinyImageException(13, 13): http://static.bbci.co.uk/frameworks/barlesque/2.60.9/desktop/3.5/img/blq-search_grey_alpha.png
+[BadImage] HugeImageException(976, 3241): http://www.bbc.co.uk/bbc.com/future/bespoke/20140107-far-future/assets/images/far-future-timeline.png
+-> http://avc.com/2014/01/vc-pitches-in-a-year-or-two/
+-> http://Soundcloud.com/jclupton
+[BadImage] RatioImageException(1800, 280): http://w1.sndcdn.com/KuupH19oWPQT_m.png
+[BadImage] TinyImageException(10, 100): http://a1.sndcdn.com/images/player-overlay.png?30a2558
+[BadImage] RatioImageException(1800, 280): http://w1.sndcdn.com/2vvJQpuNGJm8_m.png
+[BadImage] RatioImageException(1800, 280): http://w1.sndcdn.com/8rnY7GQHTTFg_m.png
+[BadImage] RatioImageException(1800, 280): http://w1.sndcdn.com/5Z4TrnL9uF1p_m.png
+[BadImage] RatioImageException(1800, 280): http://w1.sndcdn.com/7NVOkkPt5R98_m.png
+-> http://tactustechnology.com/
+[BadImage] NoImageException: http://tactustechnology.com/
+-> http://techcrunch.com/2014/04/09/nycs-flatiron-school-raises-5-5-million-to-teach-people-to-code-for-a-living/
+[BadImage] NoImageException: http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/logo.svg
+[BadImage] TinyImageException(75, 17): http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/reddit.gif?m=1381204869g
+[BadImage] TinyImageException(1, 1): http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/1x1.png?m=1381219147g
+[BadImage] ZeroBytesException: http://b.scorecardresearch.com/b?c1=2&c2=6036210&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1
+[BadImage] TinyImageException(1, 1): http://stats.wordpress.com/b.gif?v=noscript
+-> http://www.nytimes.com/2014/04/26/opinion/sunday/hello-stranger.html?_r=0
+-> http://www.niemanlab.org/2014/04/vox-is-publishing-some-of-its-stories-and-the-interviews-behind-them-in-parallel/
+[BadImage] NoImageException: http://www.niemanlab.org/2014/04/vox-is-publishing-some-of-its-stories-and-the-interviews-behind-them-in-parallel/
+[BadImage] TinyImageException(23, 18): http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/twitter_newbird_grey.png
+[BadImage] TinyImageException(16, 16): http://www.niemanlab.org/labitude/wordpress/wp-content/themes/Labby/resources/retweet.png
+[BadImage] TinyImageException(653, 43): http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/newfront-niemanlab-biglogo2.png
+[BadImage] AnimatedImageException: http://www.niemanlab.org/images/vox-story-interview.gif
+[BadImage] TinyImageException(50, 59): http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/iphone-menu-fire-white-small.png
+[BadImage] TinyImageException(100, 51): http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/encyclo-newfront-sidebar-promo.png
+[BadImage] TinyImageException(48, 90): http://www.niemanlab.org/images/iphoneappsmalltrans.png
+-> http://www.siliconrepublic.com/start-ups/item/32656-startup-dublin-event-to-exp
+[BadImage] TinyImageException(24, 24): http://www.siliconrepublic.com/img/social/rss.gif
+[BadImage] TinyImageException(24, 24): http://www.siliconrepublic.com/img/social/alerts.gif
+[BadImage] TinyImageException(24, 24): http://www.siliconrepublic.com/img/social/ezine.gif
+-> http://www.youtube.com/?app=desktop
+[BadImage] TinyImageException(1, 1): http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif
+-> http://notonappstore.com/
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_646a1eca3c50_128.png
+-> http://www.theherald.com.au/story/1848433/the-ocean-is-broken/
+[BadImage] TinyImageException(1, 1): http://ad-apac.doubleclick.net/N6411/ad/onl.fairfaxregional/newcastleherald/news/localnews;ctype=article;cat=newcastleherald;cat1=news;cat2=localnews;cat3=1848433;region=northern;locstate=nsw;pos=1;tile=1;sz=xxxx;ord=28807304
+[BadImage] TinyImageException(1, 1): http://ad-apac.doubleclick.net/N6411/ad/onl.fairfaxregional/newcastleherald/news/localnews;ctype=article;cat=newcastleherald;cat1=news;cat2=localnews;cat3=1848433;region=northern;locstate=nsw;pos=1;tile=2;sz=xxxx;ord=28807304
+[BadImage] TinyImageException(1, 1): http://ad-apac.doubleclick.net/N6411/ad/onl.fairfaxregional/newcastleherald/news/localnews;ctype=article;cat=newcastleherald;cat1=news;cat2=localnews;cat3=1848433;region=northern;locstate=nsw;pos=1;tile=3;sz=xxxx;ord=28807304
+[BadImage] TinyImageException(1, 1): http://ad-apac.doubleclick.net/N6411/ad/onl.fairfaxregional/newcastleherald/news/localnews;ctype=article;cat=newcastleherald;cat1=news;cat2=localnews;cat3=1848433;region=northern;locstate=nsw;pos=1;tile=4;sz=xxxx;ord=28807304
+[BadImage] TinyImageException(1, 1): http://www.theherald.com.au/static/1401775030/images/1x1-placeholder.gif
+-> https://gumroad.com/l/cfhipsterref
+-> http://www.nytimes.com/2014/05/01/upshot/yes-silicon-valley-there-is-such-a-thing-as-not-enough-bureaucracy.html?_r=1
+-> http://www.wired.com/2014/04/trust-in-the-share-economy/
+[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
+-> https://www.kickstarter.com/projects/cyaninc/obduction
+[BadImage] TinyImageException(620, 35): https://s3.amazonaws.com/ksr/assets/001/335/955/89be3401303d59994d92e8cca4f59c8d_large.png?1384607456
+[BadImage] TinyImageException(621, 35): https://s3.amazonaws.com/ksr/assets/001/051/174/2e292df504088d191babd9e88e07129a_large.png?1381465152
+-> http://www.wired.com/2013/02/moonshots-matter-heres-how-to-make-them-happen/
+[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
+-> http://proto.io/
+[BadImage] NoImageException: http://staticprotoio-proto.netdna-ssl.com/images/publicsite/logos/ios.svg?v=3
+[BadImage] NoImageException: http://staticprotoio-proto.netdna-ssl.com/images/publicsite/logos/google-play.svg?v=3
+[BadImage] AdblockURLFilter: http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1005360341/?value=0&guid=ON&script=0
+-> https://www.google.com/search?es_sm=119&biw=1530&bih=1067&tbm=isch&q=retro+airline&revid=1953721938#q=retro%20airline%20posters&revid=64919886&tbm=isch&imgdii=_
+-> https://medium.com/the-year-of-the-looking-glass/ddc1587cb3f6
+-> https://www.marxists.org/
+[BadImage] TinyImageException(51, 17): https://www.marxists.org/xlang/black/hayeren.jpg
+[BadImage] TinyImageException(34, 14): https://www.marxists.org/xlang/black/bangla.jpg
+[BadImage] TinyImageException(72, 22): https://www.marxists.org/xlang/black/burmese.jpg
+[BadImage] TinyImageException(37, 18): https://www.marxists.org/xlang/black/hindi.jpg
+[BadImage] TinyImageException(61, 15): https://www.marxists.org/xlang/black/malayalam.jpg
+[BadImage] TinyImageException(38, 15): https://www.marxists.org/xlang/black/nepali.jpg
+[BadImage] TinyImageException(60, 18): https://www.marxists.org/xlang/black/pashto.jpg
+[BadImage] TinyImageException(34, 18): https://www.marxists.org/xlang/black/punjabi.jpg
+[BadImage] TinyImageException(52, 22): https://www.marxists.org/xlang/black/sindhi.jpg
+[BadImage] TinyImageException(46, 15): https://www.marxists.org/xlang/black/sinhala.jpg
+-> http://www.marketingprofs.com/chirp/2014/12372/20-captivating-marketing-statistics-that-will-drive-2014-infographic
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-tw.png
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-li.png
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-fb.png
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-rss.png
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-em.png
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-g.png
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-inst.png
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-pin.png
+[BadImage] TinyImageException(16, 16): http://www.marketingprofs.com/assets/images/site/icons/icn-ss.png
+[BadImage] TinyImageException(230, 33): http://www.marketingprofs.com/assets/images/site/logos/navlogo.png
+-> https://Quip.com/
+-> http://cdixon.org/2012/07/24/buzzfeeds-strategy/
+[BadImage] TinyImageException(14, 14): http://s.wordpress.com/wp-includes/images/rss.png?m=1354137473g
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/37ba67ccd00081225b44211130c80c8f?s=60&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/199dffa8119485f5259929431b5f81e4?s=60&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/72477ea2d695643d15ba19357f49cb23?s=60&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/8dffd55028f2bc4a40dccea0b7a09c3e?s=60&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/8f3735c893692b79c18ca4461d96018a?s=60&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/26b371d2127867d944d2bc2ca078b3d5?s=60&d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&r=G
+-> http://www.businessinsider.com/bill-gates-mind-blowing-infographic-mosquiotes-2014-4
+[BadImage] TinyImageException(1, 1): http://static4.businessinsider.com/assets/images/transparent.gif
+[BadImage] TinyImageException(50, 50): http://static6.businessinsider.com/image/519f6fe36bb3f73b3e000006-50-50/jennifer-welsh.jpg
+[BadImage] AnimatedImageException: http://static6.businessinsider.com/~~/f?id=535eb058ecad04a14e1f7331
+-> http://www.bullhornreach.com/job/1450504_designer-london-united-kingdom?utm_campaign=v1&shortlink=3127473&utm_content=17&utm_source=twitter.com&referer=None&utm_medium=referral
+[BadImage] TinyImageException(16, 16): https://d1a5pw01bancut.cloudfront.net/static/images/search-icon.fcce12b3a946.png
+-> http://www.edutopia.org/blog/guidebook-social-media-in-classroom-vicki-davis?utm_source=twitter&utm_medium=cpc&utm_campaign=blog-social-media-guidebook-12-ways-image
+[GoodImage] FormatImageFilter: http://www.edutopia.org/files/slates/davis-guidebook-social-media-thinkstock.gif
+[BadImage] TinyImageException(169, 28): http://passets-lt.pinterest.com/images/about/buttons/follow-me-on-pinterest-button.png
+[GoodImage] FormatImageFilter: http://cdn3.edutopia.org/files/imagecache/grid-3-column/slates/davis-guidebook-social-media-thinkstock.gif
+[BadImage] TinyImageException(40, 40): http://cdn3.edutopia.org/files/imagecache/profile_picture_list/profile_pictures/IMAG0093.jpg
+[BadImage] TinyImageException(40, 40): http://cdn3.edutopia.org/sites/all/themes/hextopia/images/comments/default-avatar.jpg
+[BadImage] TinyImageException(40, 40): http://cdn4.edutopia.org/files/imagecache/profile_picture_list/profile_pictures/iPhoto-2.jpg
+[BadImage] TinyImageException(40, 40): http://cdn3.edutopia.org/files/imagecache/profile_picture_list/profile_pictures/samer.sky_.jpg
+-> http://dealbook.nytimes.com/2014/04/01/the-credit-card-of-tomorrow-software-not-plastic/?_php=true&_type=blogs&smid=tw-nytimes&_r=0
+[BadImage] RatioImageException(600, 90): http://graphics8.nytimes.com/images/blogs_v5/dealbook/dealbook_post.png
+[BadImage] TinyImageException(50, 50): http://graphics8.nytimes.com/images/2014/03/31/business/dbpix-sorkin-cover/dbpix-sorkin-cover-blogSmallThumb.jpg
+-> http://blog.ycombinator.com/startup-school-is-going-global
+-> http://www.smashingmagazine.com/2013/08/13/guide-to-designing-touch-keyboards-with-cheat-sheet/
+-> http://blogs.kqed.org/mindshift/2014/05/on-the-edge-of-chaos-where-creativity-flourishes/
+[BadImage] RatioImageException(351, 76): http://blogs.kqed.org/mindshift/wp-content/themes/MS-clear/img/logo-mindshift.png
+[BadImage] TinyImageException(18, 18): http://cdn.printfriendly.com/pf-icon-small.gif
+[BadImage] TinyImageException(24, 24): http://blogs.kqed.org/mindshift/wp-content/themes/clear-theme/images/feed.png
+[BadImage] TinyImageException(24, 24): http://blogs.kqed.org/mindshift/wp-content/themes/clear-theme/images/facebook.png
+[BadImage] TinyImageException(24, 24): http://blogs.kqed.org/mindshift/wp-content/themes/clear-theme/images/twitter.png
+[BadImage] TinyImageException(24, 24): http://blogs.kqed.org/mindshift/wp-content/themes/clear-theme/images/pinterest.png
+[BadImage] TinyImageException(24, 24): http://blogs.kqed.org/mindshift/wp-content/themes/clear-theme/images/google-plus.png
+[BadImage] TinyImageException(24, 24): http://blogs.kqed.org/mindshift/wp-content/themes/clear-theme/images/youtube.png
+-> https://onlycoin.com/
+[BadImage] TinyImageException(88, 58): http://d2tqk49yez7kzo.cloudfront.net/homepage/screens/blank.png
+[BadImage] TinyImageException(88, 58): http://d2tqk49yez7kzo.cloudfront.net/homepage/screens/bank.png
+[BadImage] TinyImageException(88, 58): http://d2tqk49yez7kzo.cloudfront.net/homepage/screens/java.png
+[BadImage] TinyImageException(88, 58): http://d2tqk49yez7kzo.cloudfront.net/homepage/screens/shop.png
+[BadImage] AdblockURLFilter: http://googleads.g.doubleclick.net/pagead/viewthroughconversion/979138275/?value=0&guid=ON&script=0
+[BadImage] TinyImageException(1, 1): https://www.facebook.com/tr?id=627907280599305&ev=NoScript
+-> http://www.technologyreview.com/lists/innovators-under-35/2013/
+[GoodImage] MonoImageFilter: http://www.technologyreview.com/sites/all/themes/mittr/global/i/logo-mittr-black.png
+[GoodImage] FormatImageFilter: http://www.technologyreview.com/sites/default/files/styles/homepage_you_may_have_missed/public/images/walking.robotsx392.gif?itok=oZqjvxg9
+-> http://froont.com/
+[BadImage] TinyImageException(211, 42): http://froont.com/froont/0791tr/_static-uploads/images/thumbnail/froont-logo.png_211x42.png
+[GoodImage] FormatImageFilter: http://froont.com/froont/0791tr/_static-uploads/images/thumbnail/screens-are-coming_4.gif_461x243.gif
+[GoodImage] FormatImageFilter: http://froont.com/froont/0791tr/_static-uploads/images/thumbnail/design_7.gif_461x290.gif
+[GoodImage] FormatImageFilter: http://froont.com/froont/0791tr/_static-uploads/images/thumbnail/test_5.gif_461x310.gif
+[GoodImage] FormatImageFilter: http://froont.com/froont/0791tr/_static-uploads/images/thumbnail/responsive-layouts_3.gif_162x162.gif
+[GoodImage] FormatImageFilter: http://froont.com/froont/0791tr/_static-uploads/images/thumbnail/desktop-first.gif_162x162.gif
+[GoodImage] FormatImageFilter: http://froont.com/froont/0791tr/_static-uploads/images/thumbnail/code-export_2.gif_162x162.gif
+[GoodImage] FormatImageFilter: http://froont.com/froont/0791tr/_static-uploads/images/thumbnail/css_3.gif_162x162.gif
+-> http://www.entrepreneur.com/article/223705?hootPostID=85fce6b69bf0f5860663d64a25a578d6
+[BadImage] TinyImageException(1, 1): http://post.update.entrepreneur.com/one.gif?ci=ep34&pp=&pi=223705&pc=org
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=9564200&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://secure-us.imrworldwide.com/cgi-bin/m?ci=us-304769h&cg=0&cc=1&ts=noscript&ja=1
+[BadImage] TinyImageException(29, 28): http://www.entrepreneur.com/dbimages/home/e-round.png
+[BadImage] TinyImageException(29, 28): http://www.entrepreneur.com/dbimages/home/mail-round.png
+[BadImage] TinyImageException(128, 15): http://www.entrepreneur.com/iglobal/ajax_loader_navbar.gif
+-> http://www.reuters.com/article/2013/12/20/us-usa-security-rsa-idUSBRE9BJ1C220131220
+[BadImage] TinyImageException(221, 45): http://www.reuters.com/resources_v2/images/masthead-logo.gif
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N4735792/ad/us.reuters/news/politics/article;type=leaderboard;sz=728x90;tile=1;vbc=ubs;articleID=USBRE9BJ1C220131220;ord=8692?
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N4735792/ad/us.reuters/news/politics/article;type=poe;sz=1x1;articleID=USBRE9BJ1C220131220;taga=aaaaaaaaa;ord=8071?
+[GoodImage] MonoImageFilter: http://www.reuters.com/resources_v2/images/video_overlay_140.gif
+[GoodImage] FormatImageFilter: http://www.reuters.com/resources_v2/images/video_overlay_140.gif
+[BadImage] TinyImageException(43, 11): http://www.reuters.com/resources_v2/images/btn_rel_video.gif
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N4735792/ad/us.reuters/news/politics/article;type=mpu;sz=300x250;tile=2;vbc=ubs;articleID=USBRE9BJ1C220131220;ord=2010?
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N4735792/ad/us.reuters/news/politics/article;type=mpulow;sz=300x250;tile=3;articleID=USBRE9BJ1C220131220;ord=9474?
+-> http://blog.tjll.net/ssh-kung-fu/
+[BadImage] TinyImageException(495, 55): http://blog.tjll.net/generated/firefox_socks_dns-495x55-c560e8.png
+-> http://sethgodin.typepad.com/seths_blog/2014/05/whats-your-job.html
+[BadImage] TinyImageException(83, 16): http://s7.addthis.com/addme/button0-fd.gif
+[BadImage] TinyImageException(83, 16): http://s7.addthis.com/addme/button0-bm.gif
+[BadImage] TinyImageException(75, 32): http://www.google.com/intl/en/logos/Logo_25wht.gif
+[BadImage] TinyImageException(1, 1): http://sethgodin.typepad.com/sg/images/home_book_nav/clear.spacer.png
+-> http://www.intel.com/content/www/us/en/do-it-yourself/edison.html
+[BadImage] TinyImageException(8, 6): http://www.intel.com/etc/designs/ver/5.0.15/intel/us/en/images/arrow_down_blue.png
+[BadImage] TinyImageException(8, 5): http://www.intel.com/etc/designs/ver/5.0.15/intel/us/en/images/arrow_up_blue.png
+[BadImage] RatioImageException(960, 192): http://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/marquees/960x192-edison-header-v6.jpg
+[BadImage] HugeImageException(2500, 1667): http://www.intel.com/content/dam/www/public/us/en/images/photography-consumer/3x2/mimo-baby-edison-3x2.jpg
+-> http://qz.com/161443/2013-was-a-lost-year-for-tech/
+[BadImage] HugeImageException(2400, 1350): http://img.qz.com/2013/09/iphone-sales1.jpg
+[BadImage] HugeImageException(2400, 1350): http://img.qz.com/2013/11/galaxy-gear.jpg
+[BadImage] HugeImageException(2400, 1350): http://img.qz.com/2013/11/microsoft-steve-ballmer.jpg
+[BadImage] HugeImageException(2400, 1350): http://img.qz.com/2013/12/icahn-cook.jpg
+[BadImage] HugeImageException(2400, 1350): http://img.qz.com/2013/03/robot.jpg
+[BadImage] HugeImageException(2400, 1351): http://img.qz.com/2013/10/zuckerberg-103113.jpg
+[BadImage] HugeImageException(2400, 1349): http://img.qz.com/2013/09/rtx13qbr-bitcoin.jpg
+[BadImage] AdblockURLFilter: http://ox-d.qz.com/w/1.0/ai?auid=337638&cs=5115492963096&cb=538faa1956f9a
+-> http://www.businessinsider.com/take-a-guess-where-this-wild-photo-was-taken-2014-2
+[BadImage] HugeImageException(3500, 1750): http://static2.businessinsider.com/image/530a0d61ecad048a40e23232/take-a-guess-where-this-wild-protest-photo-was-taken.jpg
+[BadImage] TinyImageException(1, 1): http://static4.businessinsider.com/assets/images/transparent.gif
+[BadImage] TinyImageException(50, 39): http://static2.businessinsider.com/image/52ffe7146bb3f77a39f06b77-50-50/michael-b-kelley.jpg
+-> http://www.thedailybeast.com/articles/2014/03/13/thanks-anti-vaxxers-you-just-brought-back-measles-in-nyc.html
+[BadImage] TinyImageException(140, 50): http://cdn.thedailybeast.com/content/partners/dailybeast/women-in-the-world/jcr:content/image.img.228.50.png/1394050110296.cached.png
+[BadImage] TinyImageException(64, 49): http://cdn.thedailybeast.com/content/partners/dailybeast/us-magazine/jcr:content/image.img.228.50.png/1389026848798.cached.png
+[BadImage] TinyImageException(82, 50): http://cdn.thedailybeast.com/content/partners/dailybeast/refinery29/jcr:content/image.img.228.50.png/1398868278281.cached.png
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=17913818
+[BadImage] TinyImageException(2, 2): http://rtst.122.2o7.net/b/ss/rtstdailybeast,rtstglobal/1/JS-1.1.1--NS/0?AQB=1&pccr=true&g=none&AQE=1
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=6433482&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://secure-us.imrworldwide.com/cgi-bin/m?ci=us-904381h&cg=0&cc=1&ts=noscript&ja=1
+-> http://techcrunch.com/2014/02/21/rumor-testflight-owner-burstly-is-being-acquired-by-apple/
+[BadImage] NoImageException: http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/logo.svg
+[BadImage] AnimatedImageException: http://tctechcrunch2011.files.wordpress.com/2014/02/flappy.gif?w=150
+[BadImage] AnimatedImageException: http://i2.wp.com/tctechcrunch2011.files.wordpress.com/2014/05/apk-drag-drop-3.gif?resize=150%2C150
+-> http://tap.unicefusa.org
+[BadImage] TinyImageException(277, 34): http://tap.unicefusa.org/img/logo.png
+[BadImage] TinyImageException(61, 34): http://tap.unicefusa.org/img/logo-mobile.png
+[BadImage] TinyImageException(94, 59): http://tap.unicefusa.org/img/iconVideo.png
+[BadImage] TinyImageException(94, 59): http://tap.unicefusa.org/img/iconVideo-over.png
+[BadImage] TinyImageException(7, 229): http://tap.unicefusa.org/img/stats/top-barras.png
+-> http://www.wired.com/2013/10/free-thinkers/
+[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
+-> http://switchpitch.com/switchpitch-nyc/
+[HTTPError] (403 Client Error: Forbidden): http://switchpitch.com/switchpitch-nyc/
+-> https://path.com/p/1lwrZb
+-> http://madeinthefuture.co/
+[BadImage] NoImageException: http://madeinthefuture.co/assets/img/ideo-logo.svg
+[BadImage] TinyImageException(50, 50): http://madeinthefuture.co/assets/img/arrow-up.png
+[BadImage] TinyImageException(50, 50): http://madeinthefuture.co/assets/img/arrow-right.png
+[BadImage] NoImageException: http://madeinthefuture.co/assets/img/mitf-sticker.svg
+[BadImage] TinyImageException(30, 30): http://madeinthefuture.co/assets/img/loading.png
+[BadImage] NoImageException: http://madeinthefuture.co/assets/img/creative-commons.svg
+-> http://www.pewsocialtrends.org/2014/03/07/millennials-in-adulthood/
+[HTTPError] (403 Client Error: Forbidden): http://www.pewsocialtrends.org/2014/03/07/millennials-in-adulthood/
+-> http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html
+[BadImage] RatioImageException(824, 120): http://highscalability.com/storage/HSBannerTrebuchet.jpg
+[BadImage] TinyImageException(1, 1): http://highscalability.com/universal/images/transparent.png
+-> http://blogs.hbr.org/2014/04/why-amazon-is-copying-zappos-and-paying-employees-to-quit/
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36272&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36282&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=480578&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=349157&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=349158&cs=46ca033357&cb=random
+[GoodImage] FormatImageFilter: http://static.hbr.org/hbrg-main/resources/images/marketing/pref_center/eNewsletters_300x100_blue.gif
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36283&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=352626&cs=46ca033357&cb=random
+-> https://transparency.twitter.com
+-> http://www.nytimes.com/2014/03/02/technology/the-monuments-of-tech.html?smid=tw-share&_r=0
+-> http://www.lukew.com/ff/entry.asp?1800
+-> https://www.linkedin.com/today/post/article/20140425112931-47585-when-execs-hide-from-their-own-people
+[BadImage] ZeroBytesException: https://sb.scorecardresearch.com/b?c1=2&c2=6402952&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1
+[BadImage] TinyImageException(1, 1): https://secure.quantserve.com/pixel/p-b3sGjMtCFrexE.gif
+[BadImage] TinyImageException(1, 1): https://secure-us.imrworldwide.com/cgi-bin/m?ci=us-603751h&cg=0&cc=1&ts=noscript&ja=1
+-> http://www.brainpickings.org/index.php/2013/05/13/dont-go-back-to-school-kio-stark/
+-> http://finance.yahoo.com/news/retiring-27-ambitious-lazy-crazy-140000847.html?soc_src=mediacontentstory
+[BadImage] TinyImageException(1, 1): http://l.yimg.com/os/mit/media/m/base/images/transparent-1093278.png
+[BadImage] TinyImageException(137, 27): http://l.yimg.com/os/publish-images/finance/2013-11-18/4b1f064c-50e0-450d-bb2e-17e7463fe157_ENT_logo_2012-edit.jpg
+[BadImage] TinyImageException(50, 51): http://l.yimg.com/os/mit/media/m/content_index/images/purple_loader-1723692.png
+-> http://www.blugraphic.com/
+[BadImage] TinyImageException(43, 21): http://assets.pinterest.com/images/PinExt.png
+-> http://25iq.com/2014/04/26/a-dozen-things-i-have-learned-from-jeff-bezos/
+[BadImage] MonoImageException: http://wordpress.com/i/blank.jpg?m=1383295312g
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/1f3d8a1994d74f9559136bcc693e3a1a?s=47&d=identicon&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/c38008c2dc10bfa63bb25342969de15e?s=47&d=identicon&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/c83fa79c28f272ae6d40319f334ca2db?s=47&d=identicon&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&d=identicon&forcedefault=y&r=G
+[BadImage] TinyImageException(1, 1): http://stats.wordpress.com/b.gif?v=noscript
+-> http://qz.com/130189/the-complete-history-of-twitter-as-told-through-tortured-descriptions-in-the-new-york-times/
+[BadImage] AdblockURLFilter: http://ox-d.qz.com/w/1.0/ai?auid=337638&cs=5115492963096&cb=538faa5559d39
+[BadImage] TinyImageException(1, 1): http://stats.wordpress.com/b.gif?v=noscript
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=6463921&c3=&c4=&c5=&c6=&c15=&cj=1
+-> http://vimeo.com/24715531
+[BadImage] AdblockURLFilter: http://www.gravatar.com/avatar/714b0e370a8fb2ba162d0428789ad53b?d=http%3A%2F%2Fi.vimeocdn.com%2Fportrait%2Fdefault-green_75x75.png&s=75
+-> http://www.forbes.com/sites/ericjackson/2014/03/29/twitter-is-killing-itself-in-order-to-grow-and-please-wall-street/?utm_campaign=techtwittersf&utm_source=twitter&utm_medium=social
+[BadImage] NoImageException: http://i.forbesimg.com/assets/img/forbes_logo/forbes_logo_white.svg
+[GoodImage] MonoImageFilter: http://i.forbesimg.com/assets/img/forbes_logo/forbes_logo_white.png
+[BadImage] TinyImageException(16, 16): http://i.forbesimg.com/assets/img/loading_spinners/16px_grey.gif
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/dcc009e494f6fe6a0655e3de377af052?s=136&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D136&r=G
+[BadImage] TinyImageException(16, 16): http://i.forbesimg.com/assets/img/loading_spinners/16px_on_transparent.gif
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/dcc009e494f6fe6a0655e3de377af052?s=40&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&r=G
+-> http://blog.asmartbear.com/unsustainable-companies.html
+[HTTPError] (403 Client Error: Forbidden): http://blog.asmartbear.com/unsustainable-companies.html
+-> http://www.wikipediaredefined.com/
+[BadImage] TinyImageException(60, 60): http://www.wikipediaredefined.com/img/go.png
+-> http://usefulscience.org/
+-> http://www.businessinsider.com/inside-story-of-clinkle-2014-4
+[BadImage] TinyImageException(1, 1): http://static4.businessinsider.com/assets/images/transparent.gif
+[BadImage] TinyImageException(50, 50): http://static5.businessinsider.com/image/519f6e3a6bb3f7bd3b00000b-50-50/alyson-shontell.jpg
+-> http://www.theatlantic.com/technology/archive/2012/09/how-google-builds-its-maps-and-what-it-means-for-the-future-of-everything/261913/
+[BadImage] TinyImageException(9, 12): http://cdn.theatlantic.com/static/front/images/welcome-screens/arrow.png
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Fchannel_technology&t=src%3Dblog%26by%3Dalexis-c-madrigal%26title%3Dhow-google-builds-its-maps-mdash-and-what-it-means-for-the-future-of-everything%26pos%3Dwelcometest&sz=640x480&c=257611299&tile=2
+[BadImage] AdblockURLFilter: http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=19&mc=imp&pli=9498814&PluID=0&ord=%n&rtu=-1
+-> http://www.goranku.com/
+-> http://blogs.hbr.org/2012/10/making-the-choice-between-mone/
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36272&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36282&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=480578&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=349157&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=349158&cs=46ca033357&cb=random
+[GoodImage] FormatImageFilter: http://static.hbr.org/hbrg-main/resources/images/marketing/pref_center/eNewsletters_300x100_blue.gif
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36283&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=352626&cs=46ca033357&cb=random
+-> http://www.businessinsider.com/communication-charts-around-the-world-2014-3
+[BadImage] TinyImageException(1, 1): http://static4.businessinsider.com/assets/images/transparent.gif
+[BadImage] TinyImageException(50, 50): http://static1.businessinsider.com/image/519f6fb2ecad04ec3f00000c-50-50/gus-lubin.jpg
+[BadImage] HugeImageException(1200, 5015): http://static3.businessinsider.com/image/535eb0d1ecad0457511f7328-1200-5015/communication%20patterns%20charts_03.jpg
+-> https://medium.com/the-year-of-the-looking-glass/be5f6b118084
+-> http://avc.com/2013/04/return-and-ridicule/
+-> http://www.theverge.com/2014/5/8/5696652/apple-reportedly-considering-buying-beats-electronics-for-3-2-billion
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=7976662&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://cdn0.vox-cdn.com/images/sbn/components/lazy-load-image-gray.vc5f04cd.gif
+[BadImage] TinyImageException(90, 60): http://cdn2.vox-cdn.com/uploads/chorus_image/image/33919049/amazon-event-2012-_1145.0_standard_90.0.jpg
+[GoodImage] FormatImageFilter: http://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif
+[BadImage] AnimatedImageException: http://cdn2.vox-cdn.com/images/verge/loading.v92f34fc.gif
+-> http://www.awwwards.com/the-ultimate-trends-for-ui-inspiration-animated-concepts-menus-svg-graphics-and-more.html
+[BadImage] AnimatedImageException: https://dragdis.blob.core.windows.net/assets/2014/02/06/6f80d8df302c46c1917bbeaed391d164.jpg
+[BadImage] AnimatedImageException: https://dragdis.blob.core.windows.net/assets/2014/03/26/f88c5ea28a1f4342879d6dd50c40403d.gif
+[BadImage] AnimatedImageException: https://dragdis.blob.core.windows.net/assets/2013/04/23/9331fb02f793412fb4aa034814b5660c.gif
+-> http://blog.42floors.com/absurdity-linkedin/
+[HTTPError] (403 Client Error: Forbidden): http://blog.42floors.com/absurdity-linkedin/
+-> http://www.geek.com/news/physics-exploiting-axe-splits-wood-in-record-time-1591725/
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/ad/zd.geek/newssection_exotic;sz=1x3;cmn=zd;zdid=1591725;ord=123456789?
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/ad/zd.geek/newssection_ATF;sz=728x90,970x250;cmn=zd;zdid=1591725;ord=123456789?
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/ad/zd.geek/newssection_ATF;sz=300x250,300x600,300x1050;cmn=zd;zdid=1591725;ord=123456789?
+[BadImage] TinyImageException(111, 51): http://www.geek.com/wp-content/themes/geek7/images/logo_geek.gif
+-> http://www.buzzfeed.com/jessicamisener/things-you-didnt-know-your-iphone-could-do
+[BadImage] TinyImageException(18, 18): http://s3-ak.buzzfed.com/static/images/public/videopage/play_icon.png
+-> http://www.topmba.com/
+[BadImage] RatioImageException(690, 100): http://www.topmba.com/profiles/qs_topmba/themes/custom/topmba/logo.png
+[BadImage] TinyImageException(24, 24): http://www.topmba.com/profiles/qs_topmba/themes/custom/topmba/images/tfb.png
+[BadImage] TinyImageException(24, 24): http://www.topmba.com/profiles/qs_topmba/themes/custom/topmba/images/ttw.png
+[BadImage] TinyImageException(24, 24): http://www.topmba.com/profiles/qs_topmba/themes/custom/topmba/images/tln.png
+[BadImage] TinyImageException(24, 24): http://www.topmba.com/profiles/qs_topmba/themes/custom/topmba/images/tgp.png
+[BadImage] TinyImageException(24, 24): http://www.topmba.com/profiles/qs_topmba/themes/custom/topmba/images/tyt.png
+[BadImage] TinyImageException(89, 21): http://www.facebook.com/images/fbconnect/login-buttons/connect_light_medium_short.gif
+-> https://Watsi.org/
+-> http://sethgodin.typepad.com/seths_blog/2014/05/cognitive-load.html
+[BadImage] TinyImageException(83, 16): http://s7.addthis.com/addme/button0-fd.gif
+[BadImage] TinyImageException(83, 16): http://s7.addthis.com/addme/button0-bm.gif
+[BadImage] TinyImageException(75, 32): http://www.google.com/intl/en/logos/Logo_25wht.gif
+[BadImage] TinyImageException(1, 1): http://sethgodin.typepad.com/sg/images/home_book_nav/clear.spacer.png
+-> http://google-nest.org/
+[BadImage] TinyImageException(1, 1): https://www.paypalobjects.com/de_DE/i/scr/pixel.gif
+-> http://smartblogs.com/leadership/2013/07/10/how-does-a-ceo-or-founder-go-about-improving-and-measuring-company-culture/?utm_content=buffer045e4&utm_source=buffer&utm_medium=twitter&utm_campaign=Buffer
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/ad/smbr.smartblogs.oao/leadership;s1=leadership;kw=;test=;smbr=ad;pos=top;tile=1;sz=728x90;ord=123456789?
+[BadImage] TinyImageException(50, 50): http://smartblogs.com/wp-content/uploads/userphoto/65.thumbnail.gif
+-> http://sideproject.io/outdated-ux-patterns/
+[GoodImage] MonoImageFilter: http://sideproject.io/content/images/2014/Feb/overlay_ex.jpg
+[BadImage] RatioImageException(600, 96): http://sideproject.io/content/images/2014/Feb/image_preloader.jpg
+-> http://www.businessinsider.com/most-miserable-places-in-the-world-2014-4
+[BadImage] TinyImageException(1, 1): http://static4.businessinsider.com/assets/images/transparent.gif
+[BadImage] TinyImageException(38, 50): http://static3.businessinsider.com/image/5381159b69bedd3c3243afc1-50-50/amanda-macias.jpg
+-> http://www.coelevate.com/essays/startup-recruiting-hiring
+[BadImage] TinyImageException(175, 49): http://static.squarespace.com/static/528c45f9e4b06be250a9fe30/52c022aae4b0816e9a8d15c1/52cf599ae4b043c17001db6b/1392805592679/download.jpeg?format=1000w
+[BadImage] TinyImageException(175, 49): http://static.squarespace.com/static/528c45f9e4b06be250a9fe30/t/52e0a0abe4b0c72a91e6ab20/1400202134399/?format=1500w
+-> http://www.youtube.com/watch?v=DYu_bGbZiiQ&feature=youtu.be
+[BadImage] TinyImageException(1, 1): http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif
+-> http://mashable.com/2014/04/06/game-of-thrones-hbo-go-crashes/
+[BadImage] TinyImageException(262, 44): http://rack.1.mshcdn.com/assets/header_logo.v2-30574d105ad07318345ec8f1a85a3efa.png
+-> https://www.destroyallsoftware.com/blog/2014/tdd-straw-men-and-rhetoric
+-> http://www.forbes.com/sites/quickerbettertech/2014/04/21/how-google-screwed-up-google-glass/
+[BadImage] NoImageException: http://i.forbesimg.com/assets/img/forbes_logo/forbes_logo_white.svg
+[GoodImage] MonoImageFilter: http://i.forbesimg.com/assets/img/forbes_logo/forbes_logo_white.png
+[BadImage] TinyImageException(16, 16): http://i.forbesimg.com/assets/img/loading_spinners/16px_grey.gif
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/afd61fc2d85b394c13c1c6b6bde439eb?s=136&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D136&r=G
+[BadImage] TinyImageException(16, 16): http://i.forbesimg.com/assets/img/loading_spinners/16px_on_transparent.gif
+-> http://www.entrepreneur.com/article/223705
+[BadImage] TinyImageException(1, 1): http://post.update.entrepreneur.com/one.gif?ci=ep34&pp=&pi=223705&pc=org
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=9564200&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://secure-us.imrworldwide.com/cgi-bin/m?ci=us-304769h&cg=0&cc=1&ts=noscript&ja=1
+[BadImage] TinyImageException(29, 28): http://www.entrepreneur.com/dbimages/home/e-round.png
+[BadImage] TinyImageException(29, 28): http://www.entrepreneur.com/dbimages/home/mail-round.png
+[BadImage] TinyImageException(128, 15): http://www.entrepreneur.com/iglobal/ajax_loader_navbar.gif
+-> http://news.google.com/
+[BadImage] TinyImageException(21, 21): http://ssl.gstatic.com/ui/v1/button/search-white.png
+[BadImage] TinyImageException(21, 21): http://ssl.gstatic.com/ui/v1/icons/common/settings.png
+[BadImage] TinyImageException(1, 1): http://www.gstatic.com/news-static/img/cleardot.gif
+-> http://www.hotgloo.com/
+[BadImage] TinyImageException(28, 20): http://www.hotgloo.com/images/home/quote_first.png
+[BadImage] RatioImageException(960, 76): http://www.hotgloo.com/images/home/seen-logos.png
+[BadImage] TinyImageException(36, 36): http://www.hotgloo.com/images/home/icon-twitter.png
+[BadImage] TinyImageException(36, 36): http://www.hotgloo.com/images/home/icon-facebook.png
+[BadImage] TinyImageException(36, 36): http://www.hotgloo.com/images/home/icon-vimeo.png
+-> http://blog.foursquare.com/post/84422758243/a-look-into-the-future-of-foursquare-including-a-new
+[BadImage] AdblockURLFilter: http://31.media.tumblr.com/avatar_90ca556519f2_64.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_31708e24ffbd_16.gif
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_1996ae51dd95_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_1c2c1840937f_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_d9264b959227_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_c08b6a99afe8_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_be14c252fab2_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_6a14464b4b5d_16.png
+-> http://vimeo.com/88907972
+-> http://www.entrepreneur.com/article/232707
+[BadImage] TinyImageException(1, 1): http://post.update.entrepreneur.com/one.gif?ci=ep34&pp=&pi=232707&pc=org
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=9564200&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://secure-us.imrworldwide.com/cgi-bin/m?ci=us-304769h&cg=0&cc=1&ts=noscript&ja=1
+[BadImage] TinyImageException(29, 28): http://www.entrepreneur.com/dbimages/home/e-round.png
+[BadImage] TinyImageException(29, 28): http://www.entrepreneur.com/dbimages/home/mail-round.png
+[BadImage] TinyImageException(128, 15): http://www.entrepreneur.com/iglobal/ajax_loader_navbar.gif
+-> http://www.niemanlab.org/2014/04/qa-david-leonhardt-says-the-upshot-wont-replace-nate-silver-at-the-new-york-times/
+[BadImage] TinyImageException(23, 18): http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/twitter_newbird_grey.png
+[BadImage] TinyImageException(16, 16): http://www.niemanlab.org/labitude/wordpress/wp-content/themes/Labby/resources/retweet.png
+[BadImage] TinyImageException(653, 43): http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/newfront-niemanlab-biglogo2.png
+[BadImage] TinyImageException(50, 59): http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/iphone-menu-fire-white-small.png
+[BadImage] TinyImageException(100, 51): http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/encyclo-newfront-sidebar-promo.png
+[BadImage] TinyImageException(48, 90): http://www.niemanlab.org/images/iphoneappsmalltrans.png
+-> http://www.fastcompany.com/3029294/work-smart/why-you-need-to-stop-bragging-about-how-busy-you-are
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/FastCompany-logo-white.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcodesign-dark.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcoexist-dark.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcocreate-dark.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcolabs-dark.svg
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcompany-dark-txt.svg
+[BadImage] TinyImageException(190, 36): http://g.fastcompany.net/multisite_files/fastcompany/poster/1999/01/3007367-teaser-worksmart-sidebar.png
+[BadImage] NoImageException: http://www.fastcompany.com/images/svg/fastcompany-dark-notxt.svg
+-> http://mobile.theverge.com/2014/2/24/5441898/in-less-than-a-decade-phone-memory-cards-have-grown-from-128mb-to-128gb
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=7976662&cv=2.0&cj=1
+[BadImage] TinyImageException(78, 60): http://cdn0.vox-cdn.com/images/verge/mobile/verge-triangle@2x.v5129a40.png
+[BadImage] RatioImageException(422, 72): http://cdn1.vox-cdn.com/images/verge/mobile/verge-logo@2x.v1b1da50.png
+[BadImage] TinyImageException(320, 7): http://cdn1.vox-cdn.com/images/verge/mobile/color-strip.v81a78c0.png
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-d9vfr8QTWnv1E.gif
+[BadImage] TinyImageException(1, 1): http://aperture.displaymarketplace.com/audmeasure.gif?liveconclientID=5497559777280&PageID=650423876&EventType=view
+[BadImage] TinyImageException(350, 59): http://cdn2.vox-cdn.com/images/auth/verge.vf8f1c8e.png
+-> http://www.economist.com/blogs/babbage/2014/04/internet-governance
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N5605/ad/teg.ckau/obba/a;subs=n;wsub=n;sdn=n;dcopt=ist;pos=ldr_top;sz=728x90,970x90,970x250;tile=1;ord=885262028?
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N5605/ad/teg.ckau/obba/a;subs=n;wsub=n;sdn=n;pos=sub_top;sz=223x90;tile=2;ord=885262028?
+[BadImage] NoImageException: http://media.economist.com/sites/all/themes/econfinal/images/svg/logo.svg
+[BadImage] TinyImageException(94, 20): http://www.economist.com/sites/all/modules/custom/ec_bookmark/assets/timekeeper-btn.png
+[BadImage] AdblockURLFilter: http://www.economist.com/sites/all/modules/custom/ec_bookmark/assets/timekeeper-by-rolex-medium.png
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N5605/ad/teg.ckau/obba/a;subs=n;wsub=n;sdn=n;pos=mpu_no_wrapper_top;sz=20x20;tile=5;ord=885262028?
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N5605/ad/teg.ckau/obba/a;subs=n;wsub=n;sdn=n;pos=mpu_top;sz=300x250,350x900,350x600,300x600;tile=6;ord=885262028?
+-> http://www.businessinsider.com/dumb-starbucks-los-angeles-coffee-shop-2014-2
+[BadImage] TinyImageException(1, 1): http://static4.businessinsider.com/assets/images/transparent.gif
+[BadImage] TinyImageException(50, 37): http://static5.businessinsider.com/image/5373d8f7eab8eaf52852974e-50-50/ashley-lutz.jpg
+[BadImage] TinyImageException(16, 16): http://static3.businessinsider.com/assets/images/icons/icon_loading.gif
+-> http://www.ft.com/cms/s/2/9b83cbe8-d5da-11e3-83b2-00144feabdc0.html
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N5887/ad/ftcom.5887.home/uk;sz=468x60,728x90;pos=banlbGPT;tile=1;nojs=1?
+[BadImage] TinyImageException(250, 21): http://im.ft-static.com/m/img/masthead_print.gif
+[BadImage] TinyImageException(14, 14): http://navigation.webservices.ft.com/v1/navigation/ft/img/rss-icon.gif
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N5887/ad/ftcom.5887.arts-and-leisure/arts-and-leisure-index;sz=468x60,728x90;pos=banlb;tile=1;nojs=1?
+[BadImage] AdblockURLFilter: http://ad.doubleclick.net/N5887/ad/ftcom.5887.arts-and-leisure/arts-and-leisure-index;sz=300x600,336x850,300x250,336x280;pos=hlfmpu;tile=2;nojs=1?
+[BadImage] AdblockURLFilter: http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1004457185/?value=0&label=2CA1CMe1kgQQ4Zn73gM&guid=ON&script=0
+-> http://mashable.com/2014/04/27/google-glass-parody-family/?utm_cid=mash-com-Tw-main-link
+[BadImage] TinyImageException(262, 44): http://rack.1.mshcdn.com/assets/header_logo.v2-30574d105ad07318345ec8f1a85a3efa.png
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=8750086&cv=2.0&cj=1
+-> http://quibbling.net/post/77706666768/opt-out-of-dropboxs-arbitration-clause
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_98c69cf79f91_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_f1a88f4c04a1_16.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_bdf10147098b_16.png
+[BadImage] AdblockURLFilter: http://31.media.tumblr.com/avatar_fa0f667674e5_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_f451f72cc92e_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_088dfb11043c_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_97fbf441446d_16.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_aeca5c3bc169_16.gif
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_6c9543a4b037_16.png
+-> http://firstround.com/article/This-Advice-From-IDEOs-Nicole-Kahn-Will-Transform-the-Way-You-Give-Presentations
+[BadImage] TinyImageException(540, 46): http://firstround.com/img/frr_logo_3.png
+-> http://hereistoday.com/
+[BadImage] TinyImageException(1, 1): http://c.statcounter.com/8902704/0/638214dc/1/
+-> http://www.youtube.com/watch?v=Lx9zgZCMqXE&feature=youtu.be
+[BadImage] TinyImageException(1, 1): http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif
+-> http://www.technologyreview.com/news/526006/an-easy-interface-for-the-internet-of-things/
+[GoodImage] MonoImageFilter: http://www.technologyreview.com/sites/all/themes/mittr/global/i/logo-mittr-black.png
+[GoodImage] FormatImageFilter: http://www.technologyreview.com/sites/default/files/styles/homepage_you_may_have_missed/public/images/walking.robotsx392.gif?itok=oZqjvxg9
+-> http://timehop.com/
+[BadImage] TinyImageException(141, 63): http://static.timehop.com/assets/home/newlogo-751e104342da3b2ea3db5a436007c549.png
+[BadImage] TinyImageException(191, 55): http://static.timehop.com/assets/home/apple-app-store-05c771dd7870fcd89fb9b7a17cb92f8e.png
+[BadImage] TinyImageException(159, 55): http://static.timehop.com/assets/home/play-store-cdca197c6864ab9bc284a98d57db1c31.png
+[BadImage] TinyImageException(90, 35): http://static.timehop.com/assets/logo_footer-f3c8488ef2765828f8ccce965b114580.png
+-> http://streeteraser.com/
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_60fafd05472e_128.png
+[BadImage] TinyImageException(286, 39): http://static.tumblr.com/21e7110c779377f27a7fd46bffde41c8/ab7h55z/Idin2aacj/tumblr_static_logo_p1.jpg
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/'p-19UtqE8ngoZbM'.gif
+[BadImage] TinyImageException(1, 1): http://www.tumblr.com/impixu?T=1401924320&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvc3RyZWV0ZXJhc2VyLmNvbVwvIiwicmVxdHlwZSI6MCwicm91dGUiOiJcLyIsIm5vc2NyaXB0IjoxfQ==&U=NDNIIGOBMH&K=471126424796b214a9c827acaf58a21989ca881256eea61d6a66a3f9fbff62e7&R=
+-> http://www.geekwire.com/2014/uber-protests-seattle/
+[HTTPError] (403 Client Error: Forbidden): http://www.geekwire.com/2014/uber-protests-seattle/
+-> https://www.yahoo.com/tech
+-> https://www.strikingly.com/?uc=kZx5dJMHeqV
+[BadImage] TinyImageException(1, 1): http://assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png
+-> http://www.ted.com/
+-> http://wayra.org/joinus/
+[BadImage] TinyImageException(200, 35): http://wayra.org/joinus/initiative.png
+-> https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/
+-> http://mappedinny.com/
+[BadImage] TinyImageException(73, 54): http://mappedinny.com/img/nyc_digital.png
+[BadImage] TinyImageException(113, 50): http://mappedinny.com/img/iw_logo.png
+[BadImage] TinyImageException(250, 10): http://mappedinny.com/img/loader.gif
+[BadImage] TinyImageException(75, 16): http://mappedinny.com/img/bodge-off.png
+-> http://lifehacker.com/281626/jerry-seinfelds-productivity-secret
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=6770184&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/activity;dc_iu=/4246/DFP_Audience_Pixel;dc_seg=22540930;blog=lifehacker;ord=1
+-> http://www.makeuseof.com/tag/move-google-plus-hangouts-appear-really-good/
+[BadImage] RatioImageException(777, 100): http://main.makeuseoflimited.netdna-cdn.com/wp-content/themes/makeuseof2014/images/makeuseof.png?ec7b17
+[BadImage] NoImageException: http://www.makeuseof.com/tag/move-google-plus-hangouts-appear-really-good/
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/f996a7388d68494816d5103bc0b15cd7?s=300&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D300&r=G
+[BadImage] TinyImageException(526, 37): http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2014/01/appearin-camera-and-mic.png?ec7b17
+-> http://www.bbc.com/news/health-27204988
+[BadImage] TinyImageException(1, 1): http://stats.bbc.co.uk/o.gif?~RS~s~RS~News~RS~t~RS~HighWeb_Story~RS~i~RS~27204988~RS~p~RS~99108~RS~a~RS~International~RS~u~RS~/news/health-27204988~RS~q~RS~~RS~z~RS~52~RS~
+[BadImage] TinyImageException(1, 1): http://sa.bbc.co.uk/bbc/bbc/s?name=news.health.story.27204988.page&ns_m2=yes&ns_setsiteck=538FAB024B0B0259&cps_asset_id=27204988&page_type=story&section=health&app_version=6.2.184-RC2&first_pub=2014-04-30T12:05:02+00:00&last_editorial_update=2014-04-30T12:05:02+00:00&title=Drug+resistance+%27global+threat%27+&comments_box=false&cps_media_type=&cps_media_state=&by_nation=eng&app_type=web&ml_name=SSI&ml_version=0.17.3&language=en-GB&blq_s=3.5&blq_r=3.5&blq_v=journalism-worldwide
+[BadImage] TinyImageException(84, 24): http://static.bbci.co.uk/frameworks/barlesque/2.60.9/desktop/3.5/img/blq-blocks_grey_alpha.png
+[BadImage] TinyImageException(13, 13): http://static.bbci.co.uk/frameworks/barlesque/2.60.9/desktop/3.5/img/blq-search_grey_alpha.png
+[BadImage] TinyImageException(255, 40): http://news.bbcimg.co.uk/img/1_0_3/cream/hi/news/news-blocks.gif
+[BadImage] TinyImageException(112, 63): http://news.bbcimg.co.uk/media/images/75297000/png/_75297706_guysmoking.png
+-> http://www.salesforce.com/eu/?ir=1
+[BadImage] TinyImageException(233, 58): http://www.sfdcstatic.com/assets/images/salescloud/sales_logo_mobile_sf1-lo.png
+[BadImage] TinyImageException(1, 1): http://www.sfdcstatic.com/spacer.gif
+-> http://www.pewinternet.org/2014/02/20/mapping-twitter-topic-networks-from-polarized-crowds-to-community-clusters/
+[HTTPError] (403 Client Error: Forbidden): http://www.pewinternet.org/2014/02/20/mapping-twitter-topic-networks-from-polarized-crowds-to-community-clusters/
+-> http://blog.kissmetrics.com/learn-growth-hacking/
+[HTTPError] (403 Client Error: Forbidden): http://blog.kissmetrics.com/learn-growth-hacking/
+-> https://www.youtube.com/watch?v=QDaqt9NzDUc
+[BadImage] TinyImageException(1, 1): https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif
+-> https://github.com/north/north
+[BadImage] TinyImageException(32, 32): https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif
+-> http://www.sublimetext.com/
+[BadImage] TinyImageException(39, 48): http://www.sublimetext.com/images/apple_48.png
+[BadImage] TinyImageException(48, 45): http://www.sublimetext.com/images/windows_48.png
+[BadImage] TinyImageException(41, 48): http://www.sublimetext.com/images/linux_48.png
+-> http://www.smau.it/padova14/schedules/servizi-digitali-per-cittadini-e-turisti-venezia-una-citta-in-rete-e-l-urp-di-rimini/
+[BadImage] TinyImageException(96, 62): http://media.smau.it/x-exhibition/upload/partner/2014/04/11/venezia.96x62p.png
+[BadImage] TinyImageException(212, 59): http://media.smau.it/x-exhibition/smau/frontend/generic/img/2014/padova/logo.png
+[BadImage] TinyImageException(140, 40): http://media.smau.it/x-exhibition/smau/frontend/generic/img/2013/milano/topbar-sb.png
+[BadImage] TinyImageException(106, 40): http://media.smau.it/x-exhibition/smau/frontend/generic/img/2013/milano/topbar-st.png
+[BadImage] TinyImageException(106, 40): http://media.smau.it/x-exhibition/smau/frontend/generic/img/2013/milano/topbar-sc.png
+[BadImage] TinyImageException(50, 28): http://media.smau.it/x-exhibition/upload/partner/2014/03/27/aruba.h28.jpg
+[BadImage] TinyImageException(37, 28): http://media.smau.it/x-exhibition/upload/partner/2014/04/01/dell_tagline_vertical_blue_rgb.h28.jpg
+[BadImage] TinyImageException(30, 28): http://media.smau.it/x-exhibition/upload/partner/2014/03/24/infor_logo.h28.jpg
+[BadImage] TinyImageException(68, 28): http://media.smau.it/x-exhibition/upload/partner/2014/03/25/Microsoft_1.h28.jpg
+[BadImage] TinyImageException(65, 28): http://media.smau.it/x-exhibition/upload/partner/2014/03/25/oracle2014.h28.jpg
+-> https://www.notism.io/
+[BadImage] TinyImageException(180, 32): https://www.notism.io/images/tour/todo-partners.png
+-> http://www.adweek.com/adfreak/perfect-match-brazilian-kids-learn-english-video-chatting-lonely-elderly-americans-157523
+[GoodImage] FormatImageFilter: http://www.adweek.com/files/zinio/500606718_416305569_200.jpg
+[BadImage] TinyImageException(988, 50): http://www.adweek.com/files/imagecache/top-banner/header_images/adfreak-banner-3.jpeg
+[BadImage] TinyImageException(20, 20): http://www.adweek.com/sites/all/themes/aw/images/sitewide/facebook.png
+[BadImage] TinyImageException(20, 20): http://www.adweek.com/sites/all/themes/aw/images/sitewide/twitter.png
+[BadImage] TinyImageException(20, 20): http://www.adweek.com/sites/all/themes/aw/images/sitewide/linkedin.png
+-> http://www.wired.com/2014/04/studio-ghibli-8-bit/?mbid=social_twitter#slide-id-781351
+[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
+-> http://www.wired.com/2014/03/decentralized-applications-built-bitcoin-great-except-whos-responsible-outcomes/
+[BadImage] TinyImageException(150, 60): http://www.wired.com/wp-content/vendor/condenast/pangea/themes/wired/assets/images/post_wired_logo_150x60.gif
+-> http://startupljackson.com/post/56584441451/hey-look-software-just-ate-vc
+[BadImage] TinyImageException(16, 16): http://assets.tumblr.com/images/default_avatar_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_8407b426de99_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_24495ee5b794_16.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_9c4f9fe77456_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_fbcfa97951e8_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_758e544a8354_16.png
+[BadImage] AdblockURLFilter: http://24.media.tumblr.com/avatar_27cd1e047f96_16.png
+[BadImage] AdblockURLFilter: http://37.media.tumblr.com/avatar_61f401ae58e3_16.png
+-> http://www.nytimes.com/2014/04/23/upshot/the-american-middle-class-is-no-longer-the-worlds-richest.html?smid=tw-share&_r=0
+[BadImage] TinyImageException(1, 1): http://graphics8.nytimes.com/newsgraphics/2014/04/21/lis-slopechart/f5aa397f29966ea47d4d3ea05e212df3eb9e6e84/transparent.png
+[BadImage] TinyImageException(10, 10): http://graphics8.nytimes.com/images/multimedia/10x10.gif
+-> http://www.iconshock.com/
+[BadImage] TinyImageException(135, 35): http://www.iconshock.com/css1/image_new1/social-icons.png
+[BadImage] TinyImageException(35, 34): http://www.iconshock.com/icon_sets/wp-content/themes/designshock/img/social_network/logo_shf.png
+[BadImage] TinyImageException(26, 34): http://www.iconshock.com/icon_sets/wp-content/themes/designshock/img/social_network/bypeople.png
+-> http://www.citeworld.com/
+[BadImage] TinyImageException(163, 57): http://idge.staticworld.net/cit/citeworld-logo-print.png
+-> https://www.notism.io/home
+[BadImage] TinyImageException(16, 16): https://www.notism.io/images/_loader/loader-circle-blue.gif
+[BadImage] TinyImageException(180, 32): https://www.notism.io/images/tour/todo-partners.png
+-> http://www.bloomberg.com/tv/
+-> http://googleblog.blogspot.be/2013/06/introducing-project-loon.html?m=1
+[BadImage] TinyImageException(18, 18): http://img1.blogblog.com/img/icon18_wrench_allbkg.png
+-> http://www.modern.ie/en-us/virtualization-tools#escape-from-xp
+[BadImage] TinyImageException(112, 24): http://www.modern.ie/cdn/img/microsoft-logo.png
+[GoodImage] MonoImageFilter: http://www.modern.ie/cdn/img/dist/png/vm-icon-white.png
+-> http://qz.com/205689/context-this-is-what-comes-after-search/
+[BadImage] AdblockURLFilter: http://ox-d.qz.com/w/1.0/ai?auid=337638&cs=5115492963096&cb=538fab439ba28
+[BadImage] TinyImageException(1, 1): http://stats.wordpress.com/b.gif?v=noscript
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=6463921&c3=&c4=&c5=&c6=&c15=&cj=1
+-> http://www.nytimes.com/2014/05/05/science/young-blood-may-hold-key-to-reversing-aging.html?_r=0
+[GoodImage] MonoImageFilter: http://static01.nyt.com/images/icons/t_logo_291_black.png
+-> http://www.stirworks.com/
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-MRruEksfXSx5d.gif?labels=_fp.event.Homepage
+[BadImage] TinyImageException(61, 41): http://www.stirworks.com/Themes/StirSite/Content/img/nav/logo.png
+-> https://www.linkedin.com/today/post/article/20130128162711-15077789-11-simple-concepts-to-become-a-better-leader?_mSplash=1&trk=mta-lnk&sessionid=nBi_qKuuBoO_V0z2ZdEz
+[BadImage] ZeroBytesException: https://sb.scorecardresearch.com/b?c1=2&c2=6402952&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1
+[BadImage] TinyImageException(1, 1): https://secure.quantserve.com/pixel/p-b3sGjMtCFrexE.gif
+[BadImage] TinyImageException(1, 1): https://secure-us.imrworldwide.com/cgi-bin/m?ci=us-603751h&cg=0&cc=1&ts=noscript&ja=1
+-> http://signup.plexce.com/
+-> http://taylordavidson.com/2014/cards?utm_content=buffera4012&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+[BadImage] TinyImageException(1, 1): https://analytics.twitter.com/i/adsct?txn_id=l48ea&p_id=Twitter
+-> http://vimeo.com/71278954
+-> http://www.nytimes.com/2014/03/05/business/e-cigarettes-under-aliases-elude-the-authorities.html?smid=tw-share&_r=0
+-> http://gigaom.com/2014/04/03/european-parliament-passes-strong-net-neutrality-law-along-with-major-roaming-reforms/
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/6599daccfd7e897e68744fe0065e5a2e?s=64&d=retro&r=PG
+[BadImage] TinyImageException(55, 55): http://s2.wp.com/wp-content/themes/vip/gigaom4-plugins/go-social-comments/components/templates/../images/unknown-user.jpg?m=1357333598g
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-7f76HAgni1Oqs.gif
+[BadImage] TinyImageException(1, 1): https://ssl-gigaom-com-bb0600.c-col.com/blank.gif
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=13557238&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://secure-us.imrworldwide.com/cgi-bin/m?ci=us-thestreet&cg=0&cc=1&ts=noscript&ja=1
+[BadImage] TinyImageException(128, 15): http://s2.wp.com/wp-content/themes/vip/gigaom4-plugins/go-social-comments/components/images/ajax-loader.gif?m=1355523676g
+[BadImage] TinyImageException(1, 1): http://stats.wordpress.com/b.gif?v=noscript
+-> http://finance.yahoo.com/news/health-wildcatters-announces-inaugural-class-110000931.html?utm_source=buffer&utm_campaign=Buffer&utm_content=buffer825d9&utm_medium=twitter
+[BadImage] TinyImageException(1, 1): http://l.yimg.com/os/mit/media/m/base/images/transparent-1093278.png
+[BadImage] TinyImageException(50, 51): http://l.yimg.com/os/mit/media/m/content_index/images/purple_loader-1723692.png
+[BadImage] TinyImageException(1, 1): http://csc.beap.bc.yahoo.com/yi?bv=1.0.0&bs=(136okd1kj(gid$ScO50jE4OC6vfpJgXu3SNwHcOTEuMVOPq2T_h08I,st$1401924452174109,si$4451051,sp$1183300245,pv$0,v$2.0))&t=J_3-D_3&al=(as$125omaf71,aid$1ApepQrIEuE-,cr$-1,ct$25,at$H,eob$gd1_match_id=-1:ypos=FSRVY)
+-> http://www.nytimes.com/2014/03/27/technology/personaltech/why-movie-streaming-services-are-unsatisfying-and-will-stay-so.html?smid=tw-share&_r=0
+-> http://i.imgur.com/Tn7CSTX.jpg
+[UnicodeDecodeError] ('ascii' codec can't decode byte 0xff in position 0: ordinal not in range(128)): http://i.imgur.com/Tn7CSTX.jpg
+-> http://www.linkedin.com/today/post/article/20140414123111-8353952-if-you-don-t-prioritize-your-life-someone-else-will
+[BadImage] ZeroBytesException: http://b.scorecardresearch.com/b?c1=2&c2=6402952&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1
+[BadImage] TinyImageException(1, 1): http://pixel.quantserve.com/pixel/p-b3sGjMtCFrexE.gif
+[BadImage] TinyImageException(1, 1): http://secure-us.imrworldwide.com/cgi-bin/m?ci=us-603751h&cg=0&cc=1&ts=noscript&ja=1
+-> https://bgr.com/2014/05/07/fcc-net-neutrality-proposal-ruining-internet/
+[SSLError] (hostname 'bgr.com' doesn't match either of '*.wordpress.com', 'wordpress.com'): https://bgr.com/2014/05/07/fcc-net-neutrality-proposal-ruining-internet/
+-> http://www.theverge.com/2014/5/7/5692578/tech-coalition-challenges-fcc
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=7976662&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://cdn0.vox-cdn.com/images/sbn/components/lazy-load-image-gray.vc5f04cd.gif
+[BadImage] TinyImageException(90, 60): http://cdn2.vox-cdn.com/uploads/chorus_image/image/33919049/amazon-event-2012-_1145.0_standard_90.0.jpg
+[GoodImage] FormatImageFilter: http://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif
+[BadImage] AnimatedImageException: http://cdn2.vox-cdn.com/images/verge/loading.v92f34fc.gif
+-> https://code.facebook.com/posts/220956754772273/an-analysis-of-facebook-photo-caching/
+[BadImage] TinyImageException(15, 14): https://fbstatic-a.akamaihd.net/rsrc.php/v2/yj/r/zrM_qhK7ZnB.png
+[BadImage] RatioImageException(716, 128): https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851567_613610512044109_2049503983_n.png
+-> https://medium.com/p/89b85413771
+[BadImage] RatioImageException(400, 96): https://d262ilb51hltx0.cloudfront.net/max/800/1*yzL5bgicbhaMQAyeBE1pzw.png
+-> http://www.theatlantic.com/
+[BadImage] TinyImageException(9, 12): http://cdn.theatlantic.com/static/front/images/welcome-screens/arrow.png
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Fatlantic_online_homepage&t=src%3Dlanding%26pos%3Dwelcometest&sz=640x480&c=985437703&tile=1
+[BadImage] HTTPError: http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Fatlantic_online_homepage&t=src%3Dlanding%26pos%3Dwelcome%26dcopt%3Dist&sz=0x0&c=966592636&tile=4
+[BadImage] AdblockURLFilter: http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=19&mc=imp&pli=9498814&PluID=0&ord=%n&rtu=-1
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Fatlantic_online_homepage&t=src%3Dlanding%26pos%3Dpush&sz=970x66%7C1012x66%7C728x90%7C970x90&c=562204219&tile=2
+-> http://www.nytimes.com/2014/04/08/technology/the-spy-in-the-soda-machine.html?_r=0
+-> http://www.ironicsans.com/helvarialquiz/
+[BadImage] TinyImageException(210, 38): http://www.ironicsans.com/helvarialquiz/header1.gif
+[BadImage] RatioImageException(350, 87): http://www.ironicsans.com/helvarialquiz/agfa-arial.gif
+[BadImage] RatioImageException(350, 85): http://www.ironicsans.com/helvarialquiz/agfa-helvetica.gif
+-> https://medium.com/p/72c6f8bec7df
+[BadImage] InvalidSchema: data:image/gif;base64,R0lGODlhMgAVAPAAAP///wAAACH5BAEAAAAALAAAAAAyABUAAAIfhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8dTAQA7
+-> http://techcrunch.com/2014/04/14/sf-housing/
+[BadImage] NoImageException: http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/logo.svg
+[BadImage] TinyImageException(75, 17): http://s1.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/reddit.gif?m=1381204869g
+-> http://www.frogdesign.com/techtrends2014/
+[GoodImage] FormatImageFilter: http://www.frogdesign.com/techtrends2014/images/trend_1.gif
+[BadImage] TinyImageException(80, 14): https://no-cache.hubspot.com/cta/default/262724/685cb887-c678-4396-8762-56946f24f49d.png
+[GoodImage] FormatImageFilter: http://www.frogdesign.com/techtrends2014/images/trend_3.gif
+[GoodImage] FormatImageFilter: http://www.frogdesign.com/techtrends2014/images/trend_5.gif
+[GoodImage] FormatImageFilter: http://www.frogdesign.com/techtrends2014/images/trend_7.gif
+-> http://blogs.hbr.org/2014/03/should-big-companies-give-up-on-innovation/
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36272&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36282&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=480578&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=349157&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=349158&cs=46ca033357&cb=random
+[GoodImage] FormatImageFilter: http://static.hbr.org/hbrg-main/resources/images/marketing/pref_center/eNewsletters_300x100_blue.gif
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36283&cs=46ca033357&cb=random
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=352626&cs=46ca033357&cb=random
+-> https://play.spotify.com/error/browser-not-supported.php
+[BadImage] TinyImageException(1720, 1): https://play.spotify.edgekey.net/site/cf60e11/images/login-overlay.png
+-> http://www.catwig.com/google-glass-teardown/
+[BadImage] TinyImageException(568, 63): https://www.eff.org/sites/all/themes/frontier/images/logo_full.png
+[BadImage] RatioImageException(798, 99): http://www.catwig.com/google-glass-teardown/appointment/glass-studio-panorama-thumb.jpg
+[BadImage] TinyImageException(53, 80): http://www.catwig.com/google-glass-teardown/appointment/glass-studio-variants-tiny.jpg
+[BadImage] TinyImageException(53, 80): http://www.catwig.com/google-glass-teardown/appointment/glass-unboxing-tiny.jpg
+-> http://www.shareable.net/blog/10-open-hardware-projects-to-save-the-earth
+[BadImage] TinyImageException(215, 30): http://www.shareable.net/sites/default/files/shareable-logo_0_0.png
+[BadImage] TinyImageException(54, 54): http://www.shareable.net/sites/all/themes/shareable/images/header-search.png
+[BadImage] TinyImageException(270, 50): http://www.shareable.net/sites/all/themes/shareable/images/share-facebook.png
+[BadImage] TinyImageException(270, 50): http://www.shareable.net/sites/all/themes/shareable/images/share-twitter.png
+-> http://www.nytimes.com/2013/07/16/science/a-low-tech-mosquito-deterrent.html?_r=0
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-3panel-nyt.png
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-3panel-nytcom.png
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/33/ad.373366/bar1-4panel-opinion.png
+[BadImage] TinyImageException(152, 23): http://graphics8.nytimes.com/images/misc/nytlogo152x23.gif
+[BadImage] TinyImageException(1, 1): http://meter-svc.nytimes.com/meter.gif
+[BadImage] ConnectionError: http://analytics.apnewsregistry.com/analytics/v2/image.svc/TheNewYorkTimes/RWS/nytimes.com/CAI/100000002337382/E/prod/PC/Basic/AT/A
+[BadImage] AdblockURLFilter: http://graphics8.nytimes.com/adx/images/ADS/37/51/ad.375171/CRS-1572_nytpinion_300x79_CP2.gif
+[BadImage] TinyImageException(23, 20): http://i1.nyt.com/images/global/buttons/moth_reverse.gif
+-> http://firstround.com/article/How-to-Win-as-a-First-Time-Founder-a-Drew-Houston-Manifesto
+[BadImage] TinyImageException(540, 46): http://firstround.com/img/frr_logo_3.png
+-> http://www.locusmag.com/Perspectives/2014/05/cory-doctorow-how-to-talk-to-your-children-about-mass-surveillance/
+[GoodImage] FormatImageFilter: http://www.locusmag.com/graphics/locusonline2008e.gif
+[BadImage] TinyImageException(980, 6): http://www.locusmag.com/graphics/pagetopcap2010_980x6.gif
+[BadImage] TinyImageException(179, 11): http://www.locusmag.com/graphics/pageleftbotcap2010_179x11.gif
+[BadImage] TinyImageException(200, 6): http://www.locusmag.com/graphics/rightbotcap09_200.gif
+[BadImage] TinyImageException(200, 6): http://www.locusmag.com/graphics/righttopcap09_200free.gif
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/5a1aaaee5a640d4587a685fde5e8334b?s=48&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D48&r=G
+-> http://darrenjw.wordpress.com/2013/12/23/scala-as-a-platform-for-statistical-computing-and-data-science/
+[BadImage] MonoImageException: http://wordpress.com/i/blank.jpg?m=1383295312g
+[BadImage] TinyImageException(32, 32): http://i1.wp.com/abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png?resize=32%2C32
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/076f61b1b7ab6958b7695cf3d3149435?s=32&d=identicon&r=G
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/b085bcb2533a000bf8505dcada29345e?s=32&d=identicon&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/30e2f86f08e9ae416ec08b44ace01945?s=32&d=identicon&r=G
+[BadImage] TinyImageException(32, 32): http://i2.wp.com/lh4.googleusercontent.com/-rgWguFAszCs/AAAAAAAAAAI/AAAAAAAAAHk/fR71VB-ZJIQ/photo.jpg?resize=32%2C32
+[BadImage] AdblockURLFilter: http://2.gravatar.com/avatar/5d958e42ca701960b3a7b3124bf2db84?s=32&d=identicon&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&d=identicon&forcedefault=y&r=G
+-> http://www.youtube.com/watch?v=1Evwgu369Jw&feature=youtu.be
+[BadImage] TinyImageException(1, 1): http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif
+-> http://wh.gov/lwhFt
+[BadImage] TinyImageException(1, 1): https://petitions.whitehouse.gov/sites/all/themes/fortyfour/images/clear.gif
+[BadImage] TinyImageException(331, 14): https://petitions.whitehouse.gov/sites/all/themes/fortyfour/images/sftr-whgov.gif
+-> http://www.iconshock.com/flat-icons/
+[BadImage] HugeImageException(630, 5500): http://www.iconshock.com/icon_sets/wp-content/uploads/2013/05/128.jpg
+[BadImage] HugeImageException(630, 6730): http://www.iconshock.com/icon_sets/wp-content/uploads/2013/05/flat-addons2.jpg
+[BadImage] TinyImageException(48, 48): http://www.iconshock.com/icon_sets/wp-content/uploads/logo/Design_Shock_48.png
+[BadImage] TinyImageException(35, 34): http://www.iconshock.com/icon_sets/wp-content/themes/designshock/img/social_network/logo_shf.png
+[BadImage] TinyImageException(26, 34): http://www.iconshock.com/icon_sets/wp-content/themes/designshock/img/social_network/bypeople.png
+[BadImage] HugeImageException(630, 5500): http://www.iconshock.com/icon_sets/wp-content/uploads/2013/05/128.jpg
+[BadImage] HugeImageException(630, 6730): http://www.iconshock.com/icon_sets/wp-content/uploads/2013/05/flat-addons2.jpg
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/67840fb7277bf60e81b26936de2c8811?s=40&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/43e24ff134c0458608d584873bbb7e4f?s=40&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/5740430553c4fd1bad9d20638cc2bc7d?s=40&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&r=G
+-> http://www.nytimes.com/2014/04/18/science/space/scientists-find-an-earth-twin-or-maybe-a-cousin.html?smid=tw-share&_r=0
+[BadImage] TinyImageException(10, 10): http://graphics8.nytimes.com/images/multimedia/10x10.gif
+-> http://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
+[BadImage] ConnectionError: http://it.talent2.linkedinlabs.com/sites/all/themes/linkedin/images/logo.png
+[BadImage] TinyImageException(93, 21): http://engineering.linkedin.com/sites/all/themes/linkedin/logo.png
+-> http://www.theatlantic.com/features/archive/2014/04/the-confidence-gap/359815/
+[BadImage] TinyImageException(2, 2): http://atlanticmedia.122.2o7.net/b/ss/atlanticprod/1/H.22--NS/0?AQB=1&pccr=true&g=none&AQE=1
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Ffeatures&t=src%3D%26pos%3Dlogo&sz=88x31&c=857697270&tile=2
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Ffeatures&t=src%3D%26pos%3Dfeatures1&sz=300x250%7C320x50%7C728x90%7C970x250&c=857697270&tile=0
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Ffeatures&t=src%3D%26pos%3Dfeatures2&sz=300x250%7C320x50%7C728x90%7C970x250&c=857697270&tile=1
+-> http://designworkflow.co/
+[HTTPError] (406 Client Error: Not Acceptable): http://designworkflow.co/
+-> http://www.charitywater.org/pipeline/
+-> https://petitions.whitehouse.gov/petition/maintain-true-net-neutrality-protect-freedom-information-united-states/9sxxdBgy
+[BadImage] TinyImageException(1, 1): https://petitions.whitehouse.gov/sites/all/themes/fortyfour/images/clear.gif
+[BadImage] TinyImageException(331, 14): https://petitions.whitehouse.gov/sites/all/themes/fortyfour/images/sftr-whgov.gif
+-> http://clarity.fm/startupadvice
+[BadImage] RatioImageException(940, 96): https://clarityfm-assets-production.s3.amazonaws.com/assets/ebook-page/getmoreclarity-headline-fca3ce14cc6a73a6469d4405cab4555d.png
+[BadImage] NoImageException: https://clarityfm-assets-production.s3.amazonaws.com/assets/ebook-page/getmoreclarity-headline-1f44e95d9fc5548188227ce75119c9f4.svg
+[BadImage] TinyImageException(900, 41): https://clarityfm-assets-production.s3.amazonaws.com/assets/ebook-page/getyouradvice-headline-966035db3a20e133ca9f5a0f407d7589.png
+[BadImage] NoImageException: https://clarityfm-assets-production.s3.amazonaws.com/assets/ebook-page/getyouradvice-headline-f3741de8d0c0ba3e440dd9d18939bbd1.svg
+-> http://hbr.org/2014/05/in-hiring-algorithms-beat-instinct/ar/1
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36302&cs=51deb4c2b36e1&cb={random}
+[GoodImage] FormatImageFilter: http://hbr.org/hbrg-main/resources/images/hbrPrintLogo.gif
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=405835&cs=517671d970fbf&cb={random}
+[GoodImage] FormatImageFilter: http://hbr.org/hbrg-main/resources/images/article_assets/hbr/1405/F1405C_A.gif
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=406641&cs=51792cfb56ff4&cb={random}
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36303&cs=51deb4c2b36e1&cb={random}
+[BadImage] TinyImageException(42, 43): http://static.hbr.org/hbrg-main/resources/images/most_widget_articles.gif
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=536872108&cs=51deb4c2b36e1&cb={random}
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=36304&cs=51deb4c2b36e1&cb={random}
+[BadImage] AdblockURLFilter: http://ox-d.hbr.org/w/1.0/ai?auid=399687&cs=51deb4c2b36e1&cb={random}
+-> http://www.theverge.com/2014/2/9/5395684/nasa-begins-hunt-for-private-companies-to-mine-the-moon-catalyst
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=7976662&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://cdn0.vox-cdn.com/images/sbn/components/lazy-load-image-gray.vc5f04cd.gif
+[BadImage] TinyImageException(90, 60): http://cdn2.vox-cdn.com/uploads/chorus_image/image/33919049/amazon-event-2012-_1145.0_standard_90.0.jpg
+[GoodImage] FormatImageFilter: http://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif
+[BadImage] AnimatedImageException: http://cdn2.vox-cdn.com/images/verge/loading.v92f34fc.gif
+-> http://allthingsd.com/20131217/top-products-in-two-decades-of-tech-reviews/?mod=tweet
+[BadImage] TinyImageException(50, 50): http://allthingsd.com/wp-content/themes/atd-2.0/images/staff/walt-mossberg-50x50.jpg
+[BadImage] TinyImageException(57, 18): http://allthingsd.com/theme/images/icon-facebook-share.png
+-> http://www.coindesk.com/bitcoin-nodes-need/
+[BadImage] HugeImageException(2320, 804): http://media.coindesk.com/2014/05/reachablenodes60day.jpg
+[BadImage] HugeImageException(2322, 824): http://media.coindesk.com/2014/05/reachablenodesoneday.jpg
+[BadImage] HugeImageException(2334, 976): http://media.coindesk.com/2014/05/totaltransactionfees.jpg
+[BadImage] RatioImageException(328, 73): http://www.coindesk.com/wp-content/themes/coindesk2/images/header-logo.png?6f25f4
+[BadImage] RatioImageException(620, 90): http://media.coindesk.com/2014/06/620x90.gif
+[BadImage] TinyImageException(320, 50): http://media.coindesk.com/2014/06/320x50.gif
+[BadImage] HugeImageException(2320, 804): http://media.coindesk.com/2014/05/reachablenodes60day.jpg
+[BadImage] HugeImageException(2322, 824): http://media.coindesk.com/2014/05/reachablenodesoneday.jpg
+[BadImage] HugeImageException(2334, 976): http://media.coindesk.com/2014/05/totaltransactionfees.jpg
+[BadImage] TinyImageException(54, 45): http://media.coindesk.com/2014/05/WinklevossBitcoinTrust-54x45.jpg
+-> http://blogs.wsj.com/digits/2014/01/27/why-arent-app-designers-as-famous-as-chefs/
+[BadImage] RatioImageException(443, 93): http://s.wsj.net/blogs/img/digits_logo.png
+-> http://www.piehole.tv/?a=8628
+-> http://blog.goresponsa.com/it/2014/01/20/un-nuovo-traguardo-nel-supporto-online-in-self-service-per-il-settore-del-banking-responsa-e-banca-ifis-insieme-per-rendimax/#.Ut0QRj9W3fE.twitter
+[BadImage] TinyImageException(164, 47): http://blog.goresponsa.com/it/wp-content/themes/twentyeleven_en/images/logo_r.png
+[BadImage] TinyImageException(29, 15): http://blog.goresponsa.com/it/wp-content/themes/twentyeleven_en/images/footer_trattore.png
+[BadImage] TinyImageException(8, 17): http://blog.goresponsa.com/it/wp-content/themes/twentyeleven_en/images/footer_facebook.png
+[BadImage] TinyImageException(21, 15): http://blog.goresponsa.com/it/wp-content/themes/twentyeleven_en/images/footer_twitter.png
+-> https://www.linkedin.com/reg/join?trk=login_reg_redirect
+[BadImage] TinyImageException(92, 22): https://static.licdn.com/scds/common/u/img/logos/logo_linkedin_92x22.png
+[BadImage] ZeroBytesException: https://sb.scorecardresearch.com/b?c1=2&c2=6402952&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1
+[BadImage] TinyImageException(1, 1): https://secure.quantserve.com/pixel/p-b3sGjMtCFrexE.gif
+[BadImage] TinyImageException(1, 1): https://secure-us.imrworldwide.com/cgi-bin/m?ci=us-603751h&cg=0&cc=1&ts=noscript&ja=1
+-> http://www.theatlantic.com/technology/archive/2014/05/10-things-you-cant-unsee-and-what-that-says-about-your-brain/361335/
+[BadImage] TinyImageException(9, 12): http://cdn.theatlantic.com/static/front/images/welcome-screens/arrow.png
+[BadImage] TinyImageException(1, 1): http://pubads.g.doubleclick.net/gampad/ad?iu=%2F4624%2FTheAtlanticOnline%2Fchannel_technology&t=src%3Dblog%26by%3Dalexis-c-madrigal%26title%3Dthings-you-cannot-unsee-and-what-that-says-about-your-brain-%26xpost%3Dhealth%26pos%3Dwelcometest&sz=640x480&c=894671089&tile=2
+[BadImage] RatioImageException(728, 90): http://pagead2.googlesyndication.com/pagead/imgad?id=CICAgKDjkf6XMhDYBRhaMgi_NzcvjqFBiw
+[BadImage] AdblockURLFilter: http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=19&mc=imp&pli=9498814&PluID=0&ord=%n&rtu=-1
+-> http://keynotopia.com/keynote-mockups-templates/
+[BadImage] TinyImageException(200, 60): http://keynotopia.com/images/Keynotopia-logo-May-2013.png
+[BadImage] RatioImageException(842, 175): http://keynotopia.com/images/mockup%20templates.png
+-> http://mashable.com/2013/05/13/startup-valuation/?utm_medium=email&utm_source=newsletter&utm_content=buffer90eff&utm_campaign=Buffer
+[BadImage] TinyImageException(262, 44): http://rack.1.mshcdn.com/assets/header_logo.v2-30574d105ad07318345ec8f1a85a3efa.png
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=8750086&cv=2.0&cj=1
+-> http://www.lizengland.com/blog/2014/04/the-door-problem/
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/3e5db6f36a63515e2a901b54b544be68?s=60&d=retro&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/2a44da1445e5ed4259c1cd80f4d0e784?s=60&d=retro&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/d3617f81cff6b9b303941a6bea2f2668?s=60&d=retro&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/a0c394e31c9740376635c8878cf5889e?s=60&d=retro&r=G
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/?d=retro&s=60
+[BadImage] AdblockURLFilter: http://0.gravatar.com/avatar/070fe207d7c84b4667b4071dc75b3612?s=60&d=retro&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/523831bf9a187710b813f7755c46b6a1?s=60&d=retro&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/ba2d8bb4ae769b168257a94a2bdc4195?s=60&d=retro&r=G
+[BadImage] AdblockURLFilter: http://1.gravatar.com/avatar/9a31ae3637c172305ada0759c9fbad3b?s=60&d=retro&r=G
+-> http://blogs.wsj.com/digits/2014/04/15/angellistss-newest-experiment-a-25-million-fund-to-invest-in-angel-investors/
+[BadImage] RatioImageException(443, 93): http://s.wsj.net/blogs/img/digits_logo.png
+-> http://www.theverge.com/2014/3/5/5475202/getty-images-made-its-pictures-free-to-use
+[BadImage] TinyImageException(1, 1): http://b.scorecardresearch.com/p2?c1=2&c2=7976662&cv=2.0&cj=1
+[BadImage] TinyImageException(1, 1): http://cdn0.vox-cdn.com/images/sbn/components/lazy-load-image-gray.vc5f04cd.gif
+[BadImage] TinyImageException(90, 60): http://cdn2.vox-cdn.com/uploads/chorus_image/image/33919049/amazon-event-2012-_1145.0_standard_90.0.jpg
+[GoodImage] FormatImageFilter: http://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif
+[BadImage] AnimatedImageException: http://cdn2.vox-cdn.com/images/verge/loading.v92f34fc.gif
+Fails: 13 out of 297.
