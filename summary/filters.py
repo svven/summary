@@ -27,7 +27,12 @@ ADBLOCK_RULES = [
 ADBLOCK_EASYLIST = 'https://easylist-downloads.adblockplus.org/easylist.txt'
 
 class AdblockURLFilter(object): # Filter
-	"Uses Adblock URL filtering and returns None if should_block."
+	"""
+	Uses adblockparser (https://github.com/scrapinghub/adblockparser) and 
+	returns `None` if it `should_block` the URL.
+	Hats off to Mikhail Korobov (https://github.com/kmike) for the awesome work. 
+	It gives a lot of value to this mashup repo.
+	"""
 	
 	def get_rules():
 		"Loads Adblock filter rules from file."
@@ -59,8 +64,12 @@ IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB
 
 class NoImageFilter(object): # AdblockURLFilter
 	"""
-	Retrieves actual image and returns it, or None if it fails.
-	Returns instance of Image class to be verified by following filters.
+	Retrieves actual image file, and returns `None` if it fails.
+	Otherwise it returns an instance of the `filters.Image` class containing 
+	the URL, together with the size and format of the actual image. 
+	Basically it hydrates this instance which is passed to following filters.
+	Worth mentioning again that it only gets first few chunks of the image file 
+	until the PIL parser gets the size and format of the image.
 	"""
 	class MaxBytesException(Exception):
 		pass
@@ -120,8 +129,10 @@ IMAGE_MAX_IMGSIZE = (2064, 2064)
 
 class SizeImageFilter(object): # NoImageFilter
 	"""
-	Checks image to have proper size, or returns None if it doesn't.
-	This may rule out tracking images that were not detected by AdblockURLFilter.
+	Checks the `filters.Image` instance to have proper size.
+	This can raise following exceptions based on defined limits: 
+	`TinyImageException`, `HugeImageException`, or `RatioImageException`. 
+	If any of these happens it returns `None`.	
 	"""
 	class TinyImageException(Exception):
 		pass
@@ -164,17 +175,11 @@ IMAGE_MONO_REGEX = re.compile(r'((_|\b)(white|blank|black|overlay)(_|\b))', re.I
 
 class MonoImageFilter(object): # SizeImageFilter
 	"""
-	Checks whether the image is (plain black or) white and returns None.
-	Otherwise return the Image instance.
-	
-	E.g.:
-		http://upcoming.org/assets/images/screw-it.png#SEMT
-		http://i.cdn.turner.com/cnn/.e/img/3.0/global/header/intl/CNNi_Logo_new.png#SEMT
-		http://images.inc.com/leftnavmenu/inc-logo-white.png#SEMT
-		http://www.inc.com/uploaded_files/leftnavmenuitem/UNUM_38.png#SEMT
-		http://wordpress.com/i/blank.jpg?m=1383295312g#FBOG
-		http://www.niemanlab.org/wordpress/wp-content/themes/Labby/resources/iphone-menu-fire-white-small.png#SEMT
-		https://d8o6wu1tc2zf3.cloudfront.net/pegasus/4.5.113/bundles/lockerzglobal/images/decal_back_overlay.png?1.0.0#SEMT
+	Checks whether the image is plain white and returns `None`.
+	This filter retrieves the whole image file so it has an extra regex check 
+	before. E.g.: rules out these URLs:
+	- http://wordpress.com/i/blank.jpg?m=1383295312g
+	- http://images.inc.com/leftnavmenu/inc-logo-white.png
 	"""
 	class MonoImageException(Exception):
 		pass
@@ -209,7 +214,8 @@ class MonoImageFilter(object): # SizeImageFilter
 
 class FormatImageFilter(object): # MonoImageFilter
 	"""
-	Checks whether the image is animated gif.
+	Rules out animated gif images for the moment.
+	This can be extended to exclude other image formats based on file contents.	
 	"""
 	class AnimatedImageException(Exception):
 		pass
