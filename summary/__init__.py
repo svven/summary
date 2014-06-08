@@ -177,7 +177,7 @@ class Summary(object):
 			# # Extract from the <head> tag
 			head = self._get_tag(response, tag_name="head")
 			# print "Get head: %s" % len(head)
-			extractor = extraction.Extractor(techniques=[
+			extractor = extraction.SvvenExtractor(techniques=[
 				"extraction.techniques.FacebookOpengraphTags",
 				"extraction.techniques.TwitterSummaryCardTags",
 				"extraction.techniques.HeadTags"
@@ -189,7 +189,7 @@ class Summary(object):
 			if GET_ALL_DATA or not self._is_complete():
 				body = self._get_tag(response, tag_name="body")
 				# print "Get body: %s" % len(body)
-				extractor = extraction.Extractor(techniques=[
+				extractor = extraction.SvvenExtractor(techniques=[
 					"extraction.techniques.HTML5SemanticTags",
 					"extraction.techniques.SemanticTags"				
 				])

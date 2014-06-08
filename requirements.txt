@@ -1,12 +1,12 @@
-Jinja2==2.7.2
-MarkupSafe==0.23
+Jinja2==2.7.2 # only for rendering
+# MarkupSafe==0.23 # idem
 Pillow==2.4.0
 adblockparser==0.2
-beautifulsoup4==4.3.2
-# extraction==0.1.3 # pip install -e .
-html5lib==0.999
+# beautifulsoup4==4.3.2
+extraction==0.2
+# html5lib==0.999
 lxml==3.3.5
-re2==0.2.20 # install re2 first
+re2==0.2.20 # good for adblockparser
 requests==2.2.1
-six==1.6.1
-wsgiref==0.1.2
+# six==1.6.1
+# wsgiref==0.1.2

@@ -49,13 +49,12 @@ Success: 3.
 In a nutshell
 -------------
 
-Summary requests the page from the URL, then uses [extraction](https://github.com/svven/extraction) to parse the HTML.<br />
+Summary requests the page from the URL, then uses [extraction](https://github.com/lethain/extraction) to parse the HTML.<br />
 Worth mentioning that it downloads the head tag first, performs specific extraction techniques, and goes further to body only if extracted data is not complete. Unless ```summary.GET_ALL_DATA = True```.
 
 The resulting lists of titles, images, and descriptions are filtered on the fly to rule out unwanted items like ads, tiny images (tracking images or sharing buttons), and plain white images. See the whole list of filters below.
 
-Many thanks to Will Larson ([@lethain](https://github.com/lethain)) for the original [extraction](https://github.com/lethain/extraction) repo.<br />
-Here's the forked extraction package that's being used: https://github.com/svven/extraction
+Many thanks to Will Larson ([@lethain](https://github.com/lethain)) for adapting his [extraction](https://github.com/lethain/extraction) library to version 0.2 to accomodate summary.
 
 
 Rendering
@@ -81,14 +80,10 @@ https://dl.dropboxusercontent.com/u/134594/svven/fast.html
 Installation
 ------------
 
-Cloning both summary and extraction repos.
-
     $ virtualenv env
     $ source env/bin/activate # or env\scripts\activate
-    $ git clone https://github.com/svven/extraction.git
     $ git clone https://github.com/svven/summary.git
-    $ pip install -r summary/requirements.txt # includes extraction dependencies but the extraction itself
-    $ pip install -e extraction/ # instead of `python setup.py develop`
+    $ pip install -r summary/requirements.txt
     
     $ cd summary # path to templates is relative
     $ python # see the usage instructions above
@@ -97,17 +92,12 @@ Requirements
 ------------
 
     Jinja2==2.7.2 # only for rendering
-    MarkupSafe==0.23 # idem
     Pillow==2.4.0
     adblockparser==0.2
-    beautifulsoup4==4.3.2
-    # extraction==0.1.3 # pip install -e .
-    html5lib==0.999
+    extraction==0.2
     lxml==3.3.5
-    re2==0.2.20 # install re2 first
+    re2==0.2.20 # good for adblockparser
     requests==2.2.1
-    six==1.6.1
-    wsgiref==0.1.2
 
 Filters
 -------
