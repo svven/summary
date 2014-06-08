@@ -18,8 +18,6 @@ class Image(object):
 		return self.url # this is important
 
 
-from adblockparser import AdblockRules
-
 ADBLOCK_RULES = [
 	'||ad.doubleclick.net', 
 	'.gravatar.com/avatar/', '.media.tumblr.com/avatar_', 'assets.tumblr.com/images/default_avatar/',
@@ -36,6 +34,8 @@ class AdblockURLFilter(object): # Filter
 	
 	def get_rules():
 		"Loads Adblock filter rules from file."
+		from adblockparser import AdblockRules
+
 		raw_rules = []
 		raw_rules.extend(ADBLOCK_RULES)
 		with closing(requests.get(ADBLOCK_EASYLIST, stream=True)) as file:
@@ -55,9 +55,6 @@ class AdblockURLFilter(object): # Filter
 			return None
 		return url
 
-
-from PIL.Image import Image as PILImage
-from PIL.ImageFile import Parser as PILParser
 
 CHUNK_SIZE = 1024 # 1 KB
 IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB
@@ -86,6 +83,8 @@ class NoImageFilter(object): # AdblockURLFilter
 		Returned Image instance has response url.
 		This might be different than the url param because of redirects.
 		"""
+		from PIL.ImageFile import Parser as PILParser
+
 		length = 0
 		raw_image = None
 		with closing(requests.get(url, stream=True)) as response:
