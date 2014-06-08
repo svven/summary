@@ -20,7 +20,7 @@ Working with the ``summary`` package::
 Batch usage with HTML rendering
 -------------------------------
 
-If you fork or clone ``summary`` you can use summarize.py like this::
+If you fork or clone the repo you can use summarize.py like this::
 
     >>> import summary
     >>> summary.GET_ALL_DATA = True # default is False
@@ -104,10 +104,15 @@ behaviour.
 
 Installation
 ------------
-Clone the repo if you need rendering::
+Pip it for simple usage::
+
+    $ pip install summary-extraction
+
+
+Or clone the repo if you need rendering::
 
     $ virtualenv env 
-    $ source env/bin/activate # or envscriptsactivate 
+    $ source env/bin/activate
     $ git clone https://github.com/svven/summary.git 
     $ pip install -r summary/requirements.txt 
 
@@ -116,7 +121,7 @@ Clone the repo if you need rendering::
 
 Requirements
 ------------
-Key required packages are ``extraction`` and ``requests``::
+Base required packages are ``extraction`` and ``requests``, but it doesn't do much withouth ``adblockparser`` and ``Pillow``::
 
     Jinja2==2.7.2 # only for rendering 
     Pillow==2.4.0
