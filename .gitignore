@@ -53,6 +53,5 @@ coverage.xml
 docs/_build/
 
 
-news.html
-
-urls2.txt
+*.html
+*.txt
