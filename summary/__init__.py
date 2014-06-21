@@ -11,9 +11,17 @@ goes on to the <body> only if Summary data is not complete.
 import requests, extraction, filters
 from contextlib import closing
 
+from url import canonicalize_url
+from w3lib.url import url_query_cleaner
+
 CHUNK_SIZE = 1024 # 1 KB
 GET_ALL_DATA = False # False for better performance
 
+USELESS_QUERY_KEYS = [
+	'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
+	'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
+	'refresh', 'ref', 'feature', '_r', 'smid', 'ncid', 'awesm',
+]
 
 class HTMLParseError(Exception):
 	pass
@@ -112,18 +120,14 @@ class Summary(object):
 		# self.descriptions = sorted(self.descriptions, key = lambda t: len(t), reverse=True)
 
 	def _clean_url(self, url):
-		"Fixes the url, but it should also discard useless query params."
-		import urllib
-		import urlparse
-		def url_fix(s, charset='utf-8'):
-			"https://github.com/mitsuhiko/werkzeug/blob/master/werkzeug/urls.py"
-			if isinstance(s, unicode):
-				s = s.encode(charset, 'ignore')
-			scheme, netloc, path, qs, anchor = urlparse.urlsplit(s)
-			path = urllib.quote(path, '/%')
-			qs = urllib.quote_plus(qs, ':&=')
-			return urlparse.urlunsplit((scheme, netloc, path, qs, anchor))
-		return url_fix(url)
+		"""
+		Canonicalizes the url, as it is done in Scrapy.
+		But first it discards specified USELESS_QUERY_KEYS. It also
+		strips the trailing slash to help identifying dupes.
+		"""
+		clean_url = url_query_cleaner(url, 
+			parameterlist=USELESS_QUERY_KEYS, remove=True)
+		return canonicalize_url(clean_url).rstrip('/')
 
 	def _filter_image(self, url):
 		"The param is the image URL, which is returned if it passes all the filters."
