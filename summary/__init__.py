@@ -14,6 +14,10 @@ from contextlib import closing
 CHUNK_SIZE = 1024 # 1 KB
 GET_ALL_DATA = False # False for better performance
 
+
+class HTMLParseError(Exception):
+	pass
+
 class Summary(object):
 	"Provides incremental load mechanism and validation."
 
@@ -22,11 +26,6 @@ class Summary(object):
 		Unlike Extracted ctor, this one just sets the source_url.
 		Extracted data is loaded later gradually by calling extract.
 		"""
-		# self.title = None
-		# self.description = None
-		# self.image = None
-		# self.url = None
-
 		self.titles = []
 		self.descriptions = []
 		self.images = []
@@ -69,9 +68,17 @@ class Summary(object):
 			return self.clean_url
 
 
+	def _is_clear(self):
+		return not (self.titles or self.descriptions or self.images or self.urls)
+
 	def _is_complete(self):
-		# return self.title and self.description and self.image and self.url and True
 		return self.titles and self.descriptions and self.images and self.urls and True
+
+	def _clear(self):
+		self.titles = []
+		self.descriptions = []
+		self.images = []
+		self.urls = []
 
 	def _load(self, titles=[], descriptions=[], images=[], urls=[], **kwargs):
 		"""
@@ -130,7 +137,11 @@ class Summary(object):
 		])
 	
 	def _get_tag(self, response, tag_name="html"):
-		"Iterates response content and returns the tag if found."
+		"""
+		Iterates response content and returns the tag if found.
+		If not found, the response content is fully consumed so
+		self._html equals response.content, and it returns None.
+		"""
 		lower_html = self._html.lower()
 		tag_start = tag_end = None
 		def find_tag(html, tag_name, tag_start, tag_end):
@@ -143,16 +154,26 @@ class Summary(object):
 			if tag_end: # and tag_start
 				return self._html[tag_start:tag_end]
 			return None
-		for chunk in response.iter_content(CHUNK_SIZE, decode_unicode=True):
-			self._html += chunk
-			lower_html += chunk.lower()
-			tag = find_tag(lower_html, tag_name, tag_start, tag_end)
-			if tag:
-				return tag
+		consumed = hasattr(response, 'consumed') and \
+			getattr(response, 'consumed')
+		if not consumed:
+			for chunk in response.iter_content(CHUNK_SIZE, decode_unicode=True):
+				self._html += chunk
+				lower_html += chunk.lower()
+				tag = find_tag(lower_html, tag_name, tag_start, tag_end)
+				if tag:
+					return tag
+			response.consumed = True
 		tag = find_tag(lower_html, tag_name, tag_start, tag_end)
 		return tag
 
-	def extract(self, check_url=None):
+	def _extract(self, html, url, techniques):
+		extractor = extraction.SvvenExtractor(techniques=techniques)
+		extracted = extractor.extract(html, source_url=url)
+		self._load(**extracted)
+
+
+	def extract(self, check_url=None, http_equiv_refresh=True):
 		"""
 		Downloads HTML <head> tag first, extracts data from it using
 		specific head techniques, loads it and checks if is complete. 
@@ -160,10 +181,11 @@ class Summary(object):
 		extracted by using appropriate semantic techniques.
 
 		Eagerly calls check_url(url) if any, before parsing the HTML.
-		Provided function should throw an exception to break extraction.
+		Provided function should raise an exception to break extraction.
 		E.g.: URL has been summarized before; URL points to off limits
-		websites like facebook.com and so on.
+		websites like foursquare.com, facebook.com, bitly.com and so on.
 		"""
+		# assert self._is_clear()
 		with closing(requests.get(self.clean_url, stream=True, timeout=10)) as response:
 			response.raise_for_status()
 			# TODO: validate content-type
@@ -174,27 +196,45 @@ class Summary(object):
 				check_url(self.clean_url)
 
 			self._html = u""
-			# # Extract from the <head> tag
 			head = self._get_tag(response, tag_name="head")
-			# print "Get head: %s" % len(head)
-			extractor = extraction.SvvenExtractor(techniques=[
-				"extraction.techniques.FacebookOpengraphTags",
-				"extraction.techniques.TwitterSummaryCardTags",
-				"extraction.techniques.HeadTags"
-			])
-			extracted = extractor.extract(head, source_url=self.clean_url)
-			self._load(**extracted)
 
-			# # Extract from <body>
+			if http_equiv_refresh:
+				# Check meta http-equiv refresh tag
+				html = head or self._html
+				self._extract(html, self.clean_url, [
+					"summary.techniques.HTTPEquivRefreshTags",
+				])
+				new_url = self.urls and self.urls[0]
+				if new_url: 
+					print "New url: %s" % new_url
+					self._clear()
+					self.clean_url = new_url
+					return self.extract(check_url=check_url, http_equiv_refresh=False)
+
+			if head:
+				# print "Get head: %s" % len(head)
+				self._extract(head, self.clean_url, [
+					"extraction.techniques.FacebookOpengraphTags",
+					"extraction.techniques.TwitterSummaryCardTags",
+					"extraction.techniques.HeadTags"
+				])
+			else:
+				print "No head: %s" % self.clean_url
+
 			if GET_ALL_DATA or not self._is_complete():
 				body = self._get_tag(response, tag_name="body")
-				# print "Get body: %s" % len(body)
-				extractor = extraction.SvvenExtractor(techniques=[
-					"extraction.techniques.HTML5SemanticTags",
-					"extraction.techniques.SemanticTags"				
-				])
-				extracted = extractor.extract(body, source_url=self.clean_url)
-				self._load(**extracted)
+				if body:
+					# print "Get body: %s" % len(body)
+					self._extract(body, self.clean_url, [
+						"extraction.techniques.HTML5SemanticTags",
+						"extraction.techniques.SemanticTags"				
+					])
+				else:
+					print "No body: %s" % self.clean_url
+
+			if not head and not body:
+				raise HTMLParseError('No head nor body tags found.')
+
 			del self._html # no longer needed
 
 		# that's it
