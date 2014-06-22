@@ -16,11 +16,13 @@ from w3lib.url import url_query_cleaner
 
 CHUNK_SIZE = 1024 # 1 KB
 GET_ALL_DATA = False # False for better performance
+MAX_ITEMS = 2 # to choose from
 
 USELESS_QUERY_KEYS = [
 	'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
 	'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
-	'refresh', 'ref', 'feature', '_r', 'smid', 'ncid', 'awesm',
+	'refresh', 'ref', 'feature', '_r', 'smid', 'seid', 'ncid', 'awesm', 'url', 'mg', 
+	'_php',	'_type', 'source', 'mod', 'partner', 
 ]
 
 class HTMLParseError(Exception):
@@ -80,7 +82,7 @@ class Summary(object):
 		return not (self.titles or self.descriptions or self.images or self.urls)
 
 	def _is_complete(self):
-		return self.titles and self.descriptions and self.images and self.urls and True
+		return self.titles and self.descriptions and len(self.images) >= MAX_ITEMS and self.urls and True
 
 	def _clear(self):
 		self.titles = []
@@ -95,29 +97,35 @@ class Summary(object):
 		non-plural fields to the best specific item so far.
 		If GET_ALL_DATA is False, it gets only the first valid item.
 		"""
-		if GET_ALL_DATA or not self.titles:
+		enough = lambda items: len(items) >= MAX_ITEMS
+
+		if GET_ALL_DATA or not enough(self.titles):
 			self.titles.extend(titles)
-		if GET_ALL_DATA or not self.descriptions:
+
+		if GET_ALL_DATA or not enough(self.descriptions):
 			self.descriptions.extend(descriptions)
 
-		if GET_ALL_DATA or not self.urls:
+		if GET_ALL_DATA or not enough(self.urls):
 			# urls = [self._clean_url(u) for u in urls]
 			urls = map(self._clean_url, urls)
 			self.urls.extend(urls)
-		
+
 		if GET_ALL_DATA:
 			# images = [i for i in [self._filter_image(i) for i in images] if i] 
 			images = filter(None, map(self._filter_image, images))
 			self.images.extend(images)
-		elif not self.images:
+		elif not enough(self.images):
 			for i in images:
 				image = self._filter_image(i)
 				if image:
 					self.images.append(image)
+				if enough(self.images):
 					break
 
-		# TODO: set non-plural fields to best item by sorting
-		# self.descriptions = sorted(self.descriptions, key = lambda t: len(t), reverse=True)
+		# Picking the best item by sorting
+		# self.titles = sorted(self.titles, key=len)
+		# self.descriptions = sorted(self.descriptions, key=len, reverse=True)
+		self.images = sorted(self.images, key=lambda i: sum(i.size), reverse=True)
 
 	def _clean_url(self, url):
 		"""
