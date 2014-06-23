@@ -25,7 +25,11 @@ USELESS_QUERY_KEYS = [
 	'_php',	'_type', 'source', 'mod', 'partner', 'type', 'share', 'cmp', 'channel',
 	'ei', 'sa', 'buffer_share', 'bih', 'biw', 'list', 'ved', 'srid', 'fsrc', 'referer',
 	'shortlink', 'trk', 'src', 'mt', 'tripIdBase36', 'activityList', 'emc', 'uid',
-	'page', 'uploaded', 
+	'page', 'uploaded', 'mbid', 'l', '_i_location', 'siteedition', 'ftcamp', 'soc_src',
+	'pagewanted', 'client', 'c', 'rls', 'hs', 'rev', 'spref', 'curator', 'm', 't',
+	'app', 'feature', 'notif_t', 'index', 'g', 'cmpid', 'lang', 'aff', 'ir', 'st',
+	'ana', 'pid', 'sc', 'sns', 'op', 'goback', 'f', 'g', 'r', 'rid', 'a_dgi', 'ocid',
+	'past', 
 ]
 
 class HTMLParseError(Exception):
@@ -203,8 +207,10 @@ class Summary(object):
 		# assert self._is_clear()
 		with closing(requests.get(self.clean_url, stream=True, timeout=10)) as response:
 			response.raise_for_status()
-			# TODO: validate content-type
-			# response.headers.get('content-type')
+
+			mime = response.headers.get('content-type')
+			if mime and not ('html' in mime.lower()):
+				raise HTMLParseError('Invalid Content-Type: %s' % mime)
 
 			self.clean_url = self._clean_url(response.url)
 			if check_url:
