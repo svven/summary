@@ -16,13 +16,16 @@ from w3lib.url import url_query_cleaner
 
 CHUNK_SIZE = 1024 # 1 KB
 GET_ALL_DATA = False # False for better performance
-MAX_ITEMS = 2 # to choose from
+# MAX_ITEMS = 2 # to choose from
 
 USELESS_QUERY_KEYS = [
 	'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
 	'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
 	'refresh', 'ref', 'feature', '_r', 'smid', 'seid', 'ncid', 'awesm', 'url', 'mg', 
-	'_php',	'_type', 'source', 'mod', 'partner', 
+	'_php',	'_type', 'source', 'mod', 'partner', 'type', 'share', 'cmp', 'channel',
+	'ei', 'sa', 'buffer_share', 'bih', 'biw', 'list', 'ved', 'srid', 'fsrc', 'referer',
+	'shortlink', 'trk', 'src', 'mt', 'tripIdBase36', 'activityList', 'emc', 'uid',
+	'page', 'uploaded', 
 ]
 
 class HTMLParseError(Exception):
@@ -82,7 +85,7 @@ class Summary(object):
 		return not (self.titles or self.descriptions or self.images or self.urls)
 
 	def _is_complete(self):
-		return self.titles and self.descriptions and len(self.images) >= MAX_ITEMS and self.urls and True
+		return self.titles and self.descriptions and self.images and self.urls and True
 
 	def _clear(self):
 		self.titles = []
@@ -97,7 +100,7 @@ class Summary(object):
 		non-plural fields to the best specific item so far.
 		If GET_ALL_DATA is False, it gets only the first valid item.
 		"""
-		enough = lambda items: len(items) >= MAX_ITEMS
+		enough = lambda items: items # len(items) >= MAX_ITEMS
 
 		if GET_ALL_DATA or not enough(self.titles):
 			self.titles.extend(titles)
@@ -125,7 +128,7 @@ class Summary(object):
 		# Picking the best item by sorting
 		# self.titles = sorted(self.titles, key=len)
 		# self.descriptions = sorted(self.descriptions, key=len, reverse=True)
-		self.images = sorted(self.images, key=lambda i: sum(i.size), reverse=True)
+		# self.images = sorted(self.images, key=lambda i: sum(i.size), reverse=True)
 
 	def _clean_url(self, url):
 		"""
@@ -230,8 +233,8 @@ class Summary(object):
 					"extraction.techniques.TwitterSummaryCardTags",
 					"extraction.techniques.HeadTags"
 				])
-			else:
-				print "No head: %s" % self.clean_url
+			# else:
+			# 	print "No head: %s" % self.clean_url
 
 			if GET_ALL_DATA or not self._is_complete():
 				body = self._get_tag(response, tag_name="body")
@@ -241,8 +244,8 @@ class Summary(object):
 						"extraction.techniques.HTML5SemanticTags",
 						"extraction.techniques.SemanticTags"				
 					])
-				else:
-					print "No body: %s" % self.clean_url
+				# else:
+				# 	print "No body: %s" % self.clean_url
 
 			if not head and not body:
 				raise HTMLParseError('No head nor body tags found.')
