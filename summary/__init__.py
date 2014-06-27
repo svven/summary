@@ -18,19 +18,24 @@ CHUNK_SIZE = 1024 # 1 KB
 GET_ALL_DATA = False # False for better performance
 # MAX_ITEMS = 2 # to choose from
 
-USELESS_QUERY_KEYS = [
-	'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
-	'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
-	'refresh', 'ref', 'feature', '_r', 'smid', 'seid', 'ncid', 'awesm', 'url', 'mg', 
-	'_php',	'_type', 'source', 'mod', 'partner', 'type', 'share', 'cmp', 'channel',
-	'ei', 'sa', 'buffer_share', 'bih', 'biw', 'list', 'ved', 'srid', 'fsrc', 'referer',
-	'shortlink', 'trk', 'src', 'mt', 'tripIdBase36', 'activityList', 'emc', 'uid',
-	'page', 'uploaded', 'mbid', 'l', '_i_location', 'siteedition', 'ftcamp', 'soc_src',
-	'pagewanted', 'client', 'c', 'rls', 'hs', 'rev', 'spref', 'curator', 'm', 't',
-	'app', 'feature', 'notif_t', 'index', 'g', 'cmpid', 'lang', 'aff', 'ir', 'st',
-	'ana', 'pid', 'sc', 'sns', 'op', 'goback', 'f', 'g', 'r', 'rid', 'a_dgi', 'ocid',
-	'past', 
+# USELESS_QUERY_KEYS = [
+# 	'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
+# 	'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
+# 	'refresh', 'ref', 'feature', '_r', 'smid', 'seid', 'ncid', 'awesm', 'url', 'mg', 
+# 	'_php',	'_type', 'source', 'mod', 'partner', 'type', 'share', 'cmp', 'channel',
+# 	'ei', 'sa', 'buffer_share', 'bih', 'biw', 'list', 'ved', 'srid', 'fsrc', 'referer',
+# 	'shortlink', 'trk', 'src', 'mt', 'tripIdBase36', 'activityList', 'emc', 'uid',
+# 	'page', 'uploaded', 'mbid', 'l', '_i_location', 'siteedition', 'ftcamp', 'soc_src',
+# 	'pagewanted', 'client', 'c', 'rls', 'hs', 'rev', 'spref', 'curator', 'm', 't',
+# 	'app', 'feature', 'notif_t', 'index', 'g', 'cmpid', 'lang', 'aff', 'ir', 'st',
+# 	'ana', 'pid', 'sc', 'sns', 'op', 'goback', 'f', 'g', 'r', 'rid', 'a_dgi', 'ocid',
+# 	'past', 
+# ]
+USEFUL_QUERY_KEYS = [
+	'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
+	'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid',
 ]
+
 
 class HTMLParseError(Exception):
 	pass
@@ -137,11 +142,11 @@ class Summary(object):
 	def _clean_url(self, url):
 		"""
 		Canonicalizes the url, as it is done in Scrapy.
-		But first it discards specified USELESS_QUERY_KEYS. It also
-		strips the trailing slash to help identifying dupes.
+		And keeps only USEFUL_QUERY_KEYS. It also strips the 
+		trailing slash to help identifying dupes.
 		"""
 		clean_url = url_query_cleaner(url, 
-			parameterlist=USELESS_QUERY_KEYS, remove=True)
+			parameterlist=USEFUL_QUERY_KEYS) # , remove=True
 		return canonicalize_url(clean_url).rstrip('/')
 
 	def _filter_image(self, url):
