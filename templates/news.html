@@ -15,7 +15,7 @@
     <div class="page-content">
       <div class="row">
         <ul class="list-unstyled">{% for summary in summaries %}
-          <li>{% include "summary.html" %}
+          <li>{% include "item.html" %}
             <div class="clearfix enable-sm {% if loop.index is divisibleby 2 %}enable-md{% endif %} {% if loop.index is divisibleby 4 %}enable-lg{% endif %}"></div>
           </li>{% endfor %}
         </ul>

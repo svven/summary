@@ -116,7 +116,7 @@ Or clone the repo if you need rendering::
     $ git clone https://github.com/svven/summary.git 
     $ pip install -r summary/requirements.txt 
 
-    $ cd summary # path to templates is relative 
+    $ cd summary
     $ python # see the usage instructions above
 
 Requirements

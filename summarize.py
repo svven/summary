@@ -12,8 +12,11 @@ def render(template, **kwargs):
 	description and collections: titles, images, descriptions.
 	"""
 	import jinja2
+	import os.path as path
 
-	loader = jinja2.FileSystemLoader(searchpath="templates")
+	searchpath = path.join(path.dirname(__file__), 
+		"templates") 
+	loader = jinja2.FileSystemLoader(searchpath=searchpath)
 	env = jinja2.Environment(loader=loader)
 	temp = env.get_template(template)
 

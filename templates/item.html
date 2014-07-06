@@ -1,0 +1,16 @@
+              
+              <div class="summary">
+                <h2 class="title">{% set title = summary.title %}
+                  <a href="#" class="cycle show">{% if title is none %}[Untitled]{% else %}{{ title }}{% endif %}</a>
+                </h2>
+                <p class="url"><a href="{{ summary.source_url }}">
+                  <span>{{ summary.url }}</span></a>
+                </p>{% set image = summary.image %}{% if image != none %}
+                <img class="image cycle show" src="{{ image }}" alt="{{ image }}" />{% endif %}
+                <div class="description">
+                  <!-- <p class="imgsrc">{{ summary.image }}</p> -->
+                  {% set description = summary.description %}{% if description != none %}<p class="cycle show">
+                    {{ description|striptags|truncate(150, end="[...]") }}
+                  </p>{% endif %}
+                </div>
+              </div>
