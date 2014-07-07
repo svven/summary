@@ -21,6 +21,9 @@ class Image(object):
 ADBLOCK_RULES = [
 	'||ad.doubleclick.net', 
 	'.gravatar.com/avatar/', '.media.tumblr.com/avatar_', 'assets.tumblr.com/images/default_avatar/',
+	'gu-logo-fallback.png', 'wsj_profile_lg.gif', 'fb-post-logo-new.png', 'og-ft-logo-large.png', 
+	'forbes_1200x1200.jpg', 'quote_200.png', 'wplogo.png', 't_logo_291_black.png', 'logo-bi-print.png',
+	'st-120x120.jpg', 'twp-200x200.jpg', 'global-sprite-v', 
 ]
 ADBLOCK_EASYLIST = 'https://easylist-downloads.adblockplus.org/easylist.txt'
 
@@ -123,7 +126,7 @@ class NoImageFilter(object): # AdblockURLFilter
 
 
 IMAGE_LIMIT_RATIO = 4 # if js crop center square
-IMAGE_MIN_IMGSIZE = (64, 64)
+IMAGE_MIN_IMGSIZE = (94, 94)
 IMAGE_MAX_IMGSIZE = (2064, 2064)
 
 class SizeImageFilter(object): # NoImageFilter
