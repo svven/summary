@@ -2,6 +2,8 @@
 Summary
 =======
 
+Current release: v0.2 - see CHANGES.txt for details.
+
 Simple usage
 ------------
 
@@ -130,6 +132,7 @@ Base required packages are ``extraction`` and ``requests``, but it doesn't do mu
     lxml==3.3.5 
     re2==0.2.20 # good for adblockparser
     requests==2.2.1
+    w3lib==1.6
 
 Filters
 -------
