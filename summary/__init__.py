@@ -8,37 +8,17 @@ Extraction is performed gradually by parsing the HTML <head>
 tag first, applying specific head extraction techniques, and
 goes on to the <body> only if Summary data is not complete.
 """
-import requests, extraction, filters
 from contextlib import closing
+
+import config, request, extraction, filters
 
 from url import canonicalize_url
 from w3lib.url import url_query_cleaner
 
-CHUNK_SIZE = 1024 # 1 KB
-GET_ALL_DATA = False # False for better performance
-# MAX_ITEMS = 2 # to choose from
-
-# USELESS_QUERY_KEYS = [
-# 	'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
-# 	'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
-# 	'refresh', 'ref', 'feature', '_r', 'smid', 'seid', 'ncid', 'awesm', 'url', 'mg', 
-# 	'_php',	'_type', 'source', 'mod', 'partner', 'type', 'share', 'cmp', 'channel',
-# 	'ei', 'sa', 'buffer_share', 'bih', 'biw', 'list', 'ved', 'srid', 'fsrc', 'referer',
-# 	'shortlink', 'trk', 'src', 'mt', 'tripIdBase36', 'activityList', 'emc', 'uid',
-# 	'page', 'uploaded', 'mbid', 'l', '_i_location', 'siteedition', 'ftcamp', 'soc_src',
-# 	'pagewanted', 'client', 'c', 'rls', 'hs', 'rev', 'spref', 'curator', 'm', 't',
-# 	'app', 'feature', 'notif_t', 'index', 'g', 'cmpid', 'lang', 'aff', 'ir', 'st',
-# 	'ana', 'pid', 'sc', 'sns', 'op', 'goback', 'f', 'g', 'r', 'rid', 'a_dgi', 'ocid',
-# 	'past', 
-# ]
-USEFUL_QUERY_KEYS = [
-	'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
-	'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid',
-]
-
 
 class HTMLParseError(Exception):
 	pass
+
 
 class Summary(object):
 	"Provides incremental load mechanism and validation."
@@ -111,18 +91,18 @@ class Summary(object):
 		"""
 		enough = lambda items: items # len(items) >= MAX_ITEMS
 
-		if GET_ALL_DATA or not enough(self.titles):
+		if config.GET_ALL_DATA or not enough(self.titles):
 			self.titles.extend(titles)
 
-		if GET_ALL_DATA or not enough(self.descriptions):
+		if config.GET_ALL_DATA or not enough(self.descriptions):
 			self.descriptions.extend(descriptions)
 
-		if GET_ALL_DATA or not enough(self.urls):
+		if config.GET_ALL_DATA or not enough(self.urls):
 			# urls = [self._clean_url(u) for u in urls]
 			urls = map(self._clean_url, urls)
 			self.urls.extend(urls)
 
-		if GET_ALL_DATA:
+		if config.GET_ALL_DATA:
 			# images = [i for i in [self._filter_image(i) for i in images] if i] 
 			images = filter(None, map(self._filter_image, images))
 			self.images.extend(images)
@@ -146,7 +126,7 @@ class Summary(object):
 		trailing slash to help identifying dupes.
 		"""
 		clean_url = url_query_cleaner(url, 
-			parameterlist=USEFUL_QUERY_KEYS) # , remove=True
+			parameterlist=config.USEFUL_QUERY_KEYS) # , remove=True
 		return canonicalize_url(clean_url).rstrip('/')
 
 	def _filter_image(self, url):
@@ -181,7 +161,7 @@ class Summary(object):
 		consumed = hasattr(response, 'consumed') and \
 			getattr(response, 'consumed')
 		if not consumed:
-			for chunk in response.iter_content(CHUNK_SIZE, decode_unicode=True):
+			for chunk in response.iter_content(config.CHUNK_SIZE): # , decode_unicode=True
 				self._html += chunk
 				lower_html += chunk.lower()
 				tag = find_tag(lower_html, tag_name, tag_start, tag_end)
@@ -210,7 +190,7 @@ class Summary(object):
 		websites like foursquare.com, facebook.com, bitly.com and so on.
 		"""
 		# assert self._is_clear()
-		with closing(requests.get(self.clean_url, stream=True, timeout=10)) as response:
+		with closing(request.get(self.clean_url, stream=True, timeout=10)) as response:
 			response.raise_for_status()
 
 			mime = response.headers.get('content-type')
@@ -221,13 +201,15 @@ class Summary(object):
 			if check_url:
 				check_url(self.clean_url)
 
-			self._html = u""
+			encoding = config.ENCODING or response.encoding
+
+			self._html = ""
 			head = self._get_tag(response, tag_name="head")
 
 			if http_equiv_refresh:
 				# Check meta http-equiv refresh tag
 				html = head or self._html
-				self._extract(html, self.clean_url, [
+				self._extract(html.decode(encoding, 'ignore'), self.clean_url, [
 					"summary.techniques.HTTPEquivRefreshTags",
 				])
 				new_url = self.urls and self.urls[0]
@@ -239,7 +221,7 @@ class Summary(object):
 
 			if head:
 				# print "Get head: %s" % len(head)
-				self._extract(head, self.clean_url, [
+				self._extract(head.decode(encoding, 'ignore'), self.clean_url, [
 					"extraction.techniques.FacebookOpengraphTags",
 					"extraction.techniques.TwitterSummaryCardTags",
 					"extraction.techniques.HeadTags"
@@ -247,11 +229,11 @@ class Summary(object):
 			# else:
 			# 	print "No head: %s" % self.clean_url
 
-			if GET_ALL_DATA or not self._is_complete():
+			if config.GET_ALL_DATA or not self._is_complete():
 				body = self._get_tag(response, tag_name="body")
 				if body:
 					# print "Get body: %s" % len(body)
-					self._extract(body, self.clean_url, [
+					self._extract(body.decode(encoding, 'ignore'), self.clean_url, [
 						"extraction.techniques.HTML5SemanticTags",
 						"extraction.techniques.SemanticTags"				
 					])

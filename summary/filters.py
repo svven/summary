@@ -1,10 +1,16 @@
-"This file contains filters for the extracted data, mainly images."
-
+"""
+This file contains filters for the extracted data, mainly images.
+"""
 from __future__ import division
-import requests
 from contextlib import closing
 
+import request, config
+
+import re, PIL
+from cStringIO import StringIO
+
 clsn = lambda e: e.__class__.__name__
+
 
 class Image(object):
 	"Used by the filter classes in this module."
@@ -18,14 +24,44 @@ class Image(object):
 		return self.url # this is important
 
 
-ADBLOCK_RULES = [
-	'||ad.doubleclick.net', 
-	'.gravatar.com/avatar/', '.media.tumblr.com/avatar_', 'assets.tumblr.com/images/default_avatar/',
-	'gu-logo-fallback.png', 'wsj_profile_lg.gif', 'fb-post-logo-new.png', 'og-ft-logo-large.png', 
-	'forbes_1200x1200.jpg', 'quote_200.png', 'wplogo.png', 't_logo_291_black.png', 'logo-bi-print.png',
-	'st-120x120.jpg', 'twp-200x200.jpg', 'global-sprite-v', 
-]
-ADBLOCK_EASYLIST = 'https://easylist-downloads.adblockplus.org/easylist.txt'
+class AdblockURLFilterMeta(type):
+	"""
+	Lazy loading Adblock rules.
+	First try to download easylist.txt, or load file from package.
+	"""
+	def get_rules(cls):
+		"Loads Adblock filter rules from file."
+		from adblockparser import AdblockRules
+		print config.USER_AGENT
+		raw_rules = []
+		try:
+			with closing(request.get(config.ADBLOCK_EASYLIST, stream=True)) as file:
+				file.raise_for_status()
+				# lines = 0 # to be removed
+				for rule in file.iter_lines():
+					raw_rules.append(rule.strip())
+					# lines += 1 # tbr
+					# if lines == 2500: break # tbr, only for windoze with no re2
+			print 'Adblock online rules: %d' % len(raw_rules)
+		except: # adblockplus.org down
+			from pkg_resources import resource_filename
+			
+			with open(resource_filename('summary', 'easylist.txt'), 'r') as file:
+				for rule in file:
+					raw_rules.append(rule.strip())
+			print 'Adblock offline rules: %d' % len(raw_rules)
+
+		raw_rules.extend(config.ADBLOCK_RULES) # custom
+
+		rules = AdblockRules(raw_rules)
+		return rules
+
+	@property
+	def rules(cls):
+		if getattr(cls, '_rules', None) is None:
+			rules = cls.get_rules()
+			cls._rules = rules
+		return cls._rules
 
 class AdblockURLFilter(object): # Filter
 	"""
@@ -34,23 +70,7 @@ class AdblockURLFilter(object): # Filter
 	Hats off to Mikhail Korobov (https://github.com/kmike) for the awesome work. 
 	It gives a lot of value to this mashup repo.
 	"""
-	
-	def get_rules():
-		"Loads Adblock filter rules from file."
-		from adblockparser import AdblockRules
-
-		raw_rules = []
-		raw_rules.extend(ADBLOCK_RULES)
-		with closing(requests.get(ADBLOCK_EASYLIST, stream=True)) as file:
-			# lines = 0 # to be removed
-			for rule in file.iter_lines():
-				raw_rules.append(rule.strip())
-				# lines += 1 # tbr
-				# if lines == 2500: break # tbr, only for windoze with no re2
-		rules = AdblockRules(raw_rules)
-		return rules
-
-	rules = get_rules() # static
+	__metaclass__ = AdblockURLFilterMeta
 
 	def __call__(self, url):
 		if AdblockURLFilter.rules.should_block(url):
@@ -58,9 +78,6 @@ class AdblockURLFilter(object): # Filter
 			return None
 		return url
 
-
-CHUNK_SIZE = 1024 # 1 KB
-IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB
 
 class NoImageFilter(object): # AdblockURLFilter
 	"""
@@ -90,13 +107,13 @@ class NoImageFilter(object): # AdblockURLFilter
 
 		length = 0
 		raw_image = None
-		with closing(requests.get(url, stream=True)) as response:
+		with closing(request.get(url, stream=True)) as response:
 			response.raise_for_status()
 			response_url = response.url
 			parser = PILParser()
-			for chunk in response.iter_content(CHUNK_SIZE):
+			for chunk in response.iter_content(config.CHUNK_SIZE):
 				length += len(chunk)
-				if length > IMAGE_MAX_BYTESIZE:
+				if length > config.IMAGE_MAX_BYTESIZE:
 					del parser
 					raise cls.MaxBytesException
 				parser.feed(chunk)
@@ -125,10 +142,6 @@ class NoImageFilter(object): # AdblockURLFilter
 		return None
 
 
-IMAGE_LIMIT_RATIO = 4 # if js crop center square
-IMAGE_MIN_IMGSIZE = (94, 94)
-IMAGE_MAX_IMGSIZE = (2064, 2064)
-
 class SizeImageFilter(object): # NoImageFilter
 	"""
 	Checks the `filters.Image` instance to have proper size.
@@ -147,16 +160,16 @@ class SizeImageFilter(object): # NoImageFilter
 	
 	@classmethod
 	def check_size(cls, image):
-		if  image.size[0] < IMAGE_MIN_IMGSIZE[0] or \
-			image.size[1] < IMAGE_MIN_IMGSIZE[1]:
+		if  image.size[0] < config.IMAGE_MIN_IMGSIZE[0] or \
+			image.size[1] < config.IMAGE_MIN_IMGSIZE[1]:
 			raise cls.TinyImageException
-		if  image.size[0] > IMAGE_MAX_IMGSIZE[0] or \
-			image.size[1] > IMAGE_MAX_IMGSIZE[1]:
+		if  image.size[0] > config.IMAGE_MAX_IMGSIZE[0] or \
+			image.size[1] > config.IMAGE_MAX_IMGSIZE[1]:
 			raise cls.HugeImageException
 		ratio = image.size[0] / image.size[1]
 		if ratio < 1:
 			ratio = 1 / ratio
-		if  ratio > IMAGE_LIMIT_RATIO:
+		if  ratio > config.IMAGE_LIMIT_RATIO:
 			raise cls.RatioImageException
 
 	def __call__(self, image):
@@ -170,10 +183,15 @@ class SizeImageFilter(object): # NoImageFilter
 		return None
 
 
-import re, PIL
-from cStringIO import StringIO
+class MonoImageFilterMeta(type):
+	"Lazy load regex (former IMAGE_MONO_REGEX)."
 
-IMAGE_MONO_REGEX = re.compile(r'((_|\b)(white|blank|black|overlay)(_|\b))', re.IGNORECASE) # improve this
+	@property
+	def regex(cls):
+		if getattr(cls, '_regex', None) is None:
+			regex = re.compile(config.IMAGE_MONO_RULE, re.IGNORECASE) # improve this
+			cls._regex = regex
+		return cls._regex
 
 class MonoImageFilter(object): # SizeImageFilter
 	"""
@@ -183,6 +201,8 @@ class MonoImageFilter(object): # SizeImageFilter
 	- http://wordpress.com/i/blank.jpg?m=1383295312g
 	- http://images.inc.com/leftnavmenu/inc-logo-white.png
 	"""
+	__metaclass__ = MonoImageFilterMeta
+
 	class MonoImageException(Exception):
 		pass
 	
@@ -200,8 +220,8 @@ class MonoImageFilter(object): # SizeImageFilter
 	def __call__(self, image):
 		# image = super(MonoImageFilter, self).__call__(image)
 		try:
-			if IMAGE_MONO_REGEX.search(image.url):
-				content = requests.get(image.url).content
+			if MonoImageFilter.regex.search(image.url):
+				content = request.get(image.url).content
 				pic = StringIO(content)
 				raw_image = PIL.Image.open(pic)
 				MonoImageFilter.check_color(raw_image)
@@ -233,12 +253,11 @@ class FormatImageFilter(object): # MonoImageFilter
 			isanimated= True
 			raise cls.AnimatedImageException
 
-
 	def __call__(self, image):
 		# image = super(FormatImageFilter, self).__call__(image)
 		try:
 			if image.format.lower() == "gif":
-				content = requests.get(image.url).content
+				content = request.get(image.url).content
 				pic = StringIO(content)
 				raw_image = PIL.Image.open(pic)
 				FormatImageFilter.check_animated(raw_image)
@@ -249,5 +268,3 @@ class FormatImageFilter(object): # MonoImageFilter
 			print "[BadImage] %s: %s" % (clsn(e), image.url)
 			pass
 		return None
-
-
