@@ -6,6 +6,8 @@ from contextlib import closing
 
 import request, config
 
+from pkg_resources import resource_filename
+
 import re, PIL
 from cStringIO import StringIO
 
@@ -28,30 +30,36 @@ class AdblockURLFilterMeta(type):
 	"""
 	Lazy loading Adblock rules.
 	First try to download easylist.txt, or load file from package.
+	The same for extralist.txt.
 	"""
-	def get_rules(cls):
-		"Loads Adblock filter rules from file."
-		from adblockparser import AdblockRules
-		print config.USER_AGENT
+	def load_raw_rules(cls, url):
+		"Load raw rules from url or package file."
 		raw_rules = []
+		filename = url.split('/')[-1] # e.g.: easylist.txt
 		try:
-			with closing(request.get(config.ADBLOCK_EASYLIST, stream=True)) as file:
+			with closing(request.get(url, stream=True)) as file:
 				file.raise_for_status()
 				# lines = 0 # to be removed
 				for rule in file.iter_lines():
 					raw_rules.append(rule.strip())
 					# lines += 1 # tbr
 					# if lines == 2500: break # tbr, only for windoze with no re2
-			print 'Adblock online rules: %d' % len(raw_rules)
-		except: # adblockplus.org down
-			from pkg_resources import resource_filename
-			
-			with open(resource_filename('summary', 'easylist.txt'), 'r') as file:
+			print 'Adblock online %s: %d' % (filename, len(raw_rules))
+		except: # file server down or bad url
+			with open(resource_filename('summary', filename), 'r') as file:
 				for rule in file:
 					raw_rules.append(rule.strip())
-			print 'Adblock offline rules: %d' % len(raw_rules)
+			print 'Adblock offline %s: %d' % (filename, len(raw_rules))
+		return raw_rules
 
-		raw_rules.extend(config.ADBLOCK_RULES) # custom
+	def get_all_rules(cls):
+		"Load all available Adblock rules."
+		from adblockparser import AdblockRules
+		
+		raw_rules = []
+		for url in [
+			config.ADBLOCK_EASYLIST_URL, config.ADBLOCK_EXTRALIST_URL]:
+			raw_rules.extend(cls.load_raw_rules(url))
 
 		rules = AdblockRules(raw_rules)
 		return rules
@@ -59,7 +67,7 @@ class AdblockURLFilterMeta(type):
 	@property
 	def rules(cls):
 		if getattr(cls, '_rules', None) is None:
-			rules = cls.get_rules()
+			rules = cls.get_all_rules()
 			cls._rules = rules
 		return cls._rules
 

@@ -15,6 +15,7 @@ GET_ALL_DATA = False # False for better performance
 USEFUL_QUERY_KEYS = [
 	'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
 	'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid',
+	'piano_t', 'piano_d',
 ]
 # USELESS_QUERY_KEYS = [
 # 	'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
@@ -34,14 +35,10 @@ USEFUL_QUERY_KEYS = [
 ### Filters settings ###
 
 # AdblockURLFilter
-ADBLOCK_RULES = [
-	'||ad.doubleclick.net', 
-	'.gravatar.com/avatar/', '.media.tumblr.com/avatar_', 'assets.tumblr.com/images/default_avatar/',
-	'gu-logo-fallback.png', 'wsj_profile_lg.gif', 'fb-post-logo-new.png', 'og-ft-logo-large.png', 
-	'forbes_1200x1200.jpg', 'quote_200.png', 'wplogo.png', 't_logo_291_black.png', 'logo-bi-print.png',
-	'st-120x120.jpg', 'twp-200x200.jpg', 'global-sprite-v', 
-]
-ADBLOCK_EASYLIST = 'https://easylist-downloads.adblockplus.org/easylist.txt'
+ADBLOCK_EASYLIST_URL = \
+	'https://easylist-downloads.adblockplus.org/easylist.txt'
+ADBLOCK_EXTRALIST_URL = 'extralist.txt' 
+	# 'https://dl.dropboxusercontent.com/u/134594/svven/extralist.txt'
 
 # NoImageFilter
 IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB

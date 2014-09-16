@@ -1,0 +1,4 @@
+||ad.doubleclick.net
+.gravatar.com/avatar
+.media.tumblr.com/avatar
+assets.tumblr.com/images/default_avatar

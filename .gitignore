@@ -55,4 +55,4 @@ docs/_build/
 
 *.html
 *.txt
-!easylist.txt
+!*list.txt

@@ -213,7 +213,7 @@ class Summary(object):
 					"summary.techniques.HTTPEquivRefreshTags",
 				])
 				new_url = self.urls and self.urls[0]
-				if new_url: 
+				if new_url and new_url != self.clean_url: 
 					print "New url: %s" % new_url
 					self._clear()
 					self.clean_url = new_url
