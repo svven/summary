@@ -12,4 +12,5 @@ def get(url, **kwargs):
 	headers = kwargs.get('headers', {})
 	headers['User-Agent'] = USER_AGENT # overwrite
 	kwargs['headers'] = headers
+	kwargs['verify'] = False # no SSLError
 	return requests.get(url, **kwargs)

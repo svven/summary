@@ -14,7 +14,7 @@ GET_ALL_DATA = False # False for better performance
 
 USEFUL_QUERY_KEYS = [
 	'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
-	'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid',
+	'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid', 'list',
 	'piano_t', 'piano_d',
 ]
 # USELESS_QUERY_KEYS = [
@@ -44,7 +44,7 @@ ADBLOCK_EXTRALIST_URL = 'extralist.txt'
 IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB
 
 # SizeImageFilter
-IMAGE_LIMIT_RATIO = 4 # if js crop center square
+IMAGE_LIMIT_RATIO = 3 # if js crop center square
 IMAGE_MIN_IMGSIZE = (94, 94)
 IMAGE_MAX_IMGSIZE = (2064, 2064)
 

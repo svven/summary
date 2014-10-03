@@ -82,7 +82,7 @@ class AdblockURLFilter(object): # Filter
 
 	def __call__(self, url):
 		if AdblockURLFilter.rules.should_block(url):
-			print "[BadImage] AdblockURLFilter: %s" % url
+			# print "[BadImage] AdblockURLFilter: %s" % url
 			return None
 		return url
 
@@ -145,7 +145,9 @@ class NoImageFilter(object): # AdblockURLFilter
 			image = NoImageFilter.get_image(url)
 			return image
 		except Exception, e:
-			print "[BadImage] %s: %s" % (clsn(e), url)
+			if url.startswith('data'): # data URI
+				url = url[:url.find(';')]
+			# print "[BadImage] %s: %s" % (clsn(e), url)
 			pass
 		return None
 
@@ -186,7 +188,7 @@ class SizeImageFilter(object): # NoImageFilter
 			SizeImageFilter.check_size(image)
 			return image
 		except Exception, e:
-			print "[BadImage] %s%s: %s" % (clsn(e), image.size, image.url)
+			# print "[BadImage] %s%s: %s" % (clsn(e), image.size, image.url)
 			pass
 		return None
 
@@ -234,10 +236,10 @@ class MonoImageFilter(object): # SizeImageFilter
 				raw_image = PIL.Image.open(pic)
 				MonoImageFilter.check_color(raw_image)
 				del raw_image # more cleaning maybe
-				print "[GoodImage] MonoImageFilter: %s" % image.url
+				# print "[GoodImage] MonoImageFilter: %s" % image.url
 			return image
 		except Exception, e:
-			print "[BadImage] %s: %s" % (clsn(e), image.url)
+			# print "[BadImage] %s: %s" % (clsn(e), image.url)
 			pass
 		return None
 
@@ -270,9 +272,9 @@ class FormatImageFilter(object): # MonoImageFilter
 				raw_image = PIL.Image.open(pic)
 				FormatImageFilter.check_animated(raw_image)
 				del raw_image
-				print "[GoodImage] FormatImageFilter: %s" % image.url
+				# print "[GoodImage] FormatImageFilter: %s" % image.url
 			return image
 		except Exception, e:
-			print "[BadImage] %s: %s" % (clsn(e), image.url)
+			# print "[BadImage] %s: %s" % (clsn(e), image.url)
 			pass
 		return None
