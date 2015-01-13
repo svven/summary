@@ -7,8 +7,11 @@ These can be overwritten after importing `summary` and before using it.
 
 USER_AGENT = 'summary-extraction 0.2'
 ENCODING = 'utf-8' # None for autodetect
+TIMEOUT = (10, 10) # (connect, read) # None for never
 
 CHUNK_SIZE = 1024 # 1 KB
+HTML_MAX_BYTESIZE = 1 * 1048576 # 1 MB
+
 GET_ALL_DATA = False # False for better performance
 # MAX_ITEMS = 2 # to choose from
 
@@ -35,8 +38,8 @@ USEFUL_QUERY_KEYS = [
 ### Filters settings ###
 
 # AdblockURLFilter
-ADBLOCK_EASYLIST_URL = \
-	'https://easylist-downloads.adblockplus.org/easylist.txt'
+ADBLOCK_EASYLIST_URL = 'easylist.txt'
+	# 'https://easylist-downloads.adblockplus.org/easylist.txt'
 ADBLOCK_EXTRALIST_URL = 'extralist.txt' 
 	# 'https://dl.dropboxusercontent.com/u/134594/svven/extralist.txt'
 

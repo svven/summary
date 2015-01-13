@@ -167,6 +167,8 @@ class Summary(object):
 				tag = find_tag(lower_html, tag_name, tag_start, tag_end)
 				if tag:
 					return tag
+				if len(self._html) > config.HTML_MAX_BYTESIZE:
+					raise HTMLParseError('Maximum response size reached.')
 			response.consumed = True
 		tag = find_tag(lower_html, tag_name, tag_start, tag_end)
 		return tag
@@ -190,19 +192,20 @@ class Summary(object):
 		websites like foursquare.com, facebook.com, bitly.com and so on.
 		"""
 		# assert self._is_clear()
-		with closing(request.get(self.clean_url, stream=True, timeout=10)) as response:
+		print "Requesting"
+		with closing(request.get(self.clean_url, stream=True)) as response:
 			response.raise_for_status()
-
 			mime = response.headers.get('content-type')
 			if mime and not ('html' in mime.lower()):
 				raise HTMLParseError('Invalid Content-Type: %s' % mime)
-
+			print "Cleaning"
 			self.clean_url = self._clean_url(response.url)
-			if check_url:
-				check_url(self.clean_url)
+			if check_url is not None:
+				check_url(url=self.clean_url)
+				print "Checked"
 
 			encoding = config.ENCODING or response.encoding
-
+			print "Extracting"
 			self._html = ""
 			head = self._get_tag(response, tag_name="head")
 
@@ -220,7 +223,7 @@ class Summary(object):
 					return self.extract(check_url=check_url, http_equiv_refresh=False)
 
 			if head:
-				# print "Get head: %s" % len(head)
+				print "Get head: %s" % len(head)
 				self._extract(head.decode(encoding, 'ignore'), self.clean_url, [
 					"extraction.techniques.FacebookOpengraphTags",
 					"extraction.techniques.TwitterSummaryCardTags",
@@ -232,7 +235,7 @@ class Summary(object):
 			if config.GET_ALL_DATA or not self._is_complete():
 				body = self._get_tag(response, tag_name="body")
 				if body:
-					# print "Get body: %s" % len(body)
+					print "Get body: %s" % len(body)
 					self._extract(body.decode(encoding, 'ignore'), self.clean_url, [
 						"extraction.techniques.HTML5SemanticTags",
 						"extraction.techniques.SemanticTags"				
