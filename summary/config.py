@@ -53,3 +53,6 @@ IMAGE_MAX_IMGSIZE = (2064, 2064)
 
 # MonoImageFilter
 IMAGE_MONO_RULE = r'((_|\b)(white|blank|black|overlay)(_|\b))'
+
+# Websites which require headless Javascript handling, e.g. via Selenium and PhantomJS
+JS_WEBSITES = ["readwrite.com"]
