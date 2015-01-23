@@ -15,8 +15,10 @@ import config
 import request
 import extraction
 import filters
+from utils import convert
 from url import canonicalize_url
 from w3lib.url import url_query_cleaner
+
 
 site = lambda myurl: urlparse(myurl).netloc
 
@@ -188,16 +190,16 @@ class Summary(object):
 
     def phantom_get(self, url):
         from selenium import webdriver
+        from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-        driver = webdriver.PhantomJS(executable_path="/usr/local/bin/phantomJs")
+        dcap = dict(DesiredCapabilities.PHANTOMJS)
+        dcap["phantomjs.page.settings.userAgent"] = config.PHANTOMJS_USERAGENT
+        driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path=config.PHANTOMJS_BIN)
         driver.set_window_size(1120, 550)
         driver.get(url)
         html = driver.page_source
         driver.quit()
-        with open('rw.html', 'w') as file:
-            file.write(html.encode('utf-8'))
         return html
-
 
     def extract(self, check_url=None, http_equiv_refresh=True):
         """
@@ -235,8 +237,8 @@ class Summary(object):
             head = self._get_tag(response, tag_name="head")
             if http_equiv_refresh:
                 # Check meta http-equiv refresh tag
-                html = head or self._html
-                self._extract(html.decode(encoding, 'ignore'), self.clean_url, [
+                html = convert(head or self._html, encoding)
+                self._extract(html, self.clean_url, [
                     "summary.techniques.HTTPEquivRefreshTags",
                 ])
                 new_url = self.urls and self.urls[0]
@@ -248,7 +250,7 @@ class Summary(object):
 
             if head:
                 print "Get head: %s" % len(head)
-                self._extract(head.decode(encoding, 'ignore'), self.clean_url, [
+                self._extract(head, self.clean_url, [
                     "extraction.techniques.FacebookOpengraphTags",
                     "extraction.techniques.TwitterSummaryCardTags",
                     "extraction.techniques.HeadTags"
@@ -260,7 +262,7 @@ class Summary(object):
                 body = self._get_tag(response, tag_name="body")
                 if body:
                     print "Get body: %s" % len(body)
-                    self._extract(body.decode(encoding, 'ignore'), self.clean_url, [
+                    self._extract(body, self.clean_url, [
                         "extraction.techniques.HTML5SemanticTags",
                         "extraction.techniques.SemanticTags"
                     ])

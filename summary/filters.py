@@ -3,13 +3,13 @@ This file contains filters for the extracted data, mainly images.
 """
 from __future__ import division
 from contextlib import closing
-
-import request, config
-
-from pkg_resources import resource_filename
-
-import re, PIL
 from cStringIO import StringIO
+
+import request
+import config
+from pkg_resources import resource_filename
+import re
+import PIL
 
 clsn = lambda e: e.__class__.__name__
 
@@ -82,7 +82,7 @@ class AdblockURLFilter(object): # Filter
 
 	def __call__(self, url):
 		if AdblockURLFilter.rules.should_block(url):
-			# print "[BadImage] AdblockURLFilter: %s" % url
+            print "[BadImage] AdblockURLFilter: %s" % url
 			return None
 		return url
 
@@ -147,7 +147,7 @@ class NoImageFilter(object): # AdblockURLFilter
 		except Exception, e:
 			if url.startswith('data'): # data URI
 				url = url[:url.find(';')]
-			# print "[BadImage] %s: %s" % (clsn(e), url)
+            print "[BadImage] %s: %s" % (clsn(e), url)
 			pass
 		return None
 
@@ -188,7 +188,7 @@ class SizeImageFilter(object): # NoImageFilter
 			SizeImageFilter.check_size(image)
 			return image
 		except Exception, e:
-			# print "[BadImage] %s%s: %s" % (clsn(e), image.size, image.url)
+            print "[BadImage] %s%s: %s" % (clsn(e), image.size, image.url)
 			pass
 		return None
 
@@ -239,7 +239,7 @@ class MonoImageFilter(object): # SizeImageFilter
 				# print "[GoodImage] MonoImageFilter: %s" % image.url
 			return image
 		except Exception, e:
-			# print "[BadImage] %s: %s" % (clsn(e), image.url)
+            print "[BadImage] %s: %s" % (clsn(e), image.url)
 			pass
 		return None
 
@@ -275,6 +275,6 @@ class FormatImageFilter(object): # MonoImageFilter
 				# print "[GoodImage] FormatImageFilter: %s" % image.url
 			return image
 		except Exception, e:
-			# print "[BadImage] %s: %s" % (clsn(e), image.url)
+            print "[BadImage] %s: %s" % (clsn(e), image.url)
 			pass
 		return None
