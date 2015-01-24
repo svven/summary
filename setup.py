@@ -8,6 +8,7 @@ setup(
     version='0.2',
     author='Alexandru Stanciu',
     author_email='alexandru.stanciu@gmail.com',
+    include_package_data=True,
     packages=['summary'],
     license='LICENSE.txt',
     url='https://github.com/svven/summary',
