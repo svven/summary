@@ -8,9 +8,10 @@ Extraction is performed gradually by parsing the HTML <head>
 tag first, applying specific head extraction techniques, and
 goes on to the <body> only if Summary data is not complete.
 """
-from contextlib import closing
+import logging
 
 import config, request, extraction, filters
+from contextlib import closing
 
 from url import canonicalize_url
 from w3lib.url import url_query_cleaner
@@ -192,20 +193,19 @@ class Summary(object):
 		websites like foursquare.com, facebook.com, bitly.com and so on.
 		"""
 		# assert self._is_clear()
-		print "Requesting"
+		logger = logging.getLogger(__name__)
+		logger.info("Extract: %s", self.clean_url)
 		with closing(request.get(self.clean_url, stream=True)) as response:
 			response.raise_for_status()
 			mime = response.headers.get('content-type')
 			if mime and not ('html' in mime.lower()):
 				raise HTMLParseError('Invalid Content-Type: %s' % mime)
-			print "Cleaning"
 			self.clean_url = self._clean_url(response.url)
 			if check_url is not None:
 				check_url(url=self.clean_url)
-				print "Checked"
 
 			encoding = config.ENCODING or response.encoding
-			print "Extracting"
+
 			self._html = ""
 			head = self._get_tag(response, tag_name="head")
 
@@ -217,31 +217,31 @@ class Summary(object):
 				])
 				new_url = self.urls and self.urls[0]
 				if new_url and new_url != self.clean_url: 
-					print "New url: %s" % new_url
+					logger.warning("Refresh: %s", new_url)
 					self._clear()
 					self.clean_url = new_url
 					return self.extract(check_url=check_url, http_equiv_refresh=False)
 
 			if head:
-				print "Get head: %s" % len(head)
+				logger.debug("Got head: %s", len(head))
 				self._extract(head.decode(encoding, 'ignore'), self.clean_url, [
 					"extraction.techniques.FacebookOpengraphTags",
 					"extraction.techniques.TwitterSummaryCardTags",
 					"extraction.techniques.HeadTags"
 				])
-			# else:
-			# 	print "No head: %s" % self.clean_url
+			else:
+				logger.debug("No head: %s", self.clean_url)
 
 			if config.GET_ALL_DATA or not self._is_complete():
 				body = self._get_tag(response, tag_name="body")
 				if body:
-					print "Get body: %s" % len(body)
+					logger.debug("Got body: %s", len(body))
 					self._extract(body.decode(encoding, 'ignore'), self.clean_url, [
 						"extraction.techniques.HTML5SemanticTags",
 						"extraction.techniques.SemanticTags"				
 					])
-				# else:
-				# 	print "No body: %s" % self.clean_url
+				else:
+					logger.debug("No body: %s", self.clean_url)
 
 			if not head and not body:
 				raise HTMLParseError('No head nor body tags found.')

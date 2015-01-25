@@ -1,8 +1,9 @@
 """
 Wrapper for `requests`.
 """
+import logging, requests
+logger = logging.getLogger(__name__)
 
-import requests
 from config import USER_AGENT, TIMEOUT
 
 requests.packages.urllib3.disable_warnings()
@@ -20,6 +21,5 @@ def get(url, **kwargs):
 
 	kwargs['verify'] = False # no SSLError
 
-	print "Getting", url
-
+	logger.debug("Getting: %s", url)
 	return requests.get(url, **kwargs)

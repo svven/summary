@@ -2,9 +2,12 @@
 This file contains filters for the extracted data, mainly images.
 """
 from __future__ import division
-from contextlib import closing
 
-import request, config
+import logging
+logger = logging.getLogger(__name__)
+
+import config, request
+from contextlib import closing
 
 from pkg_resources import resource_filename
 
@@ -44,12 +47,12 @@ class AdblockURLFilterMeta(type):
 					raw_rules.append(rule.strip())
 					# lines += 1 # tbr
 					# if lines == 2500: break # tbr, only for windoze with no re2
-			print 'Adblock online %s: %d' % (filename, len(raw_rules))
+			logger.info("Adblock online %s: %d", filename, len(raw_rules))
 		except: # file server down or bad url
 			with open(resource_filename('summary', filename), 'r') as file:
 				for rule in file:
 					raw_rules.append(rule.strip())
-			print 'Adblock offline %s: %d' % (filename, len(raw_rules))
+			logger.info("Adblock offline %s: %d", filename, len(raw_rules))
 		return raw_rules
 
 	def get_all_rules(cls):
@@ -82,7 +85,7 @@ class AdblockURLFilter(object): # Filter
 
 	def __call__(self, url):
 		if AdblockURLFilter.rules.should_block(url):
-			# print "[BadImage] AdblockURLFilter: %s" % url
+			logger.debug("Bad image (%s): %s", clsn(self), url)
 			return None
 		return url
 
@@ -147,7 +150,7 @@ class NoImageFilter(object): # AdblockURLFilter
 		except Exception, e:
 			if url.startswith('data'): # data URI
 				url = url[:url.find(';')]
-			# print "[BadImage] %s: %s" % (clsn(e), url)
+			logger.debug("Bad image (%s): %s", clsn(e), url)
 			pass
 		return None
 
@@ -188,7 +191,7 @@ class SizeImageFilter(object): # NoImageFilter
 			SizeImageFilter.check_size(image)
 			return image
 		except Exception, e:
-			# print "[BadImage] %s%s: %s" % (clsn(e), image.size, image.url)
+			logger.debug("Bad image (%s): %s", clsn(e), image.url)
 			pass
 		return None
 
@@ -236,10 +239,10 @@ class MonoImageFilter(object): # SizeImageFilter
 				raw_image = PIL.Image.open(pic)
 				MonoImageFilter.check_color(raw_image)
 				del raw_image # more cleaning maybe
-				# print "[GoodImage] MonoImageFilter: %s" % image.url
+				logger.debug("Good image (%s): %s", clsn(self), image.url)
 			return image
 		except Exception, e:
-			# print "[BadImage] %s: %s" % (clsn(e), image.url)
+			logger.debug("Bad image (%s): %s", clsn(e), image.url)
 			pass
 		return None
 
@@ -272,9 +275,9 @@ class FormatImageFilter(object): # MonoImageFilter
 				raw_image = PIL.Image.open(pic)
 				FormatImageFilter.check_animated(raw_image)
 				del raw_image
-				# print "[GoodImage] FormatImageFilter: %s" % image.url
+				logger.debug("Good image (%s): %s", clsn(self), image.url)
 			return image
 		except Exception, e:
-			# print "[BadImage] %s: %s" % (clsn(e), image.url)
+			logger.debug("Bad image (%s): %s", clsn(e), image.url)
 			pass
 		return None
