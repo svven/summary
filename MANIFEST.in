@@ -1,3 +1,2 @@
-include *.rst
-include *.txt
-exclude urls.txt
+include README.rst
+include summary/*.txt

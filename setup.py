@@ -9,6 +9,7 @@ setup(
     author='Alexandru Stanciu',
     author_email='alexandru.stanciu@gmail.com',
     packages=['summary'],
+    include_package_data=True,
     license='LICENSE.txt',
     url='https://github.com/svven/summary',
     # download_url = 'https://github.com/svven/summary/tarball/0.2',
