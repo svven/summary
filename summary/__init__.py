@@ -11,13 +11,14 @@ goes on to the <body> only if Summary data is not complete.
 from contextlib import closing
 from urlparse import urlparse
 
+import extraction
+from w3lib.url import url_query_cleaner
+
 import config
 import request
-import extraction
 import filters
 from utils import convert
 from url import canonicalize_url
-from w3lib.url import url_query_cleaner
 
 
 site = lambda myurl: urlparse(myurl).netloc
@@ -38,9 +39,11 @@ class Summary(object):
         self.descriptions = []
         self.images = []
         self.urls = []
-
         self.source_url = source_url
         self.clean_url = self.source_url
+
+        self._html = "" # Move here so it doesn't interfere with unit testing.
+                        # Have to make sure it doesn't break normal operation.
 
     # Non-plural properties
     @property
@@ -228,7 +231,6 @@ class Summary(object):
 
             encoding = config.ENCODING or response.encoding
             print "Extracting"
-            self._html = ""
 
             if site(self.clean_url) in config.JS_WEBSITES:
                 self._html = self.phantom_get(self.clean_url)

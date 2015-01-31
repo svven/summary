@@ -1,7 +1,10 @@
 """
 Wrapper for `requests`.
 """
-import logging, requests
+import logging
+
+import requests
+
 logger = logging.getLogger(__name__)
 
 from config import USER_AGENT, TIMEOUT

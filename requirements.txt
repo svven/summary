@@ -19,3 +19,7 @@ mechanize
 
 git+git://github.com/niklasb/webkit-server.git
 selenium
+
+pytest
+mockito
+mock

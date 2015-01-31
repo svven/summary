@@ -4,6 +4,20 @@ Summary
 
 Current release: v0.2 - see CHANGES.txt for details.
 
+Requirements
+------------
+
+This instance also requires Selenium and PhantomJS to handle Javascript generated pages.
+Selenium is installed via pip and the requirememts.txt file, however, PhantomJS is a binary
+which needs to be installed as per instructions on the PhantomJS site.
+
+http://phantomjs.org/download.html
+http://phantomjs.org/build.html
+
+Once the binaries have been installed change the summary/config.py file and the PHANTOMJS_BIN
+variable.
+
+
 Simple usage
 ------------
 
