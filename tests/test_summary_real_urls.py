@@ -2,6 +2,21 @@ from summary import Summary
 
 # Need to find a better way to skip tests
 
+
+
+def ignore_test_summary_gv_com():
+
+    # Given
+    url = 'http://www.gv.com/lib/the-product-design-sprint-a-five-day-recipe-for-startups'
+
+    # When
+    summ = Summary(url)
+    summ.extract()
+
+    # Then
+    assert summ.image.url == 'http://img.gv.com/wp-content/uploads/2012/10/sprint.jpg?fit=crop&crop=faces&w=500&h=500&fm=jpg&s=0452fc00eb1557bc421f8975be7850b7'
+
+
 def this_test_fails_test_summary_a16z_com():
 
     # Given
