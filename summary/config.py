@@ -16,22 +16,22 @@ GET_ALL_DATA = False # False for better performance
 # MAX_ITEMS = 2 # to choose from
 
 USEFUL_QUERY_KEYS = [
-	'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
-	'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid', 'list',
-	'piano_t', 'piano_d',
+    'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
+    'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid', 'list',
+    'piano_t', 'piano_d',
 ]
 # USELESS_QUERY_KEYS = [
-# 	'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
-# 	'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
-# 	'refresh', 'ref', 'feature', '_r', 'smid', 'seid', 'ncid', 'awesm', 'url', 'mg', 
-# 	'_php',	'_type', 'source', 'mod', 'partner', 'type', 'share', 'cmp', 'channel',
-# 	'ei', 'sa', 'buffer_share', 'bih', 'biw', 'list', 'ved', 'srid', 'fsrc', 'referer',
-# 	'shortlink', 'trk', 'src', 'mt', 'tripIdBase36', 'activityList', 'emc', 'uid',
-# 	'page', 'uploaded', 'mbid', 'l', '_i_location', 'siteedition', 'ftcamp', 'soc_src',
-# 	'pagewanted', 'client', 'c', 'rls', 'hs', 'rev', 'spref', 'curator', 'm', 't',
-# 	'app', 'feature', 'notif_t', 'index', 'g', 'cmpid', 'lang', 'aff', 'ir', 'st',
-# 	'ana', 'pid', 'sc', 'sns', 'op', 'goback', 'f', 'g', 'r', 'rid', 'a_dgi', 'ocid',
-# 	'past', 
+#   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
+#   'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
+#   'refresh', 'ref', 'feature', '_r', 'smid', 'seid', 'ncid', 'awesm', 'url', 'mg', 
+#   '_php', '_type', 'source', 'mod', 'partner', 'type', 'share', 'cmp', 'channel',
+#   'ei', 'sa', 'buffer_share', 'bih', 'biw', 'list', 'ved', 'srid', 'fsrc', 'referer',
+#   'shortlink', 'trk', 'src', 'mt', 'tripIdBase36', 'activityList', 'emc', 'uid',
+#   'page', 'uploaded', 'mbid', 'l', '_i_location', 'siteedition', 'ftcamp', 'soc_src',
+#   'pagewanted', 'client', 'c', 'rls', 'hs', 'rev', 'spref', 'curator', 'm', 't',
+#   'app', 'feature', 'notif_t', 'index', 'g', 'cmpid', 'lang', 'aff', 'ir', 'st',
+#   'ana', 'pid', 'sc', 'sns', 'op', 'goback', 'f', 'g', 'r', 'rid', 'a_dgi', 'ocid',
+#   'past', 
 # ]
 
 
@@ -39,9 +39,9 @@ USEFUL_QUERY_KEYS = [
 
 # AdblockURLFilter
 ADBLOCK_EASYLIST_URL = 'easylist.txt'
-	# 'https://easylist-downloads.adblockplus.org/easylist.txt'
+    # 'https://easylist-downloads.adblockplus.org/easylist.txt'
 ADBLOCK_EXTRALIST_URL = 'extralist.txt' 
-	# 'https://dl.dropboxusercontent.com/u/134594/svven/extralist.txt'
+    # 'https://dl.dropboxusercontent.com/u/134594/svven/extralist.txt'
 
 # NoImageFilter
 IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB
