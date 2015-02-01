@@ -21,3 +21,10 @@ time-logo-og.png
 twp-200x200.jpg
 wplogo.png
 wsj_profile_lg.gif
+fcw-logo.png
+images.forbes.com/images/channels/headercoverstory*
+i.forbesimg.com/assets/img/anon_avatar.png
+blogs-images.forbes.com/*/files/*/*/*-300x300.png
+images.forbes.com/images/channels/headerfeature*_panel*_original-*.*
+a16z.files.wordpress.com/2014/01/7cb56ea5114a9f0e92d53bf0e171d15d.png
+a16z.files.wordpress.com/2014/01/da2c1aedab40222c2e18ad31dfef0c91.png

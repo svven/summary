@@ -9,13 +9,18 @@ tag first, applying specific head extraction techniques, and
 goes on to the <body> only if Summary data is not complete.
 """
 import logging
-
-import config, request, extraction, filters
 from contextlib import closing
+from urlparse import urlparse
 
+import config
+import request
+import extraction
+import filters
 from url import canonicalize_url
 from w3lib.url import url_query_cleaner
+from utils import convert
 
+site = lambda myurl: urlparse(myurl).netloc
 
 class HTMLParseError(Exception):
     pass
@@ -36,6 +41,10 @@ class Summary(object):
 
         self.source_url = source_url
         self.clean_url = self.source_url
+
+        self._html = "" # Move here so it doesn't interfere with unit testing.
+                        # Have to make sure it doesn't break normal operation.
+
 
     # Non-plural properties
     @property
@@ -174,6 +183,20 @@ class Summary(object):
         tag = find_tag(lower_html, tag_name, tag_start, tag_end)
         return tag
 
+    def phantom_get(self, url):
+        from selenium import webdriver
+        from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+        dcap = dict(DesiredCapabilities.PHANTOMJS)
+        dcap["phantomjs.page.settings.userAgent"] = config.PHANTOMJS_USERAGENT
+        driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path=config.PHANTOMJS_BIN)
+        driver.set_window_size(1120, 550)
+        driver.get(url)
+        html = driver.page_source
+        driver.quit()
+        return html
+
+
     def _extract(self, html, url, techniques):
         extractor = extraction.SvvenExtractor(techniques=techniques)
         extracted = extractor.extract(html, source_url=url)
@@ -205,14 +228,18 @@ class Summary(object):
                 check_url(url=self.clean_url)
 
             encoding = config.ENCODING or response.encoding
+            print "Extracting"
 
-            self._html = ""
+            if site(self.clean_url) in config.JS_WEBSITES:
+                self._html = self.phantom_get(self.clean_url)
+                response.consumed = True
+
             head = self._get_tag(response, tag_name="head")
 
             if http_equiv_refresh:
                 # Check meta http-equiv refresh tag
-                html = head or self._html
-                self._extract(html.decode(encoding, 'ignore'), self.clean_url, [
+                html = convert(head or self._html, encoding)
+                self._extract(html, self.clean_url, [
                     "summary.techniques.HTTPEquivRefreshTags",
                 ])
                 new_url = self.urls and self.urls[0]
@@ -224,7 +251,7 @@ class Summary(object):
 
             if head:
                 logger.debug("Got head: %s", len(head))
-                self._extract(head.decode(encoding, 'ignore'), self.clean_url, [
+                self._extract(head, self.clean_url, [
                     "extraction.techniques.FacebookOpengraphTags",
                     "extraction.techniques.TwitterSummaryCardTags",
                     "extraction.techniques.HeadTags"

@@ -53,3 +53,12 @@ IMAGE_MAX_IMGSIZE = (2064, 2064)
 
 # MonoImageFilter
 IMAGE_MONO_RULE = r'((_|\b)(white|blank|black|overlay)(_|\b))'
+
+# Websites which require headless Javascript handling, e.g. via Selenium and PhantomJS
+JS_WEBSITES = ["readwrite.com", "html5-ninja.com", "rally.org"]
+PHANTOMJS_BIN = "/usr/local/bin/phantomJs"
+PHANTOMJS_USERAGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 "
+    "(KHTML, like Gecko) Chrome/15.0.87"
+)
+
