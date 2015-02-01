@@ -204,6 +204,7 @@ class Summary(object):
         driver.quit()
         return html
 
+
     def extract(self, check_url=None, http_equiv_refresh=True):
         """
         Downloads HTML <head> tag first, extracts data from it using

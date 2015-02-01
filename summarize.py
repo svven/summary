@@ -70,7 +70,8 @@ def summarize(urls):
 if __name__ == '__main__':
 	urls = []
 	with open('urls.txt', 'r') as file:
-		urls.extend([url.strip() for url in file])
+		urls.extend([url.strip() for url in file if not url.strip().startswith("#") \
+                                                 and url.strip() != ""])
 
 	summaries, result, speed = summarize(urls)
 	page = render(template="news.html",

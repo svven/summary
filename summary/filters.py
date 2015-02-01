@@ -88,7 +88,7 @@ class AdblockURLFilter(object):  # Filter
 
     def __call__(self, url):
         if AdblockURLFilter.rules.should_block(url):
-            # print "[BadImage] AdblockURLFilter: %s" % url
+            print "[AdblockURLFilter] AdblockURLFilter: %s" % url
             return None
         return url
 
@@ -155,7 +155,7 @@ class NoImageFilter(object):  # AdblockURLFilter
             if url.startswith('data'):  # data URI
                 url = url[:url.find(';')]
 
-            # print "[BadImage] %s: %s" % (e, url)
+            print "[NoImageFilter] %s: %s" % (e, url)
             pass
             return None
 
@@ -198,7 +198,7 @@ class SizeImageFilter(object):  # NoImageFilter
             return image
         except Exception, e:
 
-            # print "[BadImage] %s%s: %s" % (clsn(e), image.size, image.url)
+            print "[SizeImageFilter] %s%s: %s" % (clsn(e), image.size, image.url)
             pass
             return None
 
@@ -250,7 +250,7 @@ class MonoImageFilter(object):  # SizeImageFilter
             # print "[GoodImage] MonoImageFilter: %s" % image.url
             return image
         except Exception, e:
-            # print "[BadImage] %s: %s" % (clsn(e), image.url)
+            print "[MonoImageFilter] %s: %s" % (clsn(e), image.url)
             pass
             return None
 
@@ -288,6 +288,6 @@ class FormatImageFilter(object):  # MonoImageFilter
             return image
         except Exception, e:
 
-            # print "[BadImage] %s: %s" % (clsn(e), image.url)
+            print "[FormatImageFilter] %s: %s" % (clsn(e), image.url)
             pass
             return None

@@ -1,3 +1,5 @@
+import os
+
 import mock
 from mock import MagicMock
 from requests import Response
@@ -26,3 +28,11 @@ def test_summary(mock_request):
     # Then
     # mock_response.raw.close.assert_called_with()
     assert summ.title == 'Test Title'
+
+
+def get_test_data(test):
+    testfile = './test_data_' + str(test) + '.txt'
+    testpath = os.path.join(os.path.dirname(__file__), testfile)
+    with open (testpath, 'r') as myfile:
+        data = myfile.read()
+    return data
