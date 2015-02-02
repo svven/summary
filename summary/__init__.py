@@ -18,7 +18,7 @@ from w3lib.url import url_query_cleaner
 
 site = lambda url: urlparse(url).netloc
 decode = lambda str, encoding: \
-    isinstance(str, unicode) and str or str.decode(encoding, 'ignore')
+    isinstance(str, basestring) and str.decode(encoding, 'ignore') or str
 
 class HTMLParseError(Exception):
     pass
