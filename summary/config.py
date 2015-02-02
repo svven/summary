@@ -5,7 +5,8 @@ These can be overwritten after importing `summary` and before using it.
 
 ### Package settings ###
 
-USER_AGENT = 'summary-extraction 0.2'
+USER_AGENT = 'summary-extraction 0.2' 
+    # "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
 ENCODING = 'utf-8' # None for autodetect
 TIMEOUT = (10, 10) # (connect, read) # None for never
 
@@ -18,7 +19,7 @@ GET_ALL_DATA = False # False for better performance
 USEFUL_QUERY_KEYS = [
     'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
     'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid', 'list',
-    'piano_t', 'piano_d',
+    'piano_t', 'piano_d', 'page',
 ]
 # USELESS_QUERY_KEYS = [
 #   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
@@ -34,6 +35,11 @@ USEFUL_QUERY_KEYS = [
 #   'past', 
 # ]
 
+# PhantomJS
+PHANTOMJS_BIN = ''
+PHANTOMJS_SITES = [
+    'readwrite.com', 'html5-ninja.com', 'rally.org',
+]
 
 ### Filters settings ###
 
@@ -53,12 +59,3 @@ IMAGE_MAX_IMGSIZE = (2064, 2064)
 
 # MonoImageFilter
 IMAGE_MONO_RULE = r'((_|\b)(white|blank|black|overlay)(_|\b))'
-
-# Websites which require headless Javascript handling, e.g. via Selenium and PhantomJS
-JS_WEBSITES = ["readwrite.com", "html5-ninja.com", "rally.org"]
-PHANTOMJS_BIN = "/usr/local/bin/phantomJs"
-PHANTOMJS_USERAGENT = (
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 "
-    "(KHTML, like Gecko) Chrome/15.0.87"
-)
-

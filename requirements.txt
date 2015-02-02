@@ -1,22 +1,13 @@
-Jinja2==2.7.2 # only for rendering
-# MarkupSafe==0.23 # idem
+Jinja2==2.7.2 # for rendering
 Pillow==2.4.0
 adblockparser==0.2
-# beautifulsoup4==4.3.2
 extraction==0.2
-# html5lib==0.999
 lxml==3.3.5
-# re2==0.2.20 # good for adblockparser
+re2==0.2.20 # for adblockparser
 requests==2.5.1
-# six==1.6.1
+selenium==2.44.0
 w3lib==1.6
-# wsgiref==0.1.2
 
-# --index-url https://pypi.python.org/simple/
-# -e .
-
-selenium
-
-pytest
-mockito
-mock
+mock==1.0.1
+mockito==0.5.2
+pytest==2.6.4
