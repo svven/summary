@@ -6,9 +6,9 @@ def test_summary():
     testdata = get_test_data()
     passed = 0
     failed = 0
-    errors = []
+    errors = ""
     for line in testdata:
-        if line.startswith('url'):
+        if line.startswith('url') or line.strip().startswith('#') or not line.strip():
             continue
 
         url, img, title, desc = (line.strip().split('|') + [None]*99)[:4]
@@ -18,17 +18,17 @@ def test_summary():
 
         testpassed = True
         if img:
-            if summ.image.url != img:
+            if not summ.image or summ.image.url != unicode(img):
                 testpassed = False
-                errors += "%(url)s bad image %(img)s" % locals()
+                errors += "%s bad image %s\n" % (url, summ.image and summ.image.url)
         if title:
-            if summ.title != title:
+            if summ.title != unicode(title, 'utf-8'):
                 testpassed = False
-                errors += "%(url)s bad title %(title)s" % locals()
+                errors += "%s bad title %s\n" % (url, summ.title)
         if desc:
-            if summ.description != desc:
+            if summ.description != unicode(desc, 'utf-8'):
                 testpassed = False
-                errors += "%(url)s bad desc %(desc)s" % locals()
+                errors += "%s bad desc %s\n" % (url, summ.description)
 
         if testpassed:
             passed += 1

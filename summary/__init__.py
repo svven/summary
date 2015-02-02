@@ -20,6 +20,7 @@ from url import canonicalize_url
 from w3lib.url import url_query_cleaner
 from utils import convert
 
+
 site = lambda myurl: urlparse(myurl).netloc
 
 class HTMLParseError(Exception):
@@ -263,7 +264,7 @@ class Summary(object):
                 body = self._get_tag(response, tag_name="body")
                 if body:
                     logger.debug("Got body: %s", len(body))
-                    self._extract(body.decode(encoding, 'ignore'), self.clean_url, [
+                    self._extract(body, self.clean_url, [
                         "extraction.techniques.HTML5SemanticTags",
                         "extraction.techniques.SemanticTags"                
                     ])
