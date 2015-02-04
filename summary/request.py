@@ -4,7 +4,7 @@ Wrapper for `requests`.
 import logging, requests
 logger = logging.getLogger(__name__)
 
-from config import USER_AGENT, TIMEOUT
+from config import USER_AGENT, TIMEOUT, PHANTOMJS_BIN
 
 requests.packages.urllib3.disable_warnings()
 
@@ -23,3 +23,19 @@ def get(url, **kwargs):
 
     logger.debug("Getting: %s", url)
     return requests.get(url, **kwargs)
+
+def phantomjs_get(url):
+    """
+    Perform the request via PhantomJS.
+    """
+    from selenium import webdriver
+    from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+    dcap = dict(DesiredCapabilities.PHANTOMJS)
+    dcap["phantomjs.page.settings.userAgent"] = USER_AGENT
+    driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path=PHANTOMJS_BIN)
+    driver.set_window_size(1120, 550)
+    driver.get(url)
+    response = driver.page_source
+    driver.quit()
+    return response

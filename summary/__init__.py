@@ -12,16 +12,13 @@ import logging
 from contextlib import closing
 from urlparse import urlparse
 
-import config
-import request
-import extraction
-import filters
+import config, request, extraction, filters
 from url import canonicalize_url
 from w3lib.url import url_query_cleaner
-from utils import convert
 
-
-site = lambda myurl: urlparse(myurl).netloc
+site = lambda url: urlparse(url).netloc
+decode = lambda str, encoding: \
+    isinstance(str, basestring) and str.decode(encoding, 'ignore') or str
 
 class HTMLParseError(Exception):
     pass
@@ -35,6 +32,8 @@ class Summary(object):
         Unlike Extracted ctor, this one just sets the source_url.
         Extracted data is loaded later gradually by calling extract.
         """
+        self._html = ""
+
         self.titles = []
         self.descriptions = []
         self.images = []
@@ -42,10 +41,6 @@ class Summary(object):
 
         self.source_url = source_url
         self.clean_url = self.source_url
-
-        self._html = "" # Move here so it doesn't interfere with unit testing.
-                        # Have to make sure it doesn't break normal operation.
-
 
     # Non-plural properties
     @property
@@ -151,7 +146,7 @@ class Summary(object):
             filters.FormatImageFilter(),
         ])
     
-    def _get_tag(self, response, tag_name="html"):
+    def _get_tag(self, response, tag_name="html", encoding="utf-8"):
         """
         Iterates response content and returns the tag if found.
         If not found, the response content is fully consumed so
@@ -182,21 +177,7 @@ class Summary(object):
                     raise HTMLParseError('Maximum response size reached.')
             response.consumed = True
         tag = find_tag(lower_html, tag_name, tag_start, tag_end)
-        return tag
-
-    def phantom_get(self, url):
-        from selenium import webdriver
-        from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-
-        dcap = dict(DesiredCapabilities.PHANTOMJS)
-        dcap["phantomjs.page.settings.userAgent"] = config.PHANTOMJS_USERAGENT
-        driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path=config.PHANTOMJS_BIN)
-        driver.set_window_size(1120, 550)
-        driver.get(url)
-        html = driver.page_source
-        driver.quit()
-        return html
-
+        return decode(tag, encoding) # decode here
 
     def _extract(self, html, url, techniques):
         extractor = extraction.SvvenExtractor(techniques=techniques)
@@ -229,17 +210,18 @@ class Summary(object):
                 check_url(url=self.clean_url)
 
             encoding = config.ENCODING or response.encoding
-            print "Extracting"
 
-            if site(self.clean_url) in config.JS_WEBSITES:
-                self._html = self.phantom_get(self.clean_url)
+            self._html = ""
+            if config.PHANTOMJS_BIN and \
+                site(self.clean_url) in config.PHANTOMJS_SITES:
+                self._html = request.phantomjs_get(self.clean_url)
                 response.consumed = True
 
-            head = self._get_tag(response, tag_name="head")
+            head = self._get_tag(response, tag_name="head", encoding=encoding)
 
             if http_equiv_refresh:
                 # Check meta http-equiv refresh tag
-                html = convert(head or self._html, encoding)
+                html = head or decode(self._html, encoding)
                 self._extract(html, self.clean_url, [
                     "summary.techniques.HTTPEquivRefreshTags",
                 ])
@@ -261,7 +243,7 @@ class Summary(object):
                 logger.debug("No head: %s", self.clean_url)
 
             if config.GET_ALL_DATA or not self._is_complete():
-                body = self._get_tag(response, tag_name="body")
+                body = self._get_tag(response, tag_name="body", encoding=encoding)
                 if body:
                     logger.debug("Got body: %s", len(body))
                     self._extract(body, self.clean_url, [
