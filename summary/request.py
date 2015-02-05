@@ -34,7 +34,6 @@ def phantomjs_get(url):
     dcap = dict(DesiredCapabilities.PHANTOMJS)
     dcap["phantomjs.page.settings.userAgent"] = USER_AGENT
     driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path=PHANTOMJS_BIN)
-    driver.set_window_size(1120, 550)
     driver.get(url)
     response = driver.page_source
     driver.quit()

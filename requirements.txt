@@ -5,7 +5,7 @@ git+https://github.com/svven/extraction.git@master#egg=extraction # extraction==
 lxml==3.3.5
 re2==0.2.20 # for adblockparser
 requests==2.5.1
-selenium==2.44.0
+selenium==2.44.0 # for phantomjs
 w3lib==1.6
 
 mock==1.0.1

@@ -67,7 +67,7 @@ IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB
 
 # SizeImageFilter
 IMAGE_LIMIT_RATIO = 3 # if js crop center square
-IMAGE_MIN_IMGSIZE = (94, 94)
+IMAGE_MIN_IMGSIZE = (201, 201)
 IMAGE_MAX_IMGSIZE = (2064, 2064)
 
 # MonoImageFilter
