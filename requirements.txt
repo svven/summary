@@ -4,9 +4,10 @@ adblockparser==0.2
 extraction==0.2
 lxml==3.3.5
 re2==0.2.20 # for adblockparser
-requests==2.5.1
+#requests==2.5.1
 selenium==2.44.0
 w3lib==1.6
+git+https://github.com/svven/extraction.git@master#egg=extraction
 
 mock==1.0.1
 mockito==0.5.2

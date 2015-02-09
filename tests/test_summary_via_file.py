@@ -1,3 +1,5 @@
+import ssl
+
 from summary import Summary
 import os
 
@@ -7,6 +9,9 @@ def test_summary():
     passed = 0
     failed = 0
     errors = ""
+
+    print ssl.OPENSSL_VERSION
+
     for line in testdata:
         if line.startswith('url') or line.strip().startswith('#') or not line.strip():
             continue

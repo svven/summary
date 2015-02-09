@@ -14,13 +14,14 @@ def test_summary(mock_request):
     mock_response.headers.get = MagicMock(return_value = 'html')
     mock_response.url = url
     mock_response.encoding = 'UTF-8'
-    mock_response.consumed = True
+    mock_response.consumed = False
     mock_response.raw = MagicMock()
+    mock_response.iter_content = lambda s: ['<html><head><title>Test Title</head><body></body></html>']
     mock_request.return_value = mock_response
 
     # When
     summ = Summary(url)
-    summ._html = '<html><head><title>Test Title</head><body></body></html>'
+    # summ._html = '<html><head><title>Test Title</head><body></body></html>'
     summ.extract()
 
     # Then
