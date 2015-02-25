@@ -12,13 +12,17 @@ import logging
 from contextlib import closing
 from urlparse import urlparse
 
-import config, request, extraction, filters
+import config
+import request
+import extraction
+import filters
 from url import canonicalize_url
 from w3lib.url import url_query_cleaner
 
+
 site = lambda url: urlparse(url).netloc
-decode = lambda str, encoding: \
-    isinstance(str, basestring) and str.decode(encoding, 'ignore') or str
+decode = lambda mystr, encoding: \
+    isinstance(mystr, str) and mystr.decode(encoding, 'ignore') or mystr
 
 class HTMLParseError(Exception):
     pass
@@ -109,7 +113,8 @@ class Summary(object):
             self.urls.extend(urls)
 
         if config.GET_ALL_DATA:
-            # images = [i for i in [self._filter_image(i) for i in images] if i] 
+            # images = [i for i in [self._filter_image(i) for i in images] if i]
+            print images
             images = filter(None, map(self._filter_image, images))
             self.images.extend(images)
         elif not enough(self.images):
