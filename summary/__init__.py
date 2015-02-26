@@ -114,7 +114,6 @@ class Summary(object):
 
         if config.GET_ALL_DATA:
             # images = [i for i in [self._filter_image(i) for i in images] if i]
-            print images
             images = filter(None, map(self._filter_image, images))
             self.images.extend(images)
         elif not enough(self.images):
