@@ -26,14 +26,22 @@ TIMEOUT = (10, 10) # (connect, read) # None for never
 CHUNK_SIZE = 1024 # 1 KB
 HTML_MAX_BYTESIZE = 1 * 1048576 # 1 MB
 
-GET_ALL_DATA = False # False for better performance
+GET_ALL_DATA = True # False for better performance
 # MAX_ITEMS = 2 # to choose from
+
+NONCANONIC_SITES = [
+    'docquery.fec.gov',
+    'c2.com',
+]
 
 USEFUL_QUERY_KEYS = [
     'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
     'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid', 'list',
     'piano_t', 'piano_d', 'page',
 ]
+
+
+
 # USELESS_QUERY_KEYS = [
 #   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
 #   'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
@@ -49,7 +57,7 @@ USEFUL_QUERY_KEYS = [
 # ]
 
 # PhantomJS
-PHANTOMJS_BIN = ''
+PHANTOMJS_BIN = '/usr/local/bin/phantomJs'
 PHANTOMJS_SITES = [
     'readwrite.com', 'html5-ninja.com', 'rally.org',
 ]
