@@ -28,3 +28,4 @@ blogs-images.forbes.com/*/files/*/*/*-300x300.png
 images.forbes.com/images/channels/headerfeature*_panel*_original-*.*
 a16z.files.wordpress.com/2014/01/*.png
 Whatsapp-web-app.png
+breaking_image_large-3.png

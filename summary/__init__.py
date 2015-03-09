@@ -144,6 +144,7 @@ class Summary(object):
             # Handle urls which have significant unique query params
             # E.g. http://c2.com/cgi/wiki?LispMacro
             clean_url = canonicalize_url(url).rstrip('/')
+            # Clean up params without values which leave trailing equal signs '='
             clean_url = re.sub(r"=$", "", clean_url.replace("=&", "&"))
 
         return clean_url

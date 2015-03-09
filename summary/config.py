@@ -26,18 +26,26 @@ TIMEOUT = (10, 10) # (connect, read) # None for never
 CHUNK_SIZE = 1024 # 1 KB
 HTML_MAX_BYTESIZE = 1 * 1048576 # 1 MB
 
-GET_ALL_DATA = True # False for better performance
+GET_ALL_DATA = False # for better performance
 # MAX_ITEMS = 2 # to choose from
 
 NONCANONIC_SITES = [
     'docquery.fec.gov',
     'c2.com',
+    'www.lukew.com',
+    'cyberdust.com',
+    'forums.station.sony.com',
+    'www.ecommercebytes.com',
+    'www.residentadvisor.net',
+    'hire.jobvite.com',
+    'everydaycarry.com'
 ]
 
 USEFUL_QUERY_KEYS = [
     'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
     'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid', 'list',
-    'piano_t', 'piano_d', 'page',
+    'piano_t', 'piano_d', 'page', 'diff', 'editors', 'storyId', 'l', 'm', 'video', 'kanal',
+    'pid', 'sid', 'item', 'f', 't', 'forum_id'
 ]
 
 
@@ -57,7 +65,9 @@ USEFUL_QUERY_KEYS = [
 # ]
 
 # PhantomJS
-PHANTOMJS_BIN = '/usr/local/bin/phantomJs'
+#PHANTOMJS_BIN = '/usr/local/bin/phantomJs'
+PHANTOMJS_BIN = ''
+
 PHANTOMJS_SITES = [
     'readwrite.com', 'html5-ninja.com', 'rally.org',
 ]
