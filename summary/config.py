@@ -24,7 +24,7 @@ ENCODING = 'utf-8' # None for autodetect
 TIMEOUT = (10, 10) # (connect, read) # None for never
 
 CHUNK_SIZE = 1024 # 1 KB
-HTML_MAX_BYTESIZE = 1 * 1048576 # 1 MB
+HTML_MAX_BYTESIZE = 2 * 1048576 # 1 MB
 
 GET_ALL_DATA = False # for better performance
 # MAX_ITEMS = 2 # to choose from

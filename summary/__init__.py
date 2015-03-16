@@ -12,7 +12,6 @@ import logging
 from contextlib import closing
 from urlparse import urlparse
 
-import re
 import config
 import request
 import extraction
@@ -136,7 +135,7 @@ class Summary(object):
         And keeps only USEFUL_QUERY_KEYS. It also strips the 
         trailing slash to help identifying dupes.
         """
-        if site(url) not in config.NONCANONIC_SITES:
+        if False and site(url) not in config.NONCANONIC_SITES:
             clean_url = url_query_cleaner(url,
                 parameterlist=config.USEFUL_QUERY_KEYS) # , remove=True
             clean_url = canonicalize_url(clean_url).rstrip('/')
@@ -144,9 +143,6 @@ class Summary(object):
             # Handle urls which have significant unique query params
             # E.g. http://c2.com/cgi/wiki?LispMacro
             clean_url = canonicalize_url(url).rstrip('/')
-            # Clean up params without values which leave trailing equal signs '='
-            clean_url = re.sub(r"=$", "", clean_url.replace("=&", "&"))
-        clean_url = clean_url.replace(":80", "") # port 80 is never required
         return clean_url
 
     def _filter_image(self, url):
