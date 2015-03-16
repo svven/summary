@@ -18,8 +18,8 @@ def from_object(updates):
 
 ### Package settings ###
 
-USER_AGENT = 'summary-extraction 0.2' 
-    # "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
+USER_AGENT = 'summary-extraction 0.2'
+#USER_AGENT =    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
 ENCODING = 'utf-8' # None for autodetect
 TIMEOUT = (10, 10) # (connect, read) # None for never
 
@@ -69,7 +69,7 @@ USEFUL_QUERY_KEYS = [
 PHANTOMJS_BIN = ''
 
 PHANTOMJS_SITES = [
-    'readwrite.com', 'html5-ninja.com', 'rally.org',
+    'readwrite.com', 'html5-ninja.com', 'rally.org', 'blogs.ft.com', 'i100.independent.co.uk', 'www.behance.net'
 ]
 
 ### Filters settings ###
@@ -84,8 +84,8 @@ ADBLOCK_EXTRALIST_URL = 'extralist.txt'
 IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB
 
 # SizeImageFilter
-IMAGE_LIMIT_RATIO = 3 # if js crop center square
-IMAGE_MIN_IMGSIZE = (94, 94)
+IMAGE_LIMIT_RATIO = 3.6 # if js crop center square
+IMAGE_MIN_IMGSIZE = (75, 75)
 IMAGE_MAX_IMGSIZE = (2064, 2064)
 
 # MonoImageFilter

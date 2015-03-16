@@ -146,7 +146,7 @@ class Summary(object):
             clean_url = canonicalize_url(url).rstrip('/')
             # Clean up params without values which leave trailing equal signs '='
             clean_url = re.sub(r"=$", "", clean_url.replace("=&", "&"))
-
+        clean_url = clean_url.replace(":80", "") # port 80 is never required
         return clean_url
 
     def _filter_image(self, url):

@@ -4,7 +4,6 @@
 assets.tumblr.com/images/default_avatar
 assets.tumblr.com/images/og/text_200.png
 fb-post-logo-new.png
-forbes_1200x1200.jpg
 github*forkme_
 gu-logo-fallback.png
 images-amazon.com*global-sprite
@@ -29,3 +28,7 @@ images.forbes.com/images/channels/headerfeature*_panel*_original-*.*
 a16z.files.wordpress.com/2014/01/*.png
 Whatsapp-web-app.png
 breaking_image_large-3.png
+s*.reutersmedia.net/resources/media/global/assets/images/*/*_*.jpg
+blogs-images.forbes.com/*/files/*/*/*_avatar_*.png
+forbes_1200x1200.jpg
+i.forbesimg.com/assets/img/comments/no_profile_image.jpg
