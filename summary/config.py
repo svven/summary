@@ -30,15 +30,8 @@ GET_ALL_DATA = False # for better performance
 # MAX_ITEMS = 2 # to choose from
 
 NONCANONIC_SITES = [
-    'docquery.fec.gov',
-    'c2.com',
-    'www.lukew.com',
-    'cyberdust.com',
-    'forums.station.sony.com',
-    'www.ecommercebytes.com',
-    'www.residentadvisor.net',
-    'hire.jobvite.com',
-    'everydaycarry.com'
+    'docquery.fec.gov', 'c2.com', 'www.lukew.com', 'cyberdust.com', 'forums.station.sony.com',
+    'www.ecommercebytes.com', 'www.residentadvisor.net', 'hire.jobvite.com', 'everydaycarry.com',
 ]
 
 USEFUL_QUERY_KEYS = [
@@ -47,9 +40,6 @@ USEFUL_QUERY_KEYS = [
     'piano_t', 'piano_d', 'page', 'diff', 'editors', 'storyId', 'l', 'm', 'video', 'kanal',
     'pid', 'sid', 'item', 'f', 't', 'forum_id'
 ]
-
-
-
 # USELESS_QUERY_KEYS = [
 #   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
 #   'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
@@ -65,11 +55,10 @@ USEFUL_QUERY_KEYS = [
 # ]
 
 # PhantomJS
-#PHANTOMJS_BIN = '/usr/local/bin/phantomJs'
-PHANTOMJS_BIN = ''
+PHANTOMJS_BIN = '' # '/usr/local/bin/phantomjs'
 
 PHANTOMJS_SITES = [
-    'readwrite.com', 'html5-ninja.com', 'rally.org', 'blogs.ft.com', 'i100.independent.co.uk', 'www.behance.net'
+    'readwrite.com', 'html5-ninja.com', 'rally.org', 'blogs.ft.com', 'i100.independent.co.uk', 'www.behance.net', 'www.psmag.com',
 ]
 
 ### Filters settings ###
