@@ -23,5 +23,7 @@ setup(
         # 're2 >= 0.2.20',
         'requests >= 2.2.1',
         'w3lib >= 1.6',
+        'urltools >= 0.3.2',
+        'urlnorm==1.1.2',
     ],
 )

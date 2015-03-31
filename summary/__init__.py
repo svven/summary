@@ -17,7 +17,7 @@ import request
 import extraction
 import filters
 from url import canonicalize_url
-from w3lib.url import url_query_cleaner
+from urlnorm import norm
 
 
 site = lambda url: urlparse(url).netloc
@@ -135,12 +135,10 @@ class Summary(object):
         And keeps only USEFUL_QUERY_KEYS. It also strips the 
         trailing slash to help identifying dupes.
         """
-        if site(url) in config.NONCANONIC_SITES:
-            clean_url = url # keep all query keys
+        if site(norm(url).lower()) in config.NONCANONIC_SITES:
+            clean_url = canonicalize_url(url, keep_params=True)
         else:
-            clean_url = url_query_cleaner(url,
-                parameterlist=config.USEFUL_QUERY_KEYS) # , remove=True
-        clean_url = canonicalize_url(clean_url, keep_fragments=True).rstrip('/')
+            clean_url = canonicalize_url(url)
         return clean_url
 
     def _filter_image(self, url):
