@@ -23,7 +23,7 @@ def test_canonical_site_urls():
 
     url = 'http://www.gmo-toku.jp/item/70228568/【YONEX】+パワークッションSC4メン+（SHB-SC4M+）'
     clean_url = s._clean_url(url)
-    assert clean_url == 'http://www.gmo-toku.jp/item/70228568/%E3%80%90YONEX%E3%80%91%2B%E3%83%91%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3SC4%E3%83%A1%E3%83%B3%2B%EF%BC%88SHB-SC4M%2B%EF%BC%89'
+    assert clean_url == 'http://www.gmo-toku.jp/item/70228568/%E3%80%90YONEX%E3%80%91+%E3%83%91%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3SC4%E3%83%A1%E3%83%B3+%EF%BC%88SHB-SC4M+%EF%BC%89'
 
     url = "http://www.mavs.com/videos/run-dmc-cant-be-stopped/"
     clean_url = s._clean_url(url)
@@ -32,12 +32,12 @@ def test_canonical_site_urls():
     # 1 - h g i
     url = 'https://bob:bobby@www.lunatech.com:8080/file.jpg;p=1?a=3422#!page1/98292'
     clean_url = s._clean_url(url)
-    assert clean_url == "https://www.lunatech.com:8080/file.jpg%3Bp%3D1?a=3422#%21page1/98292"
+    assert clean_url == "https://www.lunatech.com:8080/file.jpg;p=1?a=3422#!page1/98292"
 
     # 2 - h g i
     url = 'https://bob:bobby@www.lunatech.com:8080/file.jpg;p=1?q=2#third'
     clean_url = s._clean_url(url)
-    assert clean_url == "https://www.lunatech.com:8080/file.jpg%3Bp%3D1"
+    assert clean_url == "https://www.lunatech.com:8080/file.jpg;p=1"
 
     # 3 - i a b
     url = 'http://google.com:80/cgi?z=!@£$%^*()-+&a=!@£$%^ *()-+'
@@ -77,7 +77,7 @@ def test_canonical_site_urls():
     # 11 - a f
     url = "http://c2.com/cgi/wiki?LispMacro&p=1&BParam&zzz#!KEEPME"
     clean_url = s._clean_url(url)
-    assert clean_url == "http://c2.com/cgi/wiki?BParam&LispMacro&p=1&zzz#%21KEEPME"
+    assert clean_url == "http://c2.com/cgi/wiki?BParam&LispMacro&p=1&zzz#!KEEPME"
 
     # 12 - f j k
     url = "http://I_AM_NORMAL_URL.com/cgi?xxx&yyy=1"
