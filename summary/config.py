@@ -58,7 +58,8 @@ USEFUL_QUERY_KEYS = [
 PHANTOMJS_BIN = '' # '/usr/local/bin/phantomjs'
 
 PHANTOMJS_SITES = [
-    'readwrite.com', 'html5-ninja.com', 'rally.org', 'blogs.ft.com', 'i100.independent.co.uk', 'www.behance.net', 'www.psmag.com',
+    'readwrite.com', 'html5-ninja.com', 'rally.org', 'blogs.ft.com', 'i100.independent.co.uk', 
+    'www.behance.net', 'www.psmag.com', 'po.st',
 ]
 
 ### Filters settings ###
