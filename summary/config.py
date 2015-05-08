@@ -29,38 +29,22 @@ HTML_MAX_BYTESIZE = 2 * 1048576 # 1 MB
 GET_ALL_DATA = False # for better performance
 # MAX_ITEMS = 2 # to choose from
 
-NONCANONIC_SITES = [
-    'docquery.fec.gov', 'c2.com', 'www.lukew.com', 'cyberdust.com', 'forums.station.sony.com',
-    'www.ecommercebytes.com', 'www.residentadvisor.net', 'hire.jobvite.com', 'everydaycarry.com',
-]
-
+# URL query keys to keep
 USEFUL_QUERY_KEYS = [
-    'v', 's', 'id', 'story_fbid', 'set', 'q', 'cid', 'tbm', 'fbid', 'u', 'p', 'next',
-    'article_id', 'articleid', 'a', 'gid', 'mid', 'itemid', 'newsid', 'storyid', 'list',
-    'piano_t', 'piano_d', 'page', 'diff', 'editors', 'storyId', 'l', 'm', 'video', 'kanal',
-    'pid', 'sid', 'item', 'f', 't', 'forum_id'
+    'id',
 ]
-# USELESS_QUERY_KEYS = [
-#   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_hp_ref', 
-#   'utm_cid', 'utm_term', 'utm_reader', 'utm_tone', 'utm', 'utm_keyword', 'utm_name', 
-#   'refresh', 'ref', 'feature', '_r', 'smid', 'seid', 'ncid', 'awesm', 'url', 'mg', 
-#   '_php', '_type', 'source', 'mod', 'partner', 'type', 'share', 'cmp', 'channel',
-#   'ei', 'sa', 'buffer_share', 'bih', 'biw', 'list', 'ved', 'srid', 'fsrc', 'referer',
-#   'shortlink', 'trk', 'src', 'mt', 'tripIdBase36', 'activityList', 'emc', 'uid',
-#   'page', 'uploaded', 'mbid', 'l', '_i_location', 'siteedition', 'ftcamp', 'soc_src',
-#   'pagewanted', 'client', 'c', 'rls', 'hs', 'rev', 'spref', 'curator', 'm', 't',
-#   'app', 'feature', 'notif_t', 'index', 'g', 'cmpid', 'lang', 'aff', 'ir', 'st',
-#   'ana', 'pid', 'sc', 'sns', 'op', 'goback', 'f', 'g', 'r', 'rid', 'a_dgi', 'ocid',
-#   'past', 
-# ]
 
 # PhantomJS
 PHANTOMJS_BIN = '' # '/usr/local/bin/phantomjs'
-
 PHANTOMJS_SITES = [
-    'readwrite.com', 'html5-ninja.com', 'rally.org', 'blogs.ft.com', 'i100.independent.co.uk', 
-    'www.behance.net', 'www.psmag.com', 'po.st',
+    'readwrite.com',
 ]
+
+# Noncanonic sites
+NONCANONIC_SITES = [
+    'cyberdust.com', 
+]
+
 
 ### Filters settings ###
 
