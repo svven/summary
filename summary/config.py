@@ -19,7 +19,7 @@ def from_object(updates):
 ### Package settings ###
 
 USER_AGENT = 'summary-extraction 0.2'
-#USER_AGENT =    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
+# USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
 ENCODING = 'utf-8' # None for autodetect
 TIMEOUT = (10, 10) # (connect, read) # None for never
 
@@ -42,7 +42,7 @@ PHANTOMJS_SITES = [
 
 # Noncanonic sites
 NONCANONIC_SITES = [
-    'cyberdust.com', 
+    'www.google.com',
 ]
 
 
