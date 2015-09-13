@@ -231,8 +231,12 @@ class Summary(object):
                 self._extract(html, self.clean_url, [
                     "summary.techniques.HTTPEquivRefreshTags",
                 ])
-                new_url = self.urls and self.urls[0]
-                if new_url and new_url != self.clean_url: 
+                # TODO: Improve this
+                new_urls = filter(
+                    lambda u: not ('nojs' in u), self.urls
+                )
+                new_url = new_urls and new_urls[0]
+                if new_url and new_url != self.clean_url:
                     logger.warning("Refresh: %s", new_url)
                     self._clear()
                     self.clean_url = new_url
