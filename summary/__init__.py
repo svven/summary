@@ -24,6 +24,9 @@ site = lambda url: urlparse(url).netloc
 decode = lambda mystr, encoding: \
     isinstance(mystr, str) and mystr.decode(encoding, 'ignore') or mystr
 
+class URLError(Exception):
+    pass
+
 class HTMLParseError(Exception):
     pass
 
@@ -109,7 +112,7 @@ class Summary(object):
 
         if config.GET_ALL_DATA or not enough(self.urls):
             # urls = [self._clean_url(u) for u in urls]
-            urls = map(self._clean_url, urls)
+            urls = filter(None, map(self._clean_url, urls))
             self.urls.extend(urls)
 
         if config.GET_ALL_DATA:
@@ -135,6 +138,9 @@ class Summary(object):
         And keeps only USEFUL_QUERY_KEYS. It also strips the 
         trailing slash to help identifying dupes.
         """
+        # TODO: Turn into regex
+        if 'nojs_router' in url:
+            return None
         if site(norm(url).lower()) in config.NONCANONIC_SITES:
             clean_url = canonicalize_url(url, keep_params=True)
         else:
@@ -212,6 +218,8 @@ class Summary(object):
             if mime and not ('html' in mime.lower()):
                 raise HTMLParseError('Invalid Content-Type: %s' % mime)
             self.clean_url = self._clean_url(response.url)
+            if self.clean_url is None:
+                raise URLError('Bad url: %s' % response.url)
             if check_url is not None:
                 check_url(url=self.clean_url)
 
@@ -231,11 +239,7 @@ class Summary(object):
                 self._extract(html, self.clean_url, [
                     "summary.techniques.HTTPEquivRefreshTags",
                 ])
-                # TODO: Improve this
-                new_urls = filter(
-                    lambda u: not ('nojs' in u), self.urls
-                )
-                new_url = new_urls and new_urls[0]
+                new_url = self.urls and self.urls[0]
                 if new_url and new_url != self.clean_url:
                     logger.warning("Refresh: %s", new_url)
                     self._clear()
