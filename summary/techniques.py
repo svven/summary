@@ -1,4 +1,9 @@
 "This file contains additional extraction techniques."
+try:
+    import lxml
+    parser = 'lxml'
+except:
+    parser = None
 from bs4 import BeautifulSoup
 from extraction.techniques import Technique
 
@@ -50,7 +55,7 @@ class HTTPEquivRefreshTags(Technique):
     def extract(self, html):
         "Extract http-equiv refresh url to follow."
         extracted = {}
-        soup = BeautifulSoup(html)
+        soup = BeautifulSoup(html, parser)
         for meta_tag in soup.find_all('meta'):
             if self.key_attr in meta_tag.attrs and 'content' in meta_tag.attrs and \
                 meta_tag[self.key_attr].lower() == self.val_attr:
