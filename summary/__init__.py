@@ -105,15 +105,18 @@ class Summary(object):
         enough = lambda items: items # len(items) >= MAX_ITEMS
 
         if config.GET_ALL_DATA or not enough(self.titles):
+            titles = filter(None, map(self._clean_text, titles))
             self.titles.extend(titles)
 
         if config.GET_ALL_DATA or not enough(self.descriptions):
+            descriptions = filter(None, map(self._clean_text, descriptions))
             self.descriptions.extend(descriptions)
 
-        if config.GET_ALL_DATA or not enough(self.urls):
-            # urls = [self._clean_url(u) for u in urls]
-            urls = filter(None, map(self._clean_url, urls))
-            self.urls.extend(urls)
+        ## Never mind the urls, they can be bad not worth it
+        # if config.GET_ALL_DATA or not enough(self.urls):
+            # # urls = [self._clean_url(u) for u in urls]
+            # urls = filter(None, map(self._clean_url, urls))
+            # self.urls.extend(urls)
 
         if config.GET_ALL_DATA:
             # images = [i for i in [self._filter_image(i) for i in images] if i]
@@ -132,14 +135,22 @@ class Summary(object):
         # self.descriptions = sorted(self.descriptions, key=len, reverse=True)
         # self.images = sorted(self.images, key=lambda i: sum(i.size), reverse=True)
 
+    def _clean_text(self, text):
+        """
+        Checks for bad text like "{{ metatags.title }}" and such
+        """
+        if text.startswith('{{') and text.endswith('}}'):
+            return None
+        return text
+        
     def _clean_url(self, url):
         """
         Canonicalizes the url, as it is done in Scrapy.
         And keeps only USEFUL_QUERY_KEYS. It also strips the 
         trailing slash to help identifying dupes.
         """
-        # TODO: Turn into regex
-        if 'nojs_router' in url:
+        # TODO: Turn this into regex
+        if not url.startswith('http') or url.endswith('}}') or 'nojs_router' in url:
             return None
         if site(norm(url).lower()) in config.NONCANONIC_SITES:
             clean_url = canonicalize_url(url, keep_params=True)
