@@ -1,11 +1,12 @@
 """
 Wrapper for `requests`.
 """
-import time
-import config, logging, requests
-logger = logging.getLogger(__name__)
-
+import requests
 requests.packages.urllib3.disable_warnings()
+
+import time
+import config, logging
+logger = logging.getLogger(__name__)
 
 def get(url, **kwargs):
     """
