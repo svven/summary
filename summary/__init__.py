@@ -9,15 +9,20 @@ tag first, applying specific head extraction techniques, and
 goes on to the <body> only if Summary data is not complete.
 """
 import logging
-from contextlib import closing
-from urlparse import urlparse
+import config, request, extraction, filters
 
-import config
-import request
-import extraction
-import filters
+from urlparse import urlparse
 from url import canonicalize_url
 from urlnorm import norm
+
+from contextlib import closing
+
+# try:
+    # import lxml
+    # parser = 'lxml'
+# except:
+    # parser = None
+# from bs4 import BeautifulSoup, Comment
 
 
 site = lambda url: urlparse(url).netloc
@@ -175,31 +180,31 @@ class Summary(object):
         If not found, the response content is fully consumed so
         self._html equals response.content, and it returns None.
         """
-        lower_html = self._html.lower()
-        tag_start = tag_end = None
-        def find_tag(html, tag_name, tag_start, tag_end):
-            if not tag_start:
-                start = html.find("<%s" % tag_name)
-                if start >= 0: tag_start = start
-            if tag_start:
-                end = html.find("</%s>" % tag_name)
-                if end > tag_start: tag_end = end+len(tag_name)+3
-            if tag_end: # and tag_start
-                return self._html[tag_start:tag_end]
-            return None
-        consumed = hasattr(response, 'consumed') and \
-            getattr(response, 'consumed')
+        def find_tag(tag_name):
+            tag_start = tag_end = None
+            html = self._html.lower()
+            start = html.find("<%s" % tag_name)
+            if start >= 0:
+                tag_start = start
+            else:
+                return None # no tag
+            end = html.find("</%s>" % tag_name)
+            if end > tag_start:
+                tag_end = end+len(tag_name)+3
+            else:
+                tag_end = -1 # till the end
+            return self._html[tag_start:tag_end]
+        consumed = getattr(response, 'consumed', False)
         if not consumed:
             for chunk in response.iter_content(config.CHUNK_SIZE): # , decode_unicode=True
                 self._html += chunk
-                lower_html += chunk.lower()
-                tag = find_tag(lower_html, tag_name, tag_start, tag_end)
+                tag = find_tag(tag_name)
                 if tag:
                     return tag
                 if len(self._html) > config.HTML_MAX_BYTESIZE:
                     raise HTMLParseError('Maximum response size reached.')
             response.consumed = True
-        tag = find_tag(lower_html, tag_name, tag_start, tag_end)
+        tag = find_tag(tag_name)
         return decode(tag, encoding) # decode here
 
     def _extract(self, html, url, techniques):
