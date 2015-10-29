@@ -182,6 +182,8 @@ class Summary(object):
         """
         def find_tag(tag_name):
             tag_start = tag_end = None
+            found = lambda: \
+                tag_start is not None and tag_end is not None
             html = self._html.lower()
             start = html.find("<%s" % tag_name)
             if start >= 0:
@@ -191,9 +193,11 @@ class Summary(object):
             end = html.find("</%s>" % tag_name)
             if end > tag_start:
                 tag_end = end+len(tag_name)+3
-            else:
+            elif consumed:
                 tag_end = -1 # till the end
-            return self._html[tag_start:tag_end]
+            if found():
+                return self._html[tag_start:tag_end]
+            return None
         consumed = getattr(response, 'consumed', False)
         if not consumed:
             for chunk in response.iter_content(config.CHUNK_SIZE): # , decode_unicode=True
