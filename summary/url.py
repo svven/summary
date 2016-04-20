@@ -38,6 +38,8 @@ import urlparse
 from urllib import quote
 
 import config
+
+import re
 from urltools import extract, construct, normalize, URL
 from urlnorm import norm
 
