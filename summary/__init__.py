@@ -205,14 +205,16 @@ class Summary(object):
                 stream = response.iter_content(config.CHUNK_SIZE) # , decode_unicode=True
                 response.stream = stream
             while True:
-                chunk = next(stream)
-                self._html += chunk
-                tag = find_tag(tag_name)
-                if tag:
-                    return tag
-                if len(self._html) > config.HTML_MAX_BYTESIZE:
-                    raise HTMLParseError('Maximum response size reached.')
-            response.consumed = True
+                try:
+                    chunk = next(stream)
+                    self._html += chunk
+                    tag = find_tag(tag_name)
+                    if tag:
+                        return tag
+                    if len(self._html) > config.HTML_MAX_BYTESIZE:
+                        raise HTMLParseError('Maximum response size reached.')
+                except StopIteration:
+                    response.consumed = True
         tag = find_tag(tag_name)
         return decode(tag, encoding) # decode here
 
