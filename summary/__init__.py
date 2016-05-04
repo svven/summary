@@ -200,7 +200,12 @@ class Summary(object):
             return None
         consumed = getattr(response, 'consumed', False)
         if not consumed:
-            for chunk in response.iter_content(config.CHUNK_SIZE): # , decode_unicode=True
+            stream = getattr(response, 'stream', None)
+            if stream is None:
+                stream = response.iter_content(config.CHUNK_SIZE) # , decode_unicode=True
+                response.stream = stream
+            while True:
+                chunk = next(stream)
                 self._html += chunk
                 tag = find_tag(tag_name)
                 if tag:
@@ -293,4 +298,5 @@ class Summary(object):
             del self._html # no longer needed
 
         # that's it
+
 
