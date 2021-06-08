@@ -1,5 +1,5 @@
 Jinja2==2.7.2 # for rendering
-Pillow==2.4.0
+Pillow==8.2.0
 adblockparser==0.2
 git+https://github.com/svven/extraction.git@master#egg=extraction # extraction==0.2
 lxml==3.3.5
