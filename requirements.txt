@@ -1,4 +1,4 @@
-Jinja2==2.7.2 # for rendering
+Jinja2==2.11.3 # for rendering
 Pillow==8.3.2
 adblockparser==0.2
 git+https://github.com/svven/extraction.git@master#egg=extraction # extraction==0.2
