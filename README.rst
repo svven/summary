@@ -83,10 +83,7 @@ import summary module for data extraction and filtering. You probably
 have your own means to render the data, so you only need the summary
 folder.
 
-|image|
-
-![sample.html
-preview](\ https://www.dropbox.com/s/lbj6cjvqvgsp2aw/sample.png?dl=1)
+.. image:: img/sample.png
 
 And this one produced much faster (see footer) with
 ``summary.GET_ALL_DATA = False``. It contains only the first valid item
