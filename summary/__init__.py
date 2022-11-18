@@ -8,6 +8,7 @@ Extraction is performed gradually by parsing the HTML <head>
 tag first, applying specific head extraction techniques, and
 goes on to the <body> only if Summary data is not complete.
 """
+from functools import reduce
 import logging
 import config, request, extraction, filters
 

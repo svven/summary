@@ -40,12 +40,12 @@ def summarize(urls):
     start = time.time()
     for url in urls:
         try:
-            print "-> %s" % url
+            print("-> %s" % url)
             summary = Summary(url)
             summary.extract()
         except KeyboardInterrupt:
             break
-        except Exception, e:
+        except Exception as e:
             fails += 1
             summary = {
                 'titles': ["[%s]" % err(e)],
@@ -53,13 +53,13 @@ def summarize(urls):
                 'descriptions': [str(e)],
                 'source': url,
                 }
-            print "[%s] (%s): %s" % (err(e), e, url)
+            print("[%s] (%s): %s" % (err(e), e, url))
         summaries.append(summary)
         end = time.time()
 
     result = fails and "Fails: %s out of %s." % (fails, len(summaries)) \
         or "Success: %s." % len(summaries)
-    print result
+    print(result)
 
     duration = end - start
     speed = "%.2f" % (duration/len(summaries))

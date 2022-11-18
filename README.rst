@@ -48,7 +48,7 @@ If you fork or clone the repo you can use summarize.py like this::
     >>> html = render(template="news.html",
         summaries=summaries, result=result, speed=speed)
     >>> with open('demo.html', 'w') as file:
-    ...   file.write(html)
+    ...   file.write(html.encode('uft8'))
     >>> 
 
 In a nutshell
@@ -85,24 +85,13 @@ folder.
 
 |image|
 
-![news.html
-preview](\ https://dl.dropboxusercontent.com/u/134594/Svven/news.png)
-
-This is the output having ``summary.GET_ALL_DATA = True``.
-
-**Clicking the summary title, image and description cycles through the
-multiple extracted values.**
-
-<https://dl.dropboxusercontent.com/u/134594/svven/news.html>
-
-
+![sample.html
+preview](\ https://www.dropbox.com/s/lbj6cjvqvgsp2aw/sample.png?dl=1)
 
 And this one produced much faster (see footer) with
 ``summary.GET_ALL_DATA = False``. It contains only the first valid item
 of each kind - title, image, and description. This is the default
 behaviour. 
-
-<https://dl.dropboxusercontent.com/u/134594/svven/fast.html>
 
 Installation
 ------------
