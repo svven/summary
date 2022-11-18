@@ -53,6 +53,5 @@ coverage.xml
 docs/_build/
 
 
-*.html
 *.txt
 !*list.txt
