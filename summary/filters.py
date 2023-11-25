@@ -4,15 +4,15 @@ This file contains filters for the extracted data, mainly images.
 from __future__ import division
 
 import logging
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("summary")
 
-import config, request
 from contextlib import closing
-
 from pkg_resources import resource_filename
 
 import re, PIL
-from cStringIO import StringIO
+from io import StringIO
+
+from summary import config, request
 
 clsn = lambda e: e.__class__.__name__
 
@@ -43,7 +43,7 @@ class AdblockURLFilterMeta(type):
             with closing(request.get(url, stream=True)) as file:
                 file.raise_for_status()
                 # lines = 0 # to be removed
-                for rule in file.iter_lines():
+                for rule in file.iter_line(decode_unicode=True):
                     raw_rules.append(rule.strip())
                     # lines += 1 # tbr
                     # if lines == 2500: break # tbr, only for windoze with no re2
@@ -74,14 +74,14 @@ class AdblockURLFilterMeta(type):
             cls._rules = rules
         return cls._rules
 
-class AdblockURLFilter(object): # Filter
+class AdblockURLFilter(object, metaclass=AdblockURLFilterMeta): # Filter
     """
     Uses adblockparser (https://github.com/scrapinghub/adblockparser) and 
     returns `None` if it `should_block` the URL.
     Hats off to Mikhail Korobov (https://github.com/kmike) for the awesome work. 
     It gives a lot of value to this mashup repo.
     """
-    __metaclass__ = AdblockURLFilterMeta
+    # __metaclass__ = AdblockURLFilterMeta
 
     def __call__(self, url):
         if AdblockURLFilter.rules.should_block(url):
@@ -147,7 +147,7 @@ class NoImageFilter(object): # AdblockURLFilter
         try:
             image = NoImageFilter.get_image(url)
             return image
-        except Exception, e:
+        except Exception as e:
             if url.startswith('data'): # data URI
                 url = url[:url.find(';')]
             logger.debug("Bad image (%s): %s", clsn(e), url)
@@ -190,7 +190,7 @@ class SizeImageFilter(object): # NoImageFilter
         try:
             SizeImageFilter.check_size(image)
             return image
-        except Exception, e:
+        except Exception as e:
             logger.debug("Bad image (%s): %s", clsn(e), image.url)
             pass
         return None
@@ -241,7 +241,7 @@ class MonoImageFilter(object): # SizeImageFilter
                 del raw_image # more cleaning maybe
                 logger.debug("Good image (%s): %s", clsn(self), image.url)
             return image
-        except Exception, e:
+        except Exception as e:
             logger.debug("Bad image (%s): %s", clsn(e), image.url)
             pass
         return None
@@ -277,7 +277,7 @@ class FormatImageFilter(object): # MonoImageFilter
                 del raw_image
                 logger.debug("Good image (%s): %s", clsn(self), image.url)
             return image
-        except Exception, e:
+        except Exception as e:
             logger.debug("Bad image (%s): %s", clsn(e), image.url)
             pass
         return None

@@ -1,14 +1,10 @@
-Jinja2==2.7.2 # for rendering
-Pillow==2.4.0
-adblockparser==0.2
-extraction==0.2 # git+https://github.com/svven/extraction.git@master#egg=extraction
-lxml==3.3.5
-# re2==0.2.20 # for adblockparser
-requests==2.5.1
-selenium==2.44.0 # for phantomjs
-w3lib==1.6
-urlnorm==1.1.2
-urltools #==0.4.0
-mock==1.0.1
-mockito #==1.4.0
-pytest==2.6.4
+# re2 # for adblockparser
+adblockparser
+extraction # git+https://github.com/svven/extraction.git@master#egg=extraction
+Jinja2 # for rendering
+lxml
+Pillow
+requests
+requests-html
+urltools
+w3lib

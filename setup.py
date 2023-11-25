@@ -5,25 +5,25 @@ except ImportError:
 
 setup(
     name='summary-extraction',
-    version='0.2',
+    version='0.3',
     author='Alexandru Stanciu',
     author_email='alexandru.stanciu@gmail.com',
     packages=['summary'],
     include_package_data=True,
     license='LICENSE.txt',
     url='https://github.com/svven/summary',
-    # download_url = 'https://github.com/svven/summary/tarball/0.2',
+    # download_url = 'https://github.com/svven/summary/tarball/0.3',
     description='Extract the title, image and description from any URL.',
-    long_description=open('README.rst').read(),
-    install_requires=[
-        'Pillow >= 2.4.0',
-        'adblockparser >= 0.2',
-        'extraction >= 0.2',
-        'lxml >= 3.3.5',
-        # 're2 >= 0.2.20',
-        'requests >= 2.2.1',
-        'w3lib >= 1.6',
-        'urltools >= 0.3.2',
-        'urlnorm==1.1.2',
+    long_description=open('README.md').read(),
+    install_requires=[        
+        'adblockparser',
+        'extraction', # git+https://github.com/svven/extraction.git@master#egg=extraction
+        # 'Jinja2' # for rendering
+        'lxml',
+        'Pillow',
+        'requests',
+        'requests-html',
+        'urltools',
+        'w3lib',
     ],
 )

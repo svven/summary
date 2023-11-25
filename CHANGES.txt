@@ -1,6 +1,10 @@
+*** RETIRED ***
+
 v0.1, 	8/06/2014 -- Initial release.
 
 v0.2,   7/09/2014 -- Significant Improvements
 	* Follow http-equiv refresh url
 	* Canonicalize the url
 	* Consider only useful query keys 
+
+v0.3,	18//11/2022 -- Python 3

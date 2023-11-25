@@ -69,13 +69,15 @@ def summarize(urls):
 
 if __name__ == '__main__':
     urls = []
-    with open('urls.txt', 'r') as file:
-        urls.extend([url.strip() for url in file if not url.strip().startswith("#") \
-                                                 and url.strip() != ""])
+    url = 'https://levelup.gitconnected.com/awesome-terminal-applications-e4a06022dffa'
+    urls.append(url)
+    # with open('urls.txt', 'r') as file:
+    #     urls.extend([url.strip() for url in file if not url.strip().startswith("#") \
+    #                                              and url.strip() != ""])
     summaries, result, speed = summarize(urls)
     page = render(template="news.html",
         summaries=summaries, result=result, speed=speed)
 
     with open('news.html', 'w') as file:
-        file.write(page.encode('utf-8'))
+        file.write(page) # .encode('utf-8')
 

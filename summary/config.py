@@ -49,10 +49,10 @@ NONCANONIC_SITES = [
 ### Filters settings ###
 
 # AdblockURLFilter
-ADBLOCK_EASYLIST_URL = 'easylist.txt'
+ADBLOCK_EASYLIST_URL = 'https://easylist-downloads.adblockplus.org/easylist.txt'
+    # 'easylist.txt'
     # 'https://easylist-downloads.adblockplus.org/easylist.txt'
 ADBLOCK_EXTRALIST_URL = 'extralist.txt' 
-    # 'https://dl.dropboxusercontent.com/u/134594/svven/extralist.txt'
 
 # NoImageFilter
 IMAGE_MAX_BYTESIZE = 1 * 1048576 # 1 MB

@@ -8,23 +8,19 @@ Extraction is performed gradually by parsing the HTML <head>
 tag first, applying specific head extraction techniques, and
 goes on to the <body> only if Summary data is not complete.
 """
-from functools import reduce
 import logging
-import config, request, extraction, filters
+logger = logging.getLogger("summary")
+logger.setLevel(logging.DEBUG)
 
-from urlparse import urlparse
-from url import canonicalize_url
-from urlnorm import norm
+import extraction
 
+from urllib.parse import urlparse
+from w3lib.url import canonicalize_url
+# from urlnorm import norm
+from functools import reduce
 from contextlib import closing
 
-# try:
-    # import lxml
-    # parser = 'lxml'
-# except:
-    # parser = None
-# from bs4 import BeautifulSoup, Comment
-
+from summary import config, request, filters
 
 site = lambda url: urlparse(url).netloc
 decode = lambda mystr, encoding: \
@@ -158,10 +154,11 @@ class Summary(object):
         # TODO: Turn this into regex
         if not url.startswith('http') or url.endswith('}}') or 'nojs_router' in url:
             return None
-        if site(norm(url).lower()) in config.NONCANONIC_SITES:
-            clean_url = canonicalize_url(url, keep_params=True)
-        else:
-            clean_url = canonicalize_url(url)
+        # if site(norm(url).lower()) in config.NONCANONIC_SITES:
+        #     clean_url = canonicalize_url(url, keep_params=True)
+        # else:
+        #     clean_url = canonicalize_url(url)
+        clean_url = canonicalize_url(url)
         return clean_url
 
     def _filter_image(self, url):
@@ -203,7 +200,7 @@ class Summary(object):
         if not consumed:
             stream = getattr(response, 'stream', None)
             if stream is None:
-                stream = response.iter_content(config.CHUNK_SIZE) # , decode_unicode=True
+                stream = response.iter_content(config.CHUNK_SIZE, decode_unicode=True)
                 response.stream = stream
             while True:
                 try:
@@ -238,7 +235,6 @@ class Summary(object):
         websites like foursquare.com, facebook.com, bitly.com and so on.
         """
         # assert self._is_clear()
-        logger = logging.getLogger(__name__)
         logger.info("Extract: %s", self.clean_url)
         with closing(request.get(self.clean_url, stream=True)) as response:
             response.raise_for_status()
